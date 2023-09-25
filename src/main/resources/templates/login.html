@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="plantilla :: header&footer"></th:block>   
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+    <th:block th:replace="plantilla :: header"></th:block>
+    <section class="secLogin">
+        <div class="login">
+            <form th:action="@{/login}" method="post" class="login-form">
+                <label for="username">USUARIO</label>
+                <div class="input-container">
+                    <input type="email" name="username" id="username" required>
+                    <span class="iconify icono" data-icon="carbon:user-filled"></span>
+                </div>
+                <label for="password">CONTRASEÑA</label>
+                <div class="input-container">
+                    <input type="password" name="password" id="password" required>
+                    <span class="iconify icono" data-icon="vaadin:key"></span>
+                </div>
+                <input type="submit" class="btn-login" value="INGRESAR">
+            </form>
+            <div class="links">
+                <a href="/recuperar-contrasena">
+                    <span class="iconify" data-icon="bi:question-circle"></span>
+                    Olvidaste contraseña
+                </a>
+                <a href="/registro">
+                    <span class="iconify" data-icon="ic:baseline-person-add"></span>
+                    Regístrate
+                </a>
+            </div>
+        </div>
+    </section>
+    <th:block th:replace="plantilla :: footer-mobile"></th:block> 
+    <th:block th:replace="plantilla :: footer-web"></th:block>
+<style>
+    :root {
+        --violeta: #b49fff;
+        --amarilloMas: #f8d246;
+        --amarillo: #ffd84a;
+        --azul: #7fb8ff;
+        --verde: #bfff9f;
+        --gris: #f3f0ed;
+    }
+
+    .secLogin {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 80vh;
+    }
+
+    .secLogin> div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 40px;
+        background-color: var(--gris);
+    }
+
+    .secLogin> div form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        outline: 0;
+        border: 0;
+        background-color: var(--violeta);
+        overflow: hidden;
+    }
+
+    .input-container .icono {
+        color: var(--gris) !important;
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    .input-container input[type="email"],
+    .input-container input[type="password"] {
+        border: none;
+        padding: 8px;
+        width: 100%;
+        background: none;
+    }
+
+    .secLogin div form input[type="submit"] {
+        border-radius: 10px;
+        width: fit-content;
+        padding: 10px 50px;
+        outline: 0;
+        border: 0;
+        background-color: var(--amarillo);
+        margin: 20px auto 0px ;
+        cursor: pointer;
+    }
+
+    .secLogin div form input[type="submit"]:hover {
+        background-color: var(--amarilloMas);
+    }
+
+    .links {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .links a {
+        color: var(--violeta);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .links a .iconify {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .links a:hover{
+        transform: scale(1.2);
+        color: var(--amarillo);
+        transition:  0.8s ease-in-out;
+    }
+
+   
+</style>
+</body>
+</html>

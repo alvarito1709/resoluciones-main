@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="plantilla :: header&footer"></th:block>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <link rel="stylesheet" href="/static/css/panel-administrador.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/panel-administrador.css}">
+</head>
+
+<body>
+  
+    <th:block th:replace="plantilla :: header"></th:block>
+    <input type="number" style="display: none;" id="masSeisMesesInput" th:value="${masSeisMeses}" />
+    <input type="number" style="display: none;" id="entreUnMesYSeisMesesInput" th:value="${entreUnMesYSeisMeses}" />
+    <input type="number" style="display: none;" id="menosUnMesInput" th:value="${menosUnMes}" />
+    <input type="number" style="display: none;" id="totalResolInput" th:value="${totalResol}" />
+    
+    <div class="bg-popup" id="containerGralForm">
+        
+        <div class="containerGralForm" >
+            <label class="botonFormularioResoCerrar" id="closePopup" >Cerrar</label> 
+            <div class="containerFormResol">
+                
+                <form action="#" class="formResolucionEspe" id="formResolucionAR">
+                    <div class="form-group" hidden>
+                        <label for="id1">ID</label>
+                        <input type="text" id="id1" >
+                    </div>
+                    <div class="form-group" hidden>
+                        <label for="usuarioDeCreacion1">USUARIO DE CREACIÓN</label>
+                        <input type="text" id="usuarioDeCreacion1" th:value="${usuario.email}" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoDeOfertaF1">TIPO DE OFERTA</label>
+                        <input type="text" id="tipoDeOfertaF1">                        
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDeGestionF1">TIPO DE GESTION</label>
+                       
+                        <select id="tipoDeGestionF1" >
+                            <option value="" disabled selected>Selecciona un tipo de gestion</option>
+                            <option value="GESTIÓN PRIVADA (DGEGP)">GESTIÓN PRIVADA (DGEGP)</option>                           
+                            <option value="GESTIÓN ESTATAL (DGEART/SSCPEE)">GESTIÓN ESTATAL (DGEART/SSCPEE)</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDeTitulosF1">TIPO DE TITULO</label>
+                        
+                        <select id="tipoDeTitulosF1" >
+                            <option value="" disabled selected>Selecciona un tipo de titulo</option>
+                            <option value="TECNICATURA SUPERIOR">TECNICATURA SUPERIOR</option>                           
+                            <option value="FORMACION CONTINUA">FORMACION CONTINUA</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resolucionAprobatoria1">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroDeAnexo1">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ambitoDeLaEducacion1">AMBITO DE LA EDUCACIÓN</label>
+                        <input type="text" id="ambitoDeLaEducacion1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="lenguajeDisciplina1">LENGUAJE DE DISCIPLINA</label>
+                        <input type="text" id="lenguajeDisciplina1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="area1">ÁREA</label>
+                        <select id="area1" >
+                            <option value="" disabled selected>Selecciona un Área</option>
+                            <option value="ARTES VISUALES Y PLÁSTICAS">ARTES VISUALES Y PLÁSTICAS</option>
+                            <option value="ARTES DE LA ALFARERÍA Y LA CERÁMICA">ARTES DE LA ALFARERÍA Y LA CERÁMICA
+                            </option>
+                            <option value="ARTES DE LA ESCULTURA">ARTES DE LA ESCULTURA</option>
+                            <option value="ARTES DE LA ESCENOGRAFÍA Y LA DECORACIÓN">ARTES DE LA ESCENOGRAFÍA Y LA
+                                DECORACIÓN</option>
+                            <option value="ARTES MUSICALES Y SONORAS">ARTES MUSICALES Y SONORAS</option>
+                            <option value="ARTES DRAMÁTICAS">ARTES DRAMÁTICAS</option>
+                            <option value="ARTES DEL MOVIMIENTO">ARTES DEL MOVIMIENTO</option>
+                            <option value="ARTES AUDIOVISUALES">ARTES AUDIOVISUALES</option>
+                            <option value="ARTES MULTIMEDIALES">ARTES MULTIMEDIALES</option>
+                            <option value="ARTE Y DISEÑO">ARTE Y DISEÑO</option>
+                            <option value="ARTE Y COMUNICACIÓN">ARTE Y COMUNICACIÓN</option>
+                            <option value="ARTE Y GESTIÓN CULTURAL">ARTE Y GESTIÓN CULTURAL</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="denominacionDeLaTitulacionOCertificacion1">DENOMINACIÓN DE LA TITULACIÓN O
+                            CERTIFICACIÓN</label>
+                        <input type="text" id="denominacionDeLaTitulacionOCertificacion1">
+                    </div>
+                    <div class="form-group">
+                        <label for="marcoDeReferencia1">MARCO DE REFERENCIA</label>
+                        <input type="text" id="marcoDeReferencia1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="normaAprobatoriaDelPlanDeEstudioDisenoCurricular1">NORMA APROBATORIA DEL PLAN DE
+                            ESTUDIOS/ DISEÑO CURRICULAR</label>
+                        <input type="text" id="normaAprobatoriaDelPlanDeEstudioDisenoCurricular1">
+                    </div>
+                    <div class="form-group">
+                        <label for="normaDeValidezNacional1">NORMA DE VALIDEZ NACIONAL</label>
+                        <input type="text" id="normaDeValidezNacional1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cargaHorariaHSReloj1">CARGA HORARIA (HS RELOJ)</label>
+                        <input type="number" id="cargaHorariaHSReloj1">
+                    </div>
+                    <div class="form-group">
+                        <label for="institucionesDondeSeDictaLaOferta1">INSTITUCIONES DONDE SE DICTA LA OFERTA</label>
+                        <input type="text" id="institucionesDondeSeDictaLaOferta1">
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeVigencia1">PLAZO DE VIGENCIA</label>
+                        <input type="date" id="plazoDeVigencia1" >
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeValidezNacional1">PLAZO DE VALIDEZ NACIONAL</label>
+                        <input type="date" id="plazoDeValidezNacional1" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url1">URL DEL ARCHIVO</label>
+                        <input type="text" id="url1" >
+                    </div>                               
+
+                </form>
+                <form action="#" class="formResolucionEspe" id="formResolucionCPL">
+                    <div class="form-group" hidden>
+                        <label for="id2">ID</label>
+                        <input type="text" id="id2" >
+                    </div>
+                    <div class="form-group" hidden>
+                        <label for="usuarioDeCreacion2">USUARIO DE CREACIÓN</label>
+                        <input type="text" id="usuarioDeCreacion2" th:value="${usuario.email}" >
+                    </div>           
+                    <div class="form-group">
+                        <label for="tipoDeOfertaF2">TIPO DE OFERTA</label>
+                        <input type="text" id="tipoDeOfertaF2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="resolucionAprobatoria2">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroDeAnexo2">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo2" >
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="nominaDeFamiliasProfesionales2">NOMINA DE FAMILIAS PROFECIONALES</label>               
+                        <select id="nominaDeFamiliasProfesionales2" >
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="ACTIVIDADES ARTÍSTICAS TÉCNICAS">ACTIVIDADES ARTÍSTICAS TÉCNICAS</option>
+                            <option value="ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES">ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES</option>
+                            <option value="AERONÁUTICA">AERONÁUTICA</option>
+                            <option value="AGROPECUARIO">AGROPECUARIO</option>
+                            <option value="AUTOMOTRIZ">AUTOMOTRIZ</option>
+                            <option value="CONSTRUCCIONES">CONSTRUCCIONES</option>
+                            <option value="CUERO Y CALZADO">CUERO Y CALZADO</option>
+                            <option value="ELECTROMECÁNICA">ELECTROMECÁNICA</option>
+                            <option value="ELECTRÓNICA">ELECTRÓNICA</option>
+                            <option value="ENERGÍA">ENERGÍA</option>
+                            <option value="ESTÉTICA PROFESIONAL">ESTÉTICA PROFESIONAL</option>
+                            <option value="FERROVIARIO">FERROVIARIO</option>
+                            <option value="HOTELERÍA Y GASTRONOMÍA">HOTELERÍA Y GASTRONOMÍA</option>
+                            <option value="INDUSTRIA ALIMENTARIA">INDUSTRIA ALIMENTARIA</option>
+                            <option value="INDUSTRIAS DE PROCESOS">INDUSTRIAS DE PROCESOS</option>
+                            <option value="INDUSTRIAS, GRÁFICA, PUBLICITARIA Y MULTIMEDIAL">INDUSTRIAS, GRÁFICA, PUBLICITARIA Y MULTIMEDIAL</option>
+                            <option value="INFORMÁTICA">INFORMÁTICA</option>
+                            <option value="MADERA Y MUEBLE">MADERA Y MUEBLE</option>
+                            <option value="MECÁNICA, METALMECÁNICA Y METALURGIA">MECÁNICA, METALMECÁNICA Y METALURGIA</option>
+                            <option value="MINERÍA E HIDROCARBUROS">MINERÍA E HIDROCARBUROS</option>
+                            <option value="NAVAL">NAVAL</option>
+                            <option value="SALUD">SALUD</option>
+                            <option value="SEGURIDAD, AMBIENTE E HIGIENE">SEGURIDAD, AMBIENTE E HIGIENE</option>
+                            <option value="TEXTIL E INDUMENTARIA">TEXTIL E INDUMENTARIA</option>
+                            <option value="TURISMO">TURISMO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resolucionAprobatoriaDeCapacitacionLaboral2">RESOLUCION APROBATORIA DE CAPACITACION LABORAL</label>
+                        <input type="text" id="resolucionAprobatoriaDeCapacitacionLaboral2">
+                    </div>
+                    <div class="form-group">                       
+                        <label for="denominacionDeLaTitulacionOCertificacion2">DENOMINACIÓN DE LA CERTIFICACIÓN</label>
+                        <input type="text" id="denominacionDeLaTitulacionOCertificacion2">
+                    </div>
+                    <div class="form-group">
+                        <label for="cargaHorariaHSReloj2">CARGA HORARIA (HS RELOJ)</label>
+                        <input type="number" id="cargaHorariaHSReloj2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="institucionesDondeSeDictaLaOferta2">INSTITUCIONES DONDE SE DISCTA LA OFERTA</label>
+                        <input type="text" id="institucionesDondeSeDictaLaOferta2" >
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeVigencia2">PLAZO DE VIGENCIA</label>
+                        <input type="date" id="plazoDeVigencia2">
+                    </div>
+                    <div class="form-group">
+                        <label for="url2">URL DEL ARCHIVO</label>
+                        <input type="text" id="url2" >
+                    </div>
+                    
+                </form>
+                <form  action="#" class="formResolucionEspe" id="formResolucionSH">
+                    <div class="form-group" hidden>
+                        <label for="id3">ID</label>
+                        <input type="text" id="id3" >
+                    </div>
+                    <div class="form-group" hidden>
+                        <label for="usuarioDeCreacion3">USUARIO DE CREACIÓN</label>
+                        <input type="text" id="usuarioDeCreacion3" th:value="${usuario.email}" >
+                    </div>           
+                    <div class="form-group">
+                        <label for="tipoDeOfertaF3">TIPO DE OFERTA</label>
+                        <input type="text" id="tipoDeOfertaF3">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDeGestionF3">TIPO DE GESTION</label>                        
+                        <select id="tipoDeGestionF3" >
+                            <option value="" disabled selected>Selecciona un tipo de gestion</option>
+                            <option value="GESTIÓN PRIVADA (DGEGP)">GESTIÓN PRIVADA (DGEGP)</option>                           
+                            <option value="GESTIÓN ESTATAL (SSAALV/SSCPEE)">GESTIÓN ESTATAL (SSAALV/SSCPEE)</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDeTitulosF3">TIPO DE TITULO</label>
+                        
+                        <select id="tipoDeTitulosF3" >
+                            <option value="" disabled selected>Selecciona un tipo de titulo</option>
+                            <option value="TECNICATURA SUPERIOR">TECNICATURA SUPERIOR</option>                           
+                            <option value="FORMACION CONTINUA">FORMACION CONTINUA</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resolucionAprobatoria3">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroDeAnexo3">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo3" >
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="ambitoDeLaEducacion3">ÁMBITO DE LA EDUCACIÓN</label>
+                        <input type="text" id="ambitoDeLaEducacion3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="disciplinaSociohumanistica3">DISCIPLINA SOCIO HUMANÍSTICA</label>
+                        <input type="text" id="disciplinaSociohumanistica3">
+                    </div>
+                    <div class="form-group">
+                        <label for="area3">ÁREA</label>
+                        <select id="area3" name="area3">
+                            <option value="">Seleccionar Área</option>
+                            <option value="COMUNICACIÓN Y MEDIOS">COMUNICACIÓN Y MEDIOS</option>
+                            <option value="INTERVENCIÓN SOCIAL">INTERVENCIÓN SOCIAL</option>
+                            <option value="DEPORTE, JUEGO Y TIEMPO LIBRE">DEPORTE, JUEGO Y TIEMPO LIBRE</option>
+                            <option value="BIENESTAR PERSONAL Y COMUNITARIO">BIENESTAR PERSONAL Y COMUNITARIO</option>
+                            <option value="RELACIONES INSTITUCIONALES Y HUMANAS">RELACIONES INSTITUCIONALES Y HUMANAS</option>
+                            <option value="POLÍTICA, DERECHO Y SOCIOLOGÍA">POLÍTICA, DERECHO Y SOCIOLOGÍA</option>
+                            <option value="ECONOMÍA, BANCOS Y FINANZAS">ECONOMÍA, BANCOS Y FINANZAS</option>
+                            <option value="HUMANÍSTICAS">HUMANÍSTICAS</option>
+                            <option value="FILOSOFÍA, ÉTICA Y RELIGIÓN">FILOSOFÍA, ÉTICA Y RELIGIÓN</option>
+                            <option value="LITERATURA, REDACCIÓN LITERARIA Y EDICIÓN">LITERATURA, REDACCIÓN LITERARIA Y EDICIÓN</option>
+                            <option value="TAQUIGRAFÍA / ESTENOTIPIA, TRADUCTORADOS E INTERPRETARIADOS">TAQUIGRAFÍA / ESTENOTIPIA, TRADUCTORADOS E INTERPRETARIADOS</option>
+                            <option value="DISCIPLINAS COMBINADAS">DISCIPLINAS COMBINADAS</option>
+                            <option value="CIENCIAS DE LA VIDA">CIENCIAS DE LA VIDA</option>
+                            <option value="CIENCIAS DE LA CONDUCTA PERSONAL Y SOCIAL">CIENCIAS DE LA CONDUCTA PERSONAL Y SOCIAL</option>
+                            <option value="HISTORIA, GEOGRAFÍA Y ARQUEOLOGÍA">HISTORIA, GEOGRAFÍA Y ARQUEOLOGÍA</option>
+                            <option value="HISTORIA, GEOGRAFÍA Y AMBIENTE">HISTORIA, GEOGRAFÍA Y AMBIENTE</option>
+                        </select>               
+                    </div>
+                    <div class="form-group">
+                        <label for="marcoDeReferencia3">MARCO DE REFERENCIA</label>
+                        <input type="text" id="marcoDeReferencia3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="normaAprobatoriaDelPlanDeEstudioDisenoCurricular3">NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</label>
+                        <input type="text" id="normaAprobatoriaDelPlanDeEstudioDisenoCurricular3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="normaDeValidezNacional3">NORMA DE VALIDEZ NACIONAL</label>
+                        <input type="text" id="normaDeValidezNacional3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="cargaHorariaHSReloj3">CARGA HORARIA (HS RELOJ)</label>
+                        <input type="number" id="cargaHorariaHSReloj3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="institucionesDondeSeDictaLaOferta3">INSTITUCIONES DONDE SE DICTA LA OFERTA</label>
+                        <input type="text" id="institucionesDondeSeDictaLaOferta3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeVigencia3">PLAZO DE VIGENCIA</label>
+                        <input type="date" id="plazoDeVigencia3" >
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeValidezNacional3">PLAZO DE VALIDEZ NACIONAL</label>
+                        <input type="date" id="plazoDeValidezNacional3">
+                    </div>
+                    <div class="form-group">
+                        <label for="url3">URL DEL ARCHIVO</label>
+                        <input type="text" id="url3" >
+                    </div>
+        
+                
+                    
+                </form>
+                <form action="#" class="formResolucionEspe" id="formResolucionETP">
+                    <div class="form-group" hidden>
+                        <label for="id4">ID</label>
+                        <input type="text" id="id4">
+                    </div>
+                    <div class="form-group" hidden>
+                        <label for="usuarioDeCreacion4">USUARIO DE CREACIÓN</label>
+                        <input type="text" id="usuarioDeCreacion4" th:value="${usuario.email} " >
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="tipoDeOfertaF4">TIPO DE OFERTA</label>
+                        <input type="text" id="tipoDeOfertaF4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDeGestionF4">TIPO DE GESTION</label>
+                       
+                        <select id="tipoDeGestionF4" >
+                            <option value="" disabled selected>Selecciona un tipo de gestion</option>
+                            <option value="GESTIÓN ESTATAL (SSAALV)">GESTIÓN ESTATAL (SSAALV)</option>                           
+                            <option value="GESTIÓN PRIVADA (DGEGP)">GESTIÓN PRIVADA (DGEGP)</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDeTitulosF4">TIPO DE TITULO</label>
+                        
+                        <select id="tipoDeTitulosF4" >
+                            <option value="" disabled selected>Selecciona un tipo de titulo</option>
+                            <option value="TECNICATURA SUPERIOR">TECNICATURA SUPERIOR</option>                           
+                            <option value="FORMACION PROFESIONAL INICIAL">FORMACION PROFESIONAL INICIAL</option>                           
+                            <option value="FORMACION PROFESIONAL CONTINUA">FORMACION PROFESIONAL CONTINUA</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resolucionAprobatoria4">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroDeAnexo4">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ambitoDeLaETP4">AMBITO DE LA ETP</label>
+                        <input type="text" id="ambitoDeLaETP4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="nominaDeFamiliasProfesionales4">NOMINA DE FAMILIAS PROFECIONALES</label>
+                        <select id="nominaDeFamiliasProfesionales4" >
+                            <option value="">Seleccionar Nomina</option>
+                            <option value="ACTIVIDADES ARTÍSTICAS TÉCNICAS">ACTIVIDADES ARTÍSTICAS TÉCNICAS</option>
+                            <option value="ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES">ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES</option>
+                            <option value="AERONÁUTICA">AERONÁUTICA</option>
+                            <option value="AGROPECUARIO">AGROPECUARIO</option>
+                            <option value="AUTOMOTRIZ">AUTOMOTRIZ</option>
+                            <option value="CONSTRUCCIONES">CONSTRUCCIONES</option>
+                            <option value="CUERO Y CALZADO">CUERO Y CALZADO</option>
+                            <option value="ELECTROMECÁNICA">ELECTROMECÁNICA</option>
+                            <option value="ELECTRÓNICA">ELECTRÓNICA</option>
+                            <option value="ENERGÍA">ENERGÍA</option>
+                            <option value="ESTÉTICA PROFESIONAL">ESTÉTICA PROFESIONAL</option>
+                            <option value="FERROVIARIO">FERROVIARIO</option>
+                            <option value="HOTELERÍA Y GASTRONOMÍA">HOTELERÍA Y GASTRONOMÍA</option>
+                            <option value="INDUSTRIA ALIMENTARIA">INDUSTRIA ALIMENTARIA</option>
+                            <option value="INDUSTRIAS DE PROCESOS">INDUSTRIAS DE PROCESOS</option>
+                            <option value="INDUSTRIAS, GRÁFICA, PUBLICITARIA Y MULTIMEDIAL">INDUSTRIAS, GRÁFICA, PUBLICITARIA Y MULTIMEDIAL</option>
+                            <option value="INFORMÁTICA">INFORMÁTICA</option>
+                            <option value="MADERA Y MUEBLE">MADERA Y MUEBLE</option>
+                            <option value="MECÁNICA, METALMECÁNICA Y METALURGIA">MECÁNICA, METALMECÁNICA Y METALURGIA</option>
+                            <option value="MINERÍA E HIDROCARBUROS">MINERÍA E HIDROCARBUROS</option>
+                            <option value="NAVAL">NAVAL</option>
+                            <option value="SALUD">SALUD</option>
+                            <option value="SEGURIDAD, AMBIENTE E HIGIENE">SEGURIDAD, AMBIENTE E HIGIENE</option>
+                            <option value="TEXTIL E INDUMENTARIA">TEXTIL E INDUMENTARIA</option>
+                            <option value="TURISMO">TURISMO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulacionOTipoDeCertificacion4">TITULACIÓN O TIPO DE CERTIFICACIÓN</label>
+                        <input type="text" id="titulacionOTipoDeCertificacion4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="denominacionDeLaTitulacionOCertificacion4">DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</label>
+                        <input type="text" id="denominacionDeLaTitulacionOCertificacion4">
+                    </div>
+                    <div class="form-group">
+                        <label for="marcoDeReferencia4">MARCO DE REFERENCIA</label>
+                        <input type="text" id="marcoDeReferencia4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="normaAprobatoriaDelPlanDeEstudioDisenoCurricular4">NORMA APROBATORIA DEL PLAN DE ESTUDIOS/ DISEÑO CURRICULAR</label>
+                        <input type="text" id="normaAprobatoriaDelPlanDeEstudioDisenoCurricular4">
+                    </div>
+                    <div class="form-group">
+                        <label for="normaDeValidezNacional4">NORMA DE VALIDEZ NACIONAL</label>
+                        <input type="text" id="normaDeValidezNacional4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="cargaHorariaHSReloj4">CARGA HORARIA (HS RELOJ)</label>
+                        <input type="number" id="cargaHorariaHSReloj4">
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeVigencia4">PLAZO DE VIGENCIA</label>
+                        <input type="date" id="plazoDeVigencia4">
+                    </div>
+                    <div class="form-group">
+                        <label for="plazoDeValidezNacional4">PLAZO DE VALIDEZ NACIONAL</label>
+                        <input type="date" id="plazoDeValidezNacional4">
+                    </div>
+                    <div class="form-group">
+                        <label for="url4">URL DEL ARCHIVO</label>
+                        <input type="text" id="url4" >
+                    </div>
+                   
+                  
+                    
+                    
+                </form>
+
+                <div class="form-group">
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostAR" onclick="enviarDatosPOSTAR()">CREAR AR</button>
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostCPL"onclick="enviarDatosPOSTCPL()">CREAR CPL</button>
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostETP"onclick="enviarDatosPOSTETP()">CREAR ETP</button>
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostSH"onclick="enviarDatosPOSTSH()">CREAR SH</button>
+                                        
+                </div>
+                
+
+            </div>
+           
+        </div>
+    </div>
+
+    <form action="" style="display: none;">
+        <input type="text" name="tipoOfertaOut" id="tipoOfertaOut" onloadeddata="validarDatos()">
+        <input type="text" name="tipoGetionOut" id="tipoGetionOut" onloadeddata="validarDatos()">
+        <input type="text" name="tipoTituloOut" id="tipoTituloOut" onloadeddata="validarDatos()">
+    </form>
+    <div id="confirmationPopupDelete" class="popup-delete">
+        <div class="popup-content-delete">
+            <p>¿Está seguro que desea eliminar la resolución?</p>
+            <button class="butonPopUpDelete verde" id="cancelButtonDelete">Cancelar</button>
+            <button class="butonPopUpDelete amarillo" id="confirmButtonDelete">Confirmar</button>
+            <input type="text" name="resolucionAEliminar" id="resolucionAEliminar" hidden>
+        </div>
+    </div>
+ 
+    <section class="panelGeneral" >
+        <div class="container-tituloSeccion">
+            <div class="tituloSeccion">
+             <span>Catálogo de Títulos y Certificados para la Educación Técnico Profesional,
+                 y de ofertas educativas.
+                 Socio Humanística de nivel superior no universitario</span>
+             </div>
+                 <div class="linea"></div>
+           
+             </div>
+        
+        <div id="contenedorBotones"></div>
+
+
+        <section id="tablaResoluciones"></section>
+        <section class="panelSec">
+            <div class="botones-container" id="tipoOferta">
+                <span>SELECCIONE TIPO DE OFERTA EDUCATIVA</span>
+                <button class="boton violeta" id="TO1"
+                    onclick="crearNuevoBoton('EDUCACIÓN TECNICA PROFESIONAL','violeta','tipoOferta','tipoDeGestion')">EDUCACIÓN
+                    TECNICA PROFESIONAL</button>
+                <button class="boton violeta" id="TO2"
+                    onclick="crearNuevoBoton('SOCIO HUMANISTICA','violeta','tipoOferta','tipoDeGestion')">SOCIO
+                    HUMANISTICA</button>
+                <button class="boton violeta" id="TO3"
+                    onclick="crearNuevoBoton('ARTISTICA ESPECIFICA','violeta','tipoOferta','tipoDeGestion')">ARTISTICA
+                    ESPECIFICA</button>
+                <button class="boton violeta" id="TO4"
+                    onclick="crearNuevoBoton('CAPACITACIÓN LABORAL','violeta','tipoOferta','botonBuscarResoluciones')">CAPACITACIÓN
+                    LABORAL</button>
+            </div>
+            <div class="botones-container" id="tipoDeGestion">
+                <span>SELECCIONE TIPO DE GESTIÓN</span>
+                <button class="boton azul" id="TG1"
+                    onclick="crearNuevoBoton('GESTIÓN ESTATAL (SSAALV)','azul','tipoDeGestion','tipoTitulo')">GESTIÓN
+                    ESTATAL (SSAALV)</button>
+                <button class="boton azul" id="TG2"
+                    onclick="crearNuevoBoton('GESTIÓN PRIVADA (DGEGP)','azul','tipoDeGestion','tipoTitulo')">GESTIÓN
+                    PRIVADA (DGEGP)</button>
+                <button class="boton azul" id="TG3"
+                    onclick="crearNuevoBoton('GESTIÓN ESTATAL (SSAALV/SSCPEE)','azul','tipoDeGestion','tipoTitulo')">GESTIÓN
+                    ESTATAL (SSAALV/SSCPEE)</button>
+                <button class="boton azul" id="TG4"
+                    onclick="crearNuevoBoton('GESTIÓN ESTATAL (DGEART/SSCPEE)','azul','tipoDeGestion','tipoTitulo')">GESTIÓN
+                    ESTATAL (DGEART/SSCPEE)</button>
+            </div>
+            <div class="botones-container" id="tipoTitulo">
+                <span>SELECCIONE TIPO DE TÍTULO</span>
+                <button class="boton verde" id="TT1"
+                    onclick="crearNuevoBoton('TECNICATURA SUPERIOR','verde','tipoTitulo','botonBuscarResoluciones')">TECNICATURA
+                    SUPERIOR</button>
+                <button class="boton verde" id="TT2"
+                    onclick="crearNuevoBoton('FORMACION PROFESIONAL INICIAL','verde','tipoTitulo','botonBuscarResoluciones')">FORMACION
+                    PROFESIONAL INICIAL</button>
+                <button class="boton verde" id="TT3"
+                    onclick="crearNuevoBoton('FORMACION PROFESIONAL CONTINUA','verde','tipoTitulo','botonBuscarResoluciones')">FORMACION
+                    PROFESIONAL CONTINUA</button>
+                <button class="boton verde" id="TT4"
+                    onclick="crearNuevoBoton('FORMACION CONTINUA','verde','tipoTitulo','botonBuscarResoluciones')">FORMACION
+                    CONTINUA</button>
+            </div>
+            <div class="chart-container" hidden style="background: none !important;" id="grafico">
+
+                <canvas id="productChart" style="background: none !important;"></canvas>
+            </div>
+        </section>
+
+
+    </section>
+  
+    <th:block th:replace="plantilla :: footer-mobile"></th:block>
+    <th:block th:replace="plantilla :: footer-web"></th:block>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script th:src="@{/js/panel-admin.js}"></script>
+    <script th:src="@{/js/formAR.js}"></script>
+    <script th:src="@{/js/formCPL.js}"></script>
+    <script th:src="@{/js/formSH.js}"></script>
+    <script th:src="@{/js/formETP.js}"></script>
+    <script th:src="@{/js/descargarExcel.js}"></script>
+    
+    <script src="/static/js/panel-admin.js"></script>
+    
+  
+</body>
+
+</html>

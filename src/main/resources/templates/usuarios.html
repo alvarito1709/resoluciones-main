@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="plantilla :: header&footer"></th:block>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link rel="stylesheet" href="/static/css/panel-administrador.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/panel-administrador.css}">
+
+</head>
+
+<body>
+
+    <th:block th:replace="plantilla :: header"></th:block>
+   
+    <div class="bg-popup" id="containerGralFormUsu">
+
+        <div class="containerGralForm">
+            <label class="botonFormularioResoCerrar" id="closePopupUSU">Cerrar</label>
+            <div class="containerFormResol">
+
+                <form th:action="@{/admin/usuarios/create}" th:object="${usuarioNuevo}" class="formResolucionEspe"
+                    id="formResolucionUsu" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" th:field="*{id}" id="user-id" readonly  />
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">IMAGEN</label>
+                        <input type="file" id="file" name="file" accept="image/jpeg, image/png" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">NOMBRE</label>
+                        <input type="text" th:field="*{nombre}" id="user-nombre" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">APELLIDO</label>
+                        <input type="text" th:field="*{apellido}" id="user-apellido" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="documento">DOCUMENTO</label>
+                        <input type="text" th:field="*{documento}" id="user-documento" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="text" th:field="*{email}" id="user-email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">TELEFONO</label>
+                        <input type="text" th:field="*{telefono}" id="user-telefono" required/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="permisos">PERMISOS</label>
+                        <select th:field="*{permisos}" id="user-permisos" required>
+                            <option value="" selected disabled>Seleccionar permiso</option>
+                            <option value="ROLE_ADMIN" >ROLE_ADMIN</option>
+                            <option value="ROLE_USER" >ROLE_USER</option>
+                            <option value="ROLE_EDITOR" >ROLE_EDITOR</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-password">PASSWORD</label>
+                        <input type="text" name="password" id="user-password" required/>
+                    </div>
+
+                    <!-- Otros campos del formulario -->
+
+                    <button class="botonFormularioReso" type="submit">CREAR USUARIO</button>
+                </form>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <section class="panelGeneral">
+        <div class="tituloSeccion">
+            <button class="botonCreateUser azul" onclick="abrirPopUsuCrear()"><span class="iconify" data-icon="mdi:user-plus" style="color: white;" data-width="30"></span></button>
+        <span>Catalogo de usuarios del sistema</span>
+        <div class="linea"></div>
+        </div>
+
+        <section id="tablaResoluciones">
+            <div class="table-container"  id="usuariosTabla">
+                <table id="tablaQueCargoContenido">
+                    <thead>
+
+                        <tr>
+                            <th>ACCIONES</th>
+                            <th hidden>ID</th>
+                            <th>IMAGEN</th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO</th>
+                            <th>DOCUMENTO</th>
+                            <th>EMAIL</th>
+                            <th>TELEFONO</th>
+                            <th>USERNAME</th>
+                            <th>PERMISOS</th>
+                            <th hidden>FECHA DE CREACION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr th:each="usuario : ${usuariosList}">
+                            <td>
+                                <span class="iconify icon-edit" data-icon="material-symbols:edit"
+                                    th:attr="onclick='abrirPopUsu(\'' + ${usuario.id} + '\')'"></span>
+                                    <a th:href="@{/admin/usuarios/eliminar/{id}(id=${usuario.id})}" style="color: #000000 !important;">
+                                        <span class="iconify icon-edit" data-icon="mdi:delete-off"></span>
+                                    </a>
+                            </td>
+                            <td th:text="${usuario.id}" hidden>ID</td>
+                            <!-- <td><img th:src="'https://inscripcionesagencia.com.ar/resoluciones-v2'+${usuario.imagen}" class="user-avatar" alt="imagen de usuario"></td> -->
+                            <td><img th:src="'http://localhost:8080'+${usuario.imagen}" class="user-avatar" alt="imagen de usuario"></td>
+                            <td th:text="${usuario.nombre}">NOMBRE</td>
+                            <td th:text="${usuario.apellido}">APELLIDO</td>
+                            <td th:text="${usuario.documento}">DOCUMENTO</td>
+                            <td th:text="${usuario.email}">EMAIL</td>
+                            <td th:text="${usuario.telefono}">TELEFONO</td>
+                            <td th:text="${usuario.username}">USERNAME</td>
+                            <td th:text="${usuario.permisos}">PERMISO</td>
+                            <td th:text="${usuario.fechaYHoraDeCreacion}" hidden>FECHA DE CREACION</td>
+
+                    </tbody>
+                </table>
+                <style>
+                    :root {
+                        --violeta: #b49fff;
+                        --violetaFuerte: #a374ff;
+                        --amarilloMas: #f8d246;
+                        --amarillo: #ffd84a;
+                        --azul: #7fb8ff;
+                        --azulFuerte: #3280e4;
+                        --verde: #bfff9f;
+                        --verdeFuerte: #86E57F;
+                        --gris: #f3f0ed;
+                        --grisFuerte: #D0CECD;
+                        --negro: black;
+                    }
+
+                    .user-avatar {
+                        color: #000000;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+
+                    .user-avatar:hover {
+                        transform: scale(1.2);
+                        transition: 0.8s ease-in-out;
+                    }
+
+                    .table-container {
+                        overflow-x: auto;
+                        margin: 20px;
+                    }
+
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        border: 1px solid var(--grisFuerte);
+                        background-color: white;
+                    }
+
+                    th,
+                    td {
+                        text-align: left;
+                        padding: 8px;
+                    }
+
+                    th {
+                        background-color: var(--violeta);
+                        color: var(--negro);
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: var(--gris);
+                    }
+
+                    .icon-edit {
+                        font-size: 30px;
+
+                    }
+
+                    .icon-edit:hover {
+                        font-size: 34px;
+
+                    }
+
+                    @media screen and (max-width: 768px) {
+
+                        th,
+                        td {
+                            font-size: 14px;
+                        }
+                    }
+                </style>
+            </div>
+
+        </section>
+
+    </section>
+    <th:block th:replace="plantilla :: footer-mobile"></th:block>
+    <th:block th:replace="plantilla :: footer-web"></th:block>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script th:src="@{/js/panel-admin.js}"></script>
+    <script th:src="@{/js/usuarios.js}"></script>
+    <script src="/static/js/usuarios.js"></script>
+
+
+
+</body>
+
+</html>

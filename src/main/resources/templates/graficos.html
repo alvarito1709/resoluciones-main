@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:replace="plantilla :: header&footer"></th:block>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/css/graficas.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/graficas.css}">
+</head>
+
+<body>
+  
+    <th:block th:replace="plantilla :: header"></th:block>
+    <input type="number" style="display: none;" id="masSeisMesesInput" th:value="${masSeisMeses}" />
+    <input type="number" style="display: none;" id="entreUnMesYSeisMesesInput" th:value="${entreUnMesYSeisMeses}" />
+    <input type="number" style="display: none;" id="menosUnMesInput" th:value="${menosUnMes}" />
+    <input type="number" style="display: none;" id="totalResolInput" th:value="${totalResol}" />
+ 
+ 
+    <section class="panelGeneral" >
+        <div class="container-tituloSeccion">
+       <div class="tituloSeccion">
+        <span>Catálogo de Títulos y Certificados para la Educación Técnico Profesional,
+            y de ofertas educativas.
+            Socio Humanística de nivel superior no universitario</span>
+        </div>
+            <div class="linea"></div>
+       <div class="busquedaPorNroResolucion">
+        <form th:action="@{/admin/resolucion/numero}">
+            <label for="resolucionNro">BÚSQUEDA POR N° DE RESOLUCIÓN:</label><input type="text" name="resolucionNro" id="resolucionNro" class="boton buscardorReso" placeholder="RESOL-2023-3798-GCABA-MEDGC">
+        <label class="boton amarillo buscardorReso" for="bucarResolucionAprobatoria">BUSCAR</label> 
+        <input type="submit" value="enviar" hidden id="bucarResolucionAprobatoria">  
+        </form>
+       </div>
+        </div>
+        
+     
+<div class="graficasPorTipo">
+    <div id="ETPGRAF" class="mini-contadores"></div>
+    <div id="SHGRAF" class="mini-contadores"></div>
+    <div id="ARGRAF" class="mini-contadores"></div>
+    <div id="CPGRAF" class="mini-contadores"></div>
+</div>
+
+       
+        <section class="panelSec">
+       
+            <div id="box1" class="box">
+
+            </div>
+            
+       
+        </section>
+<style>
+    .graficasPorTipo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .mini-contadores{
+        width: 250px;
+    }
+     .box{ 
+      width:95%;
+   
+      margin-top: 50px;
+      background-color: #fff;
+      border:1px solid #ccc;
+      box-shadow: 10px 10px 10px rgba(0,0,0,.1);
+    }
+  
+</style>
+
+    </section>
+  
+    <th:block th:replace="plantilla :: footer-mobile"></th:block>
+    <th:block th:replace="plantilla :: footer-web"></th:block>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+    
+    <script src="/static/js/graficos.js"></script>
+    <script th:src="@{/js/graficos.js}"></script>
+  
+</body>
+
+</html>

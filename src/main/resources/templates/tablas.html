@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="table-container" th:fragment="tablaPedidos(${resoluciones},${tipo})" id="tablaQueCargo">
+        <table  id="tablaQueCargoContenido">
+            <thead>
+              
+                <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}"  >
+                    <th>ACCIONES</th>
+                    <th>ID</th>
+                    <th>TIPO DE OFERTA</th>
+                    <th>TIPO DE GESTIÓN</th>
+                    <th>TIPO DE TÍTULOS</th>
+                    <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>NÚMERO DE ANEXO</th>
+                    <th>ÁMBITO DE LA ETP</th>
+                    <th>NÓMINA DE FAMILIAS PROFESIONALES</th>
+                    <th>TITULACIÓN O TIPO DE CERTIFICACIÓN</th>
+                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
+                    <th>MARCO DE REFERENCIA</th>
+                    <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
+                    <th>NORMA DE VALIDEZ NACIONAL</th>
+                    <th>CARGA HORARIA (HS RELOJ)</th>
+                    <th>PLAZO DE VIGENCIA</th>
+                    <th>PLAZO DE VALIDEZ NACIONAL</th>
+                    <th>ARCHIVO</th>
+                </tr>
+                <tr th:if="${tipo == 'SOCIO HUMANISTICA'}">
+                    <th>ACCIONES</th>
+                    <th>ID</th>
+                    <th>TIPO DE OFERTA</th>
+                    <th>TIPO DE GESTIÓN</th>
+                    <th>TIPO DE TÍTULOS</th>
+                    <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>NÚMERO DE ANEXO</th>
+                    <th>ÁMBITO DE LA EDUCACIÓN</th>
+                    <th>DISCIPLINA SOCIO HUMANÍSTICA</th>
+                    <th>ÁREA</th>
+                    <th>MARCO DE REFERENCIA</th>
+                    <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
+                    <th>NORMA DE VALIDEZ NACIONAL</th>
+                    <th>CARGA HORARIA (HS RELOJ)</th>
+                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
+                    <th>PLAZO DE VIGENCIA</th>
+                    <th>PLAZO DE VALIDEZ NACIONAL</th>
+                    <th>ARCHIVO</th>
+                </tr>
+                <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}">
+                    <th>ACCIONES</th>
+                    <th>ID</th>
+                    <th>TIPO DE OFERTA</th>
+                    <th>TIPO DE GESTIÓN</th>
+                    <th>TIPO DE TÍTULOS</th>
+                    <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>NÚMERO DE ANEXO</th>
+                    <th>ÁMBITO DE LA EDUCACIÓN</th>
+                    <th>LENGUAJE DISCIPLINA</th>
+                    <th>ÁREA</th>
+                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
+                    <th>MARCO DE REFERENCIA</th>
+                    <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
+                    <th>NORMA DE VALIDEZ NACIONAL</th>
+                    <th>CARGA HORARIA (HS RELOJ)</th>
+                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
+                    <th>PLAZO DE VIGENCIA</th>
+                    <th>PLAZO DE VALIDEZ NACIONAL</th>
+                    <th>ARCHIVO</th>
+                </tr>
+                <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}">
+                    <th>ACCIONES</th>
+                    <th>ID</th>
+                    <th>TIPO DE OFERTA</th>
+                    <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>NÚMERO DE ANEXO</th>                   
+                    <th>NÓMINA DE FAMILIAS PROFESIONALES</th>
+                    <th>DENOMINACIÓN DE LA CERTIFICACIÓN</th>
+                    <th>RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</th>
+                    <th>CARGA HORARIA (HS RELOJ)</th>
+                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
+                    <th>PLAZO DE VIGENCIA</th>
+                    <th>ARCHIVO</th>
+                </tr>
+
+
+            </thead>
+            <tbody>
+
+                <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}" th:each="resolucion : ${resoluciones}">
+                    <td>
+                        <span class="iconify icon-edit" data-icon="material-symbols:edit"
+                        th:attr="onclick='abrirPopETP(\'' + ${resolucion.id} + '\')'"></span>
+                        <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span></td>
+                    <td th:text="${resolucion.id}">ID</td>
+                    <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
+                    <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
+                    <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
+                    <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
+                    <td th:text="${resolucion.ambitoDeLaETP}">ÁMBITO DE LA ETP</td>
+                    <td th:text="${resolucion.nominaDeFamiliasProfesionales}">NÓMINA DE FAMILIAS PROFESIONALES</td>
+                    <td th:text="${resolucion.titulacionOTipoDeCertificacion}">TITULACIÓN O TIPO DE CERTIFICACIÓN</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
+                        CERTIFICACIÓN</td>
+                    <td th:text="${resolucion.marcoDeReferencia}">MARCO DE REFERENCIA</td>
+                    <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
+                        PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
+                    <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
+                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                </tr>
+                <tr th:if="${tipo == 'SOCIO HUMANISTICA'}" th:each="resolucion : ${resoluciones}">
+                    <td>
+                        <span class="iconify icon-edit" data-icon="material-symbols:edit"
+                              th:attr="onclick='abrirPopSH(\'' + ${resolucion.id} + '\')'"></span>
+                              <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span>
+
+                    </td>
+                    <td th:text="${resolucion.id}">ID</td>
+                    <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
+                    <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
+                    <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
+                    <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
+                    <td th:text="${resolucion.ambitoDeLaEducacion}">ÁMBITO DE LA EDUCACIÓN</td>
+                    <td th:text="${resolucion.disciplinaSociohumanistica}">DISCIPLINA SOCIO HUMANÍSTICA</td>
+                    <td th:text="${resolucion.area}">ÁREA</td>
+                    <td th:text="${resolucion.marcoDeReferencia}">MARCO DE REFERENCIA</td>
+                    <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
+                        PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
+                    <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
+                    <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
+                    </td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
+                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                </tr>
+                <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}" th:each="resolucion : ${resoluciones}">
+                    <td>
+                        <span class="iconify icon-edit" data-icon="material-symbols:edit"
+                              th:attr="onclick='abrirPopAR(\'' + ${resolucion.id} + '\')'"></span>
+                              <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span>
+                    </td>
+
+                    <td th:text="${resolucion.id}">ID</td>
+                    <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
+                    <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
+                    <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
+                    <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
+                    <td th:text="${resolucion.ambitoDeLaEducacion}">ÁMBITO DE LA EDUCACIÓN</td>
+                    <td th:text="${resolucion.lenguajeDisciplina}">LENGUAJE DISCIPLINA</td>
+                    <td th:text="${resolucion.area}">ÁREA</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
+                        CERTIFICACIÓN</td>
+                    <td th:text="${resolucion.marcoDeReferencia}">MARCO DE REFERENCIA</td>
+                    <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
+                        PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
+                    <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
+                    <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
+                    </td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
+                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                </tr>
+                <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}" th:each="resolucion : ${resoluciones}">
+                    <td>
+                        <span class="iconify icon-edit" data-icon="material-symbols:edit"
+                              th:attr="onclick='abrirPopCPL(\'' + ${resolucion.id} + '\')'"></span>
+                              <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span>
+                    </td>
+                    <td th:text="${resolucion.id}">ID</td>
+                    <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
+                    <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
+                    <td th:text="${resolucion.nominaDeFamiliasProfesionales}">NÓMINA DE FAMILIAS PROFESIONALES</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA CERTIFICACIÓN</td>
+                    <!-- <td th:text="${resolucion.resolucionAprobatoriaDeCapacitacionLaboral}">RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</td> -->
+                    <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
+                    <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
+                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                </tr>
+
+
+
+
+            </tbody>
+        </table>
+        <style>
+            :root {
+                --violeta: #b49fff;
+                --violetaFuerte: #a374ff;
+                --amarilloMas: #f8d246;
+                --amarillo: #ffd84a;
+                --azul: #7fb8ff;
+                --azulFuerte: #3280e4;
+                --verde: #bfff9f;
+                --verdeFuerte: #86E57F;
+                --gris: #f3f0ed;
+                --grisFuerte: #D0CECD;
+                --negro: black;
+            }
+    
+    
+    
+            .table-container {
+                overflow-x: auto;
+                margin: 20px;
+            }
+    
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid var(--grisFuerte);
+                background-color: white;
+            }
+    
+            th,
+            td {
+                text-align: left;
+                padding: 8px;
+            }
+    
+            th {
+                background-color: var(--violeta);
+                color: var(--negro);
+            }
+    
+            tr:nth-child(even) {
+                background-color: var(--gris);
+            }
+            .icon-edit{
+                font-size: 30px;
+
+            }
+            .icon-edit:hover{
+                font-size: 34px;
+
+            }
+    
+            @media screen and (max-width: 768px) {
+    
+                th,
+                td {
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </div>
+    <div class="table-container" th:fragment="tablaUsuarios(${usuarios})" id="usuariosTabla">
+        <table  id="tablaQueCargoContenido">
+            <thead>
+              
+                <tr>
+                    <th>ACCIONES</th>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>DOCUMENTO</th>
+                    <th>EMAIL</th>
+                    <th>TELEFONO</th>
+                    <th>USERNAME</th>
+                    <th>FECHA DE CREACION</th>                   
+                </tr>      
+            </thead>
+            <tbody>
+
+                <tr  th:each="usuario : ${usuarios}">
+                    <td>
+                        <span class="iconify icon-edit" data-icon="material-symbols:edit"
+                        th:attr="onclick='abrirPopUsu(\'' + ${usuario.id} + '\')'"></span>
+                        <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${usuario.id} + '\')'"></span>
+                    </td>
+                    <td th:text="${resolucion.id}">ID</td>
+                    <td th:text="${resolucion.nombre}">NOMBRE</td>
+                    <td th:text="${resolucion.apellido}">APELLIDO</td>
+                    <td th:text="${resolucion.documento}">DOCUMENTO</td>
+                    <td th:text="${resolucion.email}">EMAIL</td>
+                    <td th:text="${resolucion.telefono}">TELEFONO</td>
+                    <td th:text="${resolucion.username}">USERNAME</td>
+                    <td th:text="${resolucion.fechaYHoraDeCreacion}">FECHA DE CREACION</td> 
+            
+            </tbody>
+        </table>
+        <style>
+            :root {
+                --violeta: #b49fff;
+                --violetaFuerte: #a374ff;
+                --amarilloMas: #f8d246;
+                --amarillo: #ffd84a;
+                --azul: #7fb8ff;
+                --azulFuerte: #3280e4;
+                --verde: #bfff9f;
+                --verdeFuerte: #86E57F;
+                --gris: #f3f0ed;
+                --grisFuerte: #D0CECD;
+                --negro: black;
+            }
+    
+    
+    
+            .table-container {
+                overflow-x: auto;
+                margin: 20px;
+            }
+    
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid var(--grisFuerte);
+                background-color: white;
+            }
+    
+            th,
+            td {
+                text-align: left;
+                padding: 8px;
+            }
+    
+            th {
+                background-color: var(--violeta);
+                color: var(--negro);
+            }
+    
+            tr:nth-child(even) {
+                background-color: var(--gris);
+            }
+            .icon-edit{
+                font-size: 30px;
+
+            }
+            .icon-edit:hover{
+                font-size: 34px;
+
+            }
+    
+            @media screen and (max-width: 768px) {
+    
+                th,
+                td {
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </div>
+
+
+
+   
+</body>
+
+</html>
