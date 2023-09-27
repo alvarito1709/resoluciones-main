@@ -74,7 +74,7 @@ public class ExcelGenerator {
                 row.createCell(8).setCellValue(resolucion.getTitulacionOTipoDeCertificacion());
                 row.createCell(9).setCellValue(resolucion.getDenominacionDeLaTitulacionOCertificacion());
                 row.createCell(10).setCellValue(resolucion.getMarcoDeReferencia());
-                row.createCell(11).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
+            //    row.createCell(11).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
                 row.createCell(12).setCellValue(resolucion.getNormaDeValidezNacional());
                 row.createCell(13).setCellValue(resolucion.getCargaHorariaHSReloj());
                 row.createCell(14).setCellValue(resolucion.getPlazoDeVigencia().toString());
@@ -93,7 +93,7 @@ public class ExcelGenerator {
                 row.createCell(7).setCellValue(resolucion.getDisciplinaSociohumanistica());
                 row.createCell(8).setCellValue(resolucion.getArea());
                 row.createCell(9).setCellValue(resolucion.getMarcoDeReferencia());
-                row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
+              //  row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
                 row.createCell(11).setCellValue(resolucion.getNormaDeValidezNacional());
                 row.createCell(12).setCellValue(resolucion.getCargaHorariaHSReloj());
                 row.createCell(13).setCellValue(resolucion.getInstitucionesDondeSeDictaLaOferta());
@@ -116,7 +116,7 @@ public class ExcelGenerator {
                 row.createCell(7).setCellValue(resolucion.getLenguajeDisciplina());
                 row.createCell(8).setCellValue(resolucion.getArea());
                 row.createCell(9).setCellValue(resolucion.getMarcoDeReferencia());
-                row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
+            //    row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
                 row.createCell(11).setCellValue(resolucion.getNormaDeValidezNacional());
                 row.createCell(12).setCellValue(resolucion.getCargaHorariaHSReloj());
                 row.createCell(13).setCellValue(resolucion.getInstitucionesDondeSeDictaLaOferta());

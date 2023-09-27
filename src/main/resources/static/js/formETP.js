@@ -14,7 +14,7 @@ var nominaDeFamiliasProfesionales4 = document.getElementById('nominaDeFamiliasPr
 var titulacionOTipoDeCertificacion4 = document.getElementById('titulacionOTipoDeCertificacion4').value;
 var denominacionDeLaTitulacionOCertificacion4 = document.getElementById('denominacionDeLaTitulacionOCertificacion4').value;
 var marcoDeReferencia4 = document.getElementById('marcoDeReferencia4').value;
-var normaAprobatoriaDelPlanDeEstudioDisenoCurricular4 = document.getElementById('normaAprobatoriaDelPlanDeEstudioDisenoCurricular4').value;
+//var normaAprobatoriaDelPlanDeEstudioDisenoCurricular4 = document.getElementById('normaAprobatoriaDelPlanDeEstudioDisenoCurricular4').value;
 var normaDeValidezNacional4 = document.getElementById('normaDeValidezNacional4').value;
 var cargaHorariaHSReloj4 = document.getElementById('cargaHorariaHSReloj4').value;
 var plazoDeVigencia4 = document.getElementById('plazoDeVigencia4').value;
@@ -34,7 +34,7 @@ nominaDeFamiliasProfesionales:nominaDeFamiliasProfesionales4,
 titulacionOTipoDeCertificacion:titulacionOTipoDeCertificacion4,
 denominacionDeLaTitulacionOCertificacion:denominacionDeLaTitulacionOCertificacion4,
 marcoDeReferencia:marcoDeReferencia4,
-normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular4,
+//normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular4,
 normaDeValidezNacional:normaDeValidezNacional4,
 cargaHorariaHSReloj:cargaHorariaHSReloj4,
 plazoDeVigencia:plazoDeVigencia4,

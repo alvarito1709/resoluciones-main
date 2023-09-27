@@ -26,7 +26,7 @@
             <div class="containerFormResol">
                 
                 <form th:action="@{/}"  th:if="${tipo == 'ARTISTICA ESPECIFICA'}" class="formResolucionEspe" id="formResolucionAR" th:object="${resolucion}">
-                    <h1>ESTE ES EL FORMULARIO DE INDEXADMIN</h1>
+
                     <div class="form-group" hidden>
                         <label for="id1">ID</label>
                         <input type="text" id="id1"  th:field="*{id}" >
@@ -40,6 +40,10 @@
                         <label for="tipoDeOfertaF1">TIPO DE OFERTA</label>
                         <input type="text" id="tipoDeOfertaF1" th:field="*{tipoDeOferta}">                        
                     </div>
+
+                    <!--BORRAR LUEGO-->
+                    <h1>ESTE ES EL FORMULARIO DE INDEXADMIN</h1>
+
                     <div class="form-group">
                         <label for="tipoDeGestionF1">TIPO DE GESTION</label>
                        
@@ -103,11 +107,11 @@
                         <label for="marcoDeReferencia1">MARCO DE REFERENCIA</label>
                         <input type="text" id="marcoDeReferencia1"  th:field="*{marcoDeReferencia}">
                     </div>
-                    <div class="form-group">
+                   <!-- <div class="form-group">
                         <label for="normaAprobatoriaDelPlanDeEstudioDisenoCurricular1">NORMA APROBATORIA DEL PLAN DE
                             ESTUDIOS/ DISEÑO CURRICULAR</label>
                         <input type="text" id="normaAprobatoriaDelPlanDeEstudioDisenoCurricular1" th:field="*{normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="normaDeValidezNacional1">NORMA DE VALIDEZ NACIONAL</label>
                         <input type="text" id="normaDeValidezNacional1" th:field="*{normaDeValidezNacional}">
@@ -287,10 +291,10 @@
                         <label for="marcoDeReferencia3">MARCO DE REFERENCIA</label>
                         <input type="text" id="marcoDeReferencia3" th:field="*{marcoDeReferencia}">
                     </div>
-                    <div class="form-group">
+                  <!--  <div class="form-group">
                         <label for="normaAprobatoriaDelPlanDeEstudioDisenoCurricular3">NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</label>
                         <input type="text" id="normaAprobatoriaDelPlanDeEstudioDisenoCurricular3"th:field="*{normaAprobatoriaDelPlanDeEstudioDisenoCurricular}" >
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="normaDeValidezNacional3">NORMA DE VALIDEZ NACIONAL</label>
                         <input type="text" id="normaDeValidezNacional3" th:field="*{normaDeValidezNacional}">
@@ -407,10 +411,10 @@
                         <label for="marcoDeReferencia4">MARCO DE REFERENCIA</label>
                         <input type="text" id="marcoDeReferencia4" th:field="*{marcoDeReferencia}">
                     </div>
-                    <div class="form-group">
+                   <!-- <div class="form-group">
                         <label for="normaAprobatoriaDelPlanDeEstudioDisenoCurricular4">NORMA APROBATORIA DEL PLAN DE ESTUDIOS/ DISEÑO CURRICULAR</label>
                         <input type="text" id="normaAprobatoriaDelPlanDeEstudioDisenoCurricular4" th:field="*{normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="normaDeValidezNacional4">NORMA DE VALIDEZ NACIONAL</label>
                         <input type="text" id="normaDeValidezNacional4" th:field="*{normaDeValidezNacional}">

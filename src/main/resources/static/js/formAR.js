@@ -17,7 +17,7 @@ function enviarDatosPOSTAR() {
   var area1 = document.getElementById("area1");
   var denominacionDeLaTitulacionOCertificacion1 = document.getElementById("denominacionDeLaTitulacionOCertificacion1");
   var marcoDeReferencia1 = document.getElementById("marcoDeReferencia1");
-  var normaAprobatoriaDelPlanDeEstudioDisenoCurricular1 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular1");
+  // var normaAprobatoriaDelPlanDeEstudioDisenoCurricular1 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular1");
   var normaDeValidezNacional1 = document.getElementById("normaDeValidezNacional1");
   var cargaHorariaHSReloj1 = document.getElementById("cargaHorariaHSReloj1");
   var institucionesDondeSeDictaLaOferta1 = document.getElementById("institucionesDondeSeDictaLaOferta1");
@@ -40,7 +40,7 @@ function enviarDatosPOSTAR() {
     area: area1.value,
     denominacionDeLaTitulacionOCertificacion: denominacionDeLaTitulacionOCertificacion1.value,
     marcoDeReferencia: marcoDeReferencia1.value,
-    normaAprobatoriaDelPlanDeEstudioDisenoCurricular: normaAprobatoriaDelPlanDeEstudioDisenoCurricular1.value,
+   // normaAprobatoriaDelPlanDeEstudioDisenoCurricular: normaAprobatoriaDelPlanDeEstudioDisenoCurricular1.value,
     normaDeValidezNacional: normaDeValidezNacional1.value,
     cargaHorariaHSReloj: cargaHorariaHSReloj1.value,
     institucionesDondeSeDictaLaOferta: institucionesDondeSeDictaLaOferta1.value,

@@ -12,7 +12,7 @@ function enviarDatosPOSTSH() {
   var disciplinaSociohumanistica = document.getElementById("disciplinaSociohumanistica3").value;
   var area = document.getElementById("area3").value;
   var marcoDeReferencia = document.getElementById("marcoDeReferencia3").value;
-  var normaAprobatoriaDelPlanDeEstudioDisenoCurricular = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular3").value;
+  //var normaAprobatoriaDelPlanDeEstudioDisenoCurricular = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular3").value;
   var normaDeValidezNacional = document.getElementById("normaDeValidezNacional3").value;
   var cargaHorariaHSReloj = document.getElementById("cargaHorariaHSReloj3").value;
   var institucionesDondeSeDictaLaOferta = document.getElementById("institucionesDondeSeDictaLaOferta3").value;
@@ -32,7 +32,7 @@ function enviarDatosPOSTSH() {
     disciplinaSociohumanistica:disciplinaSociohumanistica,
     area:area,
     marcoDeReferencia:marcoDeReferencia,
-    normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular,
+    //normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular,
     normaDeValidezNacional:normaDeValidezNacional,
     cargaHorariaHSReloj:cargaHorariaHSReloj,
     institucionesDondeSeDictaLaOferta:institucionesDondeSeDictaLaOferta,

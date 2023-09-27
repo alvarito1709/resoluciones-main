@@ -78,7 +78,7 @@ public class ResolucionService {
             resolucion.setTitulacionOTipoDeCertificacion("TitulacionCertificacion" + i);
             resolucion.setDenominacionDeLaTitulacionOCertificacion("DenominacionTitulacionCertificacion" + i);
             resolucion.setMarcoDeReferencia("MarcoReferencia" + i);
-            resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
+           // resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
             resolucion.setNormaDeValidezNacional("NormaValidezNacional" + i);
             resolucion.setCargaHorariaHSReloj(i * 10); // Cambiar la fórmula si es necesario
             resolucion.setPlazoDeVigencia(new Date());
@@ -108,7 +108,7 @@ public class ResolucionService {
             resolucion.setTitulacionOTipoDeCertificacion("TitulacionCertificacion" + i);
             resolucion.setDenominacionDeLaTitulacionOCertificacion("DenominacionTitulacionCertificacion" + i);
             resolucion.setMarcoDeReferencia("MarcoReferencia" + i);
-            resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
+            //resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
             resolucion.setNormaDeValidezNacional("NormaValidezNacional" + i);
             resolucion.setCargaHorariaHSReloj(i * 10); // Cambiar la fórmula si es necesario
             resolucion.setPlazoDeVigencia(new Date());
@@ -138,7 +138,7 @@ public class ResolucionService {
             resolucion.setTitulacionOTipoDeCertificacion("TitulacionCertificacion" + i);
             resolucion.setDenominacionDeLaTitulacionOCertificacion("DenominacionTitulacionCertificacion" + i);
             resolucion.setMarcoDeReferencia("MarcoReferencia" + i);
-            resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
+           // resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
             resolucion.setNormaDeValidezNacional("NormaValidezNacional" + i);
             resolucion.setCargaHorariaHSReloj(i * 10); // Cambiar la fórmula si es necesario
             resolucion.setPlazoDeVigencia(new Date());
@@ -168,7 +168,7 @@ public class ResolucionService {
             resolucion.setTitulacionOTipoDeCertificacion("TitulacionCertificacion" + i);
             resolucion.setDenominacionDeLaTitulacionOCertificacion("DenominacionTitulacionCertificacion" + i);
             resolucion.setMarcoDeReferencia("MarcoReferencia" + i);
-            resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
+         //   resolucion.setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular("NormaAprobatoriaPlanEstudio" + i);
             resolucion.setNormaDeValidezNacional("NormaValidezNacional" + i);
             resolucion.setCargaHorariaHSReloj(i * 10); // Cambiar la fórmula si es necesario
             resolucion.setPlazoDeVigencia(new Date());

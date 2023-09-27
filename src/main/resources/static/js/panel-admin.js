@@ -472,7 +472,11 @@ function abrirCargaResoParaCrear() {
             incorporarTipoDeOferta = document.getElementById("tipoDeOfertaF1")
             incorporarTipoDeGestion = document.getElementById("tipoDeGestionF1")
             incorporarTipoDeTitulo = document.getElementById("tipoDeTitulosF1")
-            incorporarTipoDeOferta.value =tipoDeOferta 
+            incorporarTipoDeTitulo = document.getElementById("tipoDeTitulosF1")
+            incorporarTipoDeTitulo = document.getElementById("tipoDeTitulosF1")
+            incorporarTipoDeTitulo = document.getElementById("tipoDeTitulosF1")
+            incorporarTipoDeTitulo = document.getElementById("tipoDeTitulosF1")
+            incorporarTipoDeOferta.value =tipoDeOferta
             incorporarTipoDeGestion.value =tipoDeGestion 
             incorporarTipoDeTitulo.value =tipoDeTitulo
             break;

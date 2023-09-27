@@ -45,7 +45,7 @@ public class Resolucion implements Serializable {
     private String titulacionOTipoDeCertificacion;
     private String denominacionDeLaTitulacionOCertificacion;
     private String marcoDeReferencia;
-    private String normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
+   // private String normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
     private String normaDeValidezNacional;
     private Integer cargaHorariaHSReloj;
 
@@ -196,13 +196,13 @@ private String numeroDeAnexo;
         this.marcoDeReferencia = marcoDeReferencia;
     }
 
-    public String getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular() {
-        return normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
-    }
+    //public String getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular() {
+       // return normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
+   // }
 
-    public void setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular(String normaAprobatoriaDelPlanDeEstudioDisenoCurricular) {
-        this.normaAprobatoriaDelPlanDeEstudioDisenoCurricular = normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
-    }
+  //  public void setNormaAprobatoriaDelPlanDeEstudioDisenoCurricular(String normaAprobatoriaDelPlanDeEstudioDisenoCurricular) {
+      //  this.normaAprobatoriaDelPlanDeEstudioDisenoCurricular = normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
+   // }
 
     public String getNormaDeValidezNacional() {
         return normaDeValidezNacional;
@@ -318,7 +318,7 @@ private String numeroDeAnexo;
                 ", titulacionOTipoDeCertificacion='" + titulacionOTipoDeCertificacion + '\'' +
                 ", denominacionDeLaTitulacionOCertificacion='" + denominacionDeLaTitulacionOCertificacion + '\'' +
                 ", marcoDeReferencia='" + marcoDeReferencia + '\'' +
-                ", normaAprobatoriaDelPlanDeEstudioDisenoCurricular='" + normaAprobatoriaDelPlanDeEstudioDisenoCurricular + '\'' +
+              //  ", normaAprobatoriaDelPlanDeEstudioDisenoCurricular='" + normaAprobatoriaDelPlanDeEstudioDisenoCurricular + '\'' +
                 ", normaDeValidezNacional='" + normaDeValidezNacional + '\'' +
                 ", cargaHorariaHSReloj=" + cargaHorariaHSReloj +
                 ", plazoDeVigencia=" + plazoDeVigencia +
