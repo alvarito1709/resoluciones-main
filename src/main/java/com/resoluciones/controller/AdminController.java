@@ -109,6 +109,8 @@ List<Resolucion> resoluciones=resolucionService.obtenerTodasResoluciones();
         Usuario usuario = (Usuario) session.getAttribute("usuariosession");
 
         if (usuario != null) {
+
+            //CREA UNA VARIABLE USUARIO CON LOS ARIBUTOS DE USUARIOSRESSION (tipo de acceso)
             model.addAttribute("usuario", usuario);
         }
 model.addAttribute("tipo","");

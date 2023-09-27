@@ -1,5 +1,5 @@
-var urlBase = "https://inscripcionesagencia.com.ar/resoluciones-v2";
-//var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.com.ar/resoluciones-v2";
+var urlBase = "http://localhost:8080";
 
 
 function modificarResolucionUsu(id) {

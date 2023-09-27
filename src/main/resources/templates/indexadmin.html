@@ -26,6 +26,7 @@
             <div class="containerFormResol">
                 
                 <form th:action="@{/}"  th:if="${tipo == 'ARTISTICA ESPECIFICA'}" class="formResolucionEspe" id="formResolucionAR" th:object="${resolucion}">
+                    <h1>ESTE ES EL FORMULARIO DE INDEXADMIN</h1>
                     <div class="form-group" hidden>
                         <label for="id1">ID</label>
                         <input type="text" id="id1"  th:field="*{id}" >
@@ -450,11 +451,10 @@
     <section class="panelGeneral" >
         <div class="container-tituloSeccion">
        <div class="tituloSeccion">
-        <span>Catálogo de Títulos y Certificados para la Educación Técnico Profesional,
-            y de ofertas educativas.
-            Socio Humanística de nivel superior no universitario</span>
+        <span>CATÁLOGO DE TITULOS Y CERTIFICADOS</span>
         </div>
-            <div class="linea"></div>
+            <br>
+
        <div class="busquedaPorNroResolucion">
         <form th:action="@{/admin/resolucion/numero}">
             <label for="resolucionNro">BÚSQUEDA POR N° DE RESOLUCIÓN:</label><input type="text" name="resolucionNro" id="resolucionNro" class="boton buscardorReso" placeholder="RESOL-2023-3798-GCABA-MEDGC">
