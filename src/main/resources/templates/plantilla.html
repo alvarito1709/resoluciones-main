@@ -9,6 +9,19 @@
     <script th:src="@{/js/header.js}"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+       <style>
+           .proximamenteContainer{
+               width: 100%;
+               height:30vw;
+               display: flex;
+           }
+
+           .proximamente{
+               margin: auto;
+               text-align: center;
+           }
+       </style>
  
 
     <link rel="icon" th:href="@{/img/logohead.webp}">
@@ -72,7 +85,13 @@ for (const iterator of botonesMenu) {
         </script>
       <script th:src="@{/js/header.js}"></script>
     </header>
-    <div class="table-container">
+
+    <div class="proximamenteContainer">
+        <h1 class="proximamente">Proximamente...</h1>
+    </div>
+
+
+    <div class="table-container" hidden>
         <table>
             <thead>
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}">

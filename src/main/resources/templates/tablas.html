@@ -13,25 +13,25 @@
     <div class="table-container" th:fragment="tablaPedidos(${resoluciones},${tipo})" id="tablaQueCargo">
         <table  id="tablaQueCargoContenido">
             <thead>
-              
+
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}"  >
                     <th>ACCIONES</th>
                     <th>ID</th>
                     <th>TIPO DE OFERTA</th>
                     <th>TIPO DE GESTIÓN</th>
                     <th>TIPO DE TÍTULOS</th>
+                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
                     <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>PLAZO DE VIGENCIA</th>
                     <th>NÚMERO DE ANEXO</th>
                     <th>ÁMBITO DE LA ETP</th>
                     <th>NÓMINA DE FAMILIAS PROFESIONALES</th>
                     <th>TITULACIÓN O TIPO DE CERTIFICACIÓN</th>
-                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
                     <th>MARCO DE REFERENCIA</th>
                <!--     <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th> -->
                     <th>NORMA DE VALIDEZ NACIONAL</th>
-                    <th>CARGA HORARIA (HS RELOJ)</th>
-                    <th>PLAZO DE VIGENCIA</th>
                     <th>PLAZO DE VALIDEZ NACIONAL</th>
+                    <th>CARGA HORARIA (HS RELOJ)</th>
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'SOCIO HUMANISTICA'}">
@@ -41,6 +41,7 @@
                     <th>TIPO DE GESTIÓN</th>
                     <th>TIPO DE TÍTULOS</th>
                     <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>PLAZO DE VIGENCIA</th>
                     <th>NÚMERO DE ANEXO</th>
                     <th>ÁMBITO DE LA EDUCACIÓN</th>
                     <th>DISCIPLINA SOCIO HUMANÍSTICA</th>
@@ -48,10 +49,9 @@
                     <th>MARCO DE REFERENCIA</th>
                     <!--     <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th> -->
                     <th>NORMA DE VALIDEZ NACIONAL</th>
+                    <th>PLAZO DE VALIDEZ NACIONAL</th>
                     <th>CARGA HORARIA (HS RELOJ)</th>
                     <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
-                    <th>PLAZO DE VIGENCIA</th>
-                    <th>PLAZO DE VALIDEZ NACIONAL</th>
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}">
@@ -60,33 +60,33 @@
                     <th>TIPO DE OFERTA</th>
                     <th>TIPO DE GESTIÓN</th>
                     <th>TIPO DE TÍTULOS</th>
+                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
                     <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>PLAZO DE VIGENCIA</th>
                     <th>NÚMERO DE ANEXO</th>
                     <th>ÁMBITO DE LA EDUCACIÓN</th>
                     <th>LENGUAJE DISCIPLINA</th>
                     <th>ÁREA</th>
-                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
                     <th>MARCO DE REFERENCIA</th>
                     <!--     <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th> -->
                     <th>NORMA DE VALIDEZ NACIONAL</th>
+                    <th>PLAZO DE VALIDEZ NACIONAL</th>
                     <th>CARGA HORARIA (HS RELOJ)</th>
                     <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
-                    <th>PLAZO DE VIGENCIA</th>
-                    <th>PLAZO DE VALIDEZ NACIONAL</th>
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}">
                     <th>ACCIONES</th>
                     <th>ID</th>
                     <th>TIPO DE OFERTA</th>
+                    <th>DENOMINACIÓN DE LA CERTIFICACIÓN</th>
                     <th>RESOLUCIÓN APROBATORIA</th>
+                    <th>PLAZO DE VIGENCIA</th>
                     <th>NÚMERO DE ANEXO</th>                   
                     <th>NÓMINA DE FAMILIAS PROFESIONALES</th>
-                    <th>DENOMINACIÓN DE LA CERTIFICACIÓN</th>
                     <th>RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</th>
                     <th>CARGA HORARIA (HS RELOJ)</th>
-                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
-                    <th>PLAZO DE VIGENCIA</th>
+                    <th>CFP DONDE SE DICTA LA CAPACITACION LABORAL</th>
                     <th>DESCARGABLES</th>
                 </tr>
 
@@ -103,20 +103,20 @@
                     <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
                     <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
                     <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
+                        CERTIFICACIÓN</td>
                     <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
                     <td th:text="${resolucion.ambitoDeLaETP}">ÁMBITO DE LA ETP</td>
                     <td th:text="${resolucion.nominaDeFamiliasProfesionales}">NÓMINA DE FAMILIAS PROFESIONALES</td>
                     <td th:text="${resolucion.titulacionOTipoDeCertificacion}">TITULACIÓN O TIPO DE CERTIFICACIÓN</td>
-                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
-                        CERTIFICACIÓN</td>
                     <td th:text="${resolucion.marcoDeReferencia}">MARCO DE REFERENCIA</td>
                    <!-- <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
                         PLAN DE ESTUDIO/DISEÑO CURRICULAR</td> -->
                     <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
-                    <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
-                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
                 <tr th:if="${tipo == 'SOCIO HUMANISTICA'}" th:each="resolucion : ${resoluciones}">
@@ -131,6 +131,7 @@
                     <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
                     <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
                     <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
                     <td th:text="${resolucion.ambitoDeLaEducacion}">ÁMBITO DE LA EDUCACIÓN</td>
                     <td th:text="${resolucion.disciplinaSociohumanistica}">DISCIPLINA SOCIO HUMANÍSTICA</td>
@@ -139,11 +140,10 @@
                     <!-- <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
                         PLAN DE ESTUDIO/DISEÑO CURRICULAR</td> -->
                     <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
                     </td>
-                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
-                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
                 <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}" th:each="resolucion : ${resoluciones}">
@@ -157,22 +157,22 @@
                     <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
                     <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
                     <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
+                        CERTIFICACIÓN</td>
                     <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
                     <td th:text="${resolucion.ambitoDeLaEducacion}">ÁMBITO DE LA EDUCACIÓN</td>
                     <td th:text="${resolucion.lenguajeDisciplina}">LENGUAJE DISCIPLINA</td>
                     <td th:text="${resolucion.area}">ÁREA</td>
-                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
-                        CERTIFICACIÓN</td>
                     <td th:text="${resolucion.marcoDeReferencia}">MARCO DE REFERENCIA</td>
                     <!-- <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
                         PLAN DE ESTUDIO/DISEÑO CURRICULAR</td> -->
                     <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
                     </td>
-                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
-                    <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
                 <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}" th:each="resolucion : ${resoluciones}">
@@ -183,14 +183,14 @@
                     </td>
                     <td th:text="${resolucion.id}">ID</td>
                     <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA CERTIFICACIÓN</td>
                     <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
+                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.numeroDeAnexo}">NÚMERO DE ANEXO</td>
                     <td th:text="${resolucion.nominaDeFamiliasProfesionales}">NÓMINA DE FAMILIAS PROFESIONALES</td>
-                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA CERTIFICACIÓN</td>
                     <!-- <td th:text="${resolucion.resolucionAprobatoriaDeCapacitacionLaboral}">RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</td> -->
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
-                    <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
 
