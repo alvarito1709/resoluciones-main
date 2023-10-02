@@ -26,7 +26,7 @@ function enviarDatosPOSTCPL() {
     // resolucionAprobatoriaDeCapacitacionLaboral:resolucionAprobatoriaDeCapacitacionLaboral2.value,
     cargaHorariaHSReloj:cargaHorariaHSReloj2.value,
     institucionesDondeSeDictaLaOferta:institucionesDondeSeDictaLaOferta2.value,
-    cenofDondeSeDictaLaOferta:cenofDondeSeDictaLaOferta.value,
+    cnofDondeSedictaLaOferta:cenofDondeSeDictaLaOferta.value,
     plazoDeVigencia:plazoDeVigencia2.value,
     url:url2.value
   };
@@ -96,7 +96,7 @@ function modificarResolucionCPL(id) {
         const disciplinaSociohumanistica = data.disciplinaSociohumanistica;
         const area = data.area;
         const institucionesDondeSeDictaLaOferta = data.institucionesDondeSeDictaLaOferta;
-        const cenofDondeSeDictaLaOferta = data.cenofDondeSeDictaLaOferta;
+        const cenofDondeSeDictaLaOferta = data.cnofDondeSedictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
         var url2 = document.getElementById("url2");
@@ -129,6 +129,7 @@ function modificarResolucionCPL(id) {
           cargaHorariaHSReloj2.value=cargaHorariaHSReloj
           institucionesDondeSeDictaLaOferta2.value=institucionesDondeSeDictaLaOferta
           plazoDeVigencia2.value=plazoDeVigencia
+          cenofDondeSeDictaLaOferta2.value=cenofDondeSeDictaLaOferta;
           url2.value=url
       
 
@@ -206,7 +207,7 @@ function retrieveGuests() {
           area: area,
           nombreDeTitulos: nombreDeTitulos,
           institucionDondeSeDicta: institucionDondeSeDicta,
-          cnofDondeSeDicta: cnofDondeSeDicta,
+       
           id: id
       },
       success: function (response) {
