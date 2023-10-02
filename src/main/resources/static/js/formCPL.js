@@ -12,6 +12,7 @@ function enviarDatosPOSTCPL() {
   // var resolucionAprobatoriaDeCapacitacionLaboral2 = document.getElementById("resolucionAprobatoriaDeCapacitacionLaboral2");
   var cargaHorariaHSReloj2 = document.getElementById("cargaHorariaHSReloj2");
   var institucionesDondeSeDictaLaOferta2 = document.getElementById("institucionesDondeSeDictaLaOferta2");
+  var cenofDondeSeDictaLaOferta = document.getElementById("cenofDondeSeDictaLaOferta");
   var plazoDeVigencia2 = document.getElementById("plazoDeVigencia2");
 
   var data = {     
@@ -25,6 +26,7 @@ function enviarDatosPOSTCPL() {
     // resolucionAprobatoriaDeCapacitacionLaboral:resolucionAprobatoriaDeCapacitacionLaboral2.value,
     cargaHorariaHSReloj:cargaHorariaHSReloj2.value,
     institucionesDondeSeDictaLaOferta:institucionesDondeSeDictaLaOferta2.value,
+    cenofDondeSeDictaLaOferta:cenofDondeSeDictaLaOferta.value,
     plazoDeVigencia:plazoDeVigencia2.value,
     url:url2.value
   };
@@ -94,6 +96,7 @@ function modificarResolucionCPL(id) {
         const disciplinaSociohumanistica = data.disciplinaSociohumanistica;
         const area = data.area;
         const institucionesDondeSeDictaLaOferta = data.institucionesDondeSeDictaLaOferta;
+        const cenofDondeSeDictaLaOferta = data.cenofDondeSeDictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
         var url2 = document.getElementById("url2");
@@ -105,6 +108,7 @@ function modificarResolucionCPL(id) {
         // var resolucionAprobatoriaDeCapacitacionLaboral2 = document.getElementById("resolucionAprobatoriaDeCapacitacionLaboral2");
         var cargaHorariaHSReloj2 = document.getElementById("cargaHorariaHSReloj2");
         var institucionesDondeSeDictaLaOferta2 = document.getElementById("institucionesDondeSeDictaLaOferta2");
+        var cenofDondeSeDictaLaOferta2 = document.getElementById("cenofDondeSeDictaLaOferta");
         var plazoDeVigencia2 = document.getElementById("plazoDeVigencia2");
       
         
@@ -164,6 +168,7 @@ function borrarFormulariosCPL(){
     // "resolucionAprobatoriaDeCapacitacionLaboral2",
     "cargaHorariaHSReloj2",
     "institucionesDondeSeDictaLaOferta2",
+    "cnofDondeSeDictaLaOferta",
     "plazoDeVigencia2"
   ];
 
@@ -187,6 +192,7 @@ function retrieveGuests() {
   var area = null;
   var nombreDeTitulos = null;
   var institucionDondeSeDicta = null;
+  var cnofDondeSeDicta = null;
   var id = null;
 
   $.ajax({
@@ -200,6 +206,7 @@ function retrieveGuests() {
           area: area,
           nombreDeTitulos: nombreDeTitulos,
           institucionDondeSeDicta: institucionDondeSeDicta,
+          cnofDondeSeDicta: cnofDondeSeDicta,
           id: id
       },
       success: function (response) {

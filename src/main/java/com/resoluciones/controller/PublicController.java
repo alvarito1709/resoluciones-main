@@ -61,9 +61,10 @@ public class PublicController {
             @RequestParam(value = "area", required = false) String area,
             @RequestParam(value = "nombreDeTitulo", required = false) String nombreDeTitulo,
             @RequestParam(value = "institucionDondeSeDicta", required = false) String institucionDondeSeDicta,
+                                        @RequestParam(value = "cnofDondeSeDicta", required = false) String cnofDondeSeDicta,
             @RequestParam(value = "id", required = false) String id
             ) {
-        ResolucionSpecifications resolucionSpecifications=new ResolucionSpecifications( tipoDeGestion,  tipoDeOferta,  tipoDeTitulos,  tipoDeNomina,  area,  nombreDeTitulo,  institucionDondeSeDicta,  id);
+        ResolucionSpecifications resolucionSpecifications=new ResolucionSpecifications( tipoDeGestion,  tipoDeOferta,  tipoDeTitulos,  tipoDeNomina,  area,  nombreDeTitulo,  institucionDondeSeDicta,cnofDondeSeDicta,  id);
         List<Resolucion> resoluciones = resolucionService.buscarResolucionesConFiltros(resolucionSpecifications);
         model.addAttribute("resoluciones", resoluciones);
         model.addAttribute("tipo",tipoDeOferta);

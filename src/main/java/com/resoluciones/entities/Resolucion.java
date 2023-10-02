@@ -63,6 +63,8 @@ public class Resolucion implements Serializable {
 //    private String resolucionAprobatoriaDeCapacitacionLaboral;
 private String resolucionAprobatoria;
 private String numeroDeAnexo;
+
+private String cnofDondeSedictaLaOferta;
     public Resolucion() {
     }
 
@@ -300,6 +302,10 @@ private String numeroDeAnexo;
         this.anexoPlandeEstudioDisenioCurricular = anexoPlandeEstudioDisenioCurricular;
     }
 
+    public String getCnofDondeSedictaLaOferta(){return cnofDondeSedictaLaOferta;}
+
+    public void setCnofDondeSedictaLaOferta(String cnofDondeSedictaLaOferta){this.cnofDondeSedictaLaOferta = cnofDondeSedictaLaOferta;}
+
     @Override
     public String toString() {
         return "Resolucion{" +
@@ -330,6 +336,7 @@ private String numeroDeAnexo;
                 ", lenguajeDisciplina='" + lenguajeDisciplina + '\'' +
                 ", resolucionAprobatoria='" + resolucionAprobatoria + '\'' +
                 ", numeroDeAnexo='" + numeroDeAnexo + '\'' +
+                ", cnofDondeSeDictaLaOferta='" + cnofDondeSedictaLaOferta + '\'' +
                 '}';
     }
 }
