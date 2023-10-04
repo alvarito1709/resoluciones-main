@@ -40,7 +40,7 @@
     width: 20%;
 }
 .container-tituloSeccion{
-    background-color: #98b9e3;
+    background-color: #f3a32d;
  
     display: flex;
     align-self: center;
@@ -59,12 +59,11 @@
     width: 60%;
     margin: auto;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 
 }
 .tituloSeccion span{
     text-align: center;
-
 }
 .linea{
     background-color: gray;
@@ -81,6 +80,7 @@
 }
 .busquedaPorNroResolucion{
     width: 100%;
+    margin-top: 15px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -119,6 +119,7 @@ padding-right: 10px !important;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
 }
 .botonCreateUser {
     display: flex;
@@ -141,6 +142,7 @@ padding-right: 10px !important;
 .violeta {
     background-color: var(--violeta);
     color: var(--gris);
+
 }
 
 .violeta:hover {
@@ -388,7 +390,7 @@ padding-right: 10px !important;
 
 
 .tituloRedireccion{
-
+font-weight: bold;
 }
 #contenedorBotones{
     display: flex;

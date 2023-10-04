@@ -30,17 +30,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 80%;
+    height: 80%;
     background-color: var(--gris);
     border-radius: 20px;
 }
 
+.botones-container span {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
 .chart-container {
     width: 20%;
 }
 .container-tituloSeccion{
-    background-color: #98b9e3;
- 
+    background-color: #f3a32d;
     display: flex;
     align-self: center;
     align-content: center;
@@ -49,8 +54,8 @@
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-radius: 0 0 10px 10px;
 
 }
@@ -63,7 +68,6 @@
 }
 .tituloSeccion span{
     text-align: center;
-
 }
 .linea{
     background-color: gray;
@@ -109,13 +113,14 @@ width: calc(100% / 4) !important;
 width: 15% !important;
 }
 .boton {
-    width: 300px;
+    width: 400px;
     border: none;
     padding: 10px 0;
-    margin: 10px;
+    margin: 20px;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
 }
 .botonCreateUser {
     display: flex;
@@ -182,6 +187,7 @@ width: 15% !important;
 
 #tablaResoluciones {
     width: 100%;
+    font-size: 0.8rem;
 }
 
 .bg-popup {
@@ -346,6 +352,7 @@ width: 15% !important;
     justify-content: center;
     align-items: center;
     align-content: center;
+    margin-top: 20px;
 }
 
 @media (max-width: 600px) {

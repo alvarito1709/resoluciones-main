@@ -40,7 +40,7 @@
     width: 20%;
 }
 .container-tituloSeccion{
-    background-color: #98b9e3;
+    background-color: #f3a32d;
  
     display: flex;
     align-self: center;
@@ -120,6 +120,7 @@ padding-right: 10px !important;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+
 }
 .botonCreateUser {
     display: flex;
