@@ -1,5 +1,5 @@
-var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-//var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+var urlBase = "http://localhost:8080";
 function enviarDatosPOSTETP() {
   var id4 = document.getElementById('id4').value;
 var usuarioDeCreacion4 = document.getElementById('usuarioDeCreacion4').value;
@@ -142,7 +142,7 @@ function modificarResolucionETP(id) {
         titulacionOTipoDeCertificacion4.value=titulacionOTipoDeCertificacion
         denominacionDeLaTitulacionOCertificacion4.value=denominacionDeLaTitulacionOCertificacion
         marcoDeReferencia4.value=marcoDeReferencia
-        normaAprobatoriaDelPlanDeEstudioDisenoCurricular4.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
+       // normaAprobatoriaDelPlanDeEstudioDisenoCurricular4.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
         normaDeValidezNacional4.value=normaDeValidezNacional
         cargaHorariaHSReloj4.value=cargaHorariaHSReloj
         plazoDeVigencia4.value=plazoDeVigencia

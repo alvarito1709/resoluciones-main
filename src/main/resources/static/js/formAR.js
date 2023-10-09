@@ -1,5 +1,5 @@
-var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-//var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+var urlBase = "http://localhost:8080";
 function enviarDatosPOSTAR() {
   var url1 = document.getElementById("url1");
   var id1 = document.getElementById("id1");
@@ -185,8 +185,8 @@ console.log('Lenguaje Disciplina:', lenguajeDisciplina);
         var marcoDeReferencia1 = document.getElementById("marcoDeReferencia1");
         marcoDeReferencia1.value = marcoDeReferencia
 
-        var normaAprobatoriaDelPlanDeEstudioDisenoCurricular1 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular1");
-        normaAprobatoriaDelPlanDeEstudioDisenoCurricular1.value = normaAprobatoriaDelPlanDeEstudioDisenoCurricular
+        //var normaAprobatoriaDelPlanDeEstudioDisenoCurricular1 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular1");
+        //normaAprobatoriaDelPlanDeEstudioDisenoCurricular1.value = normaAprobatoriaDelPlanDeEstudioDisenoCurricular
 
         var normaDeValidezNacional1 = document.getElementById("normaDeValidezNacional1");
         normaDeValidezNacional1.value = normaDeValidezNacional

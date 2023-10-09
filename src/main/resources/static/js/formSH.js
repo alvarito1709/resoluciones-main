@@ -1,5 +1,5 @@
-var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-//var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+var urlBase = "http://localhost:8080";
 function enviarDatosPOSTSH() {
   var id = document.getElementById("id3").value;
   var usuarioDeCreacion = document.getElementById("usuarioDeCreacion3").value;
@@ -136,7 +136,7 @@ function modificarResolucionSH(id) {
         disciplinaSociohumanistica3.value=disciplinaSociohumanistica
         area3.value=area
         marcoDeReferencia3.value=marcoDeReferencia
-        normaAprobatoriaDelPlanDeEstudioDisenoCurricular3.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
+        //normaAprobatoriaDelPlanDeEstudioDisenoCurricular3.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
         normaDeValidezNacional3.value=normaDeValidezNacional
         cargaHorariaHSReloj3.value=cargaHorariaHSReloj
         institucionesDondeSeDictaLaOferta3.value=institucionesDondeSeDictaLaOferta
