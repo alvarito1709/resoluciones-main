@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,7 @@
        </style>
  
 
-    <link rel="icon" th:href="@{/img/logohead.webp}">
+ <link rel="icon" th:href="@{/img/logohead.webp}" th:width="48"  />
     <title>Resoluciones BA</title>
    </section>
     
@@ -39,8 +40,8 @@
             <div class="userName" th:if="${usuario}">
                 <span th:text="${usuario.nombre.toUpperCase()}" class="user-name">JORGE</span>
                 <div th:if="${usuario.imagen}">
-                    <!-- <img th:src="'https://inscripcionesagencia.com.ar/resoluciones-v2'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" /> -->
-                    <img th:src="'http://localhost:8080'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" />
+                    <img th:src="'https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" />
+                    <!-- <img th:src="'http://localhost:8080'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" /> -->
 
                     
                 </div>

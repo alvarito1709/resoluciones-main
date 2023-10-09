@@ -3,39 +3,27 @@ package com.resoluciones.controller;
 
 import com.resoluciones.entities.Resolucion;
 import com.resoluciones.entities.Usuario;
-import com.resoluciones.repositories.ResolucionSpecifications;
 import com.resoluciones.service.ExcelGenerator;
 import com.resoluciones.service.ResolucionService;
 import com.resoluciones.service.UsuarioServiceIMP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import org.springframework.core.io.ByteArrayResource;
 
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.util.List;
 @Controller
 @RequestMapping({"/admin","/admin/"})
 public class AdminController {

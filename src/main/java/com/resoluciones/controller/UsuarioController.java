@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -68,32 +69,36 @@ public class UsuarioController {
                                 @RequestParam("file") MultipartFile file,
                                 @RequestParam("password") String password,
                                 RedirectAttributes redirectAttributes) {
-        Usuario busqueda=usuarioService.obtenerUsuarioPorId(usuario.getId());
+        Usuario busqueda = usuarioService.obtenerUsuarioPorId(usuario.getId());
         usuario.setPassword(password);
-        System.out.println(password);
+        System.out.println("EL PASSWORD ES " + password);
+
         if (!file.isEmpty()) {
             try {
-                String uploadsDir = "/uploads/"; // Ruta donde se guardarán las imágenes
-                String fileName = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
+                String uploadsDir = "/home/educacionuser/Downloads/uploads/"; // Ruta donde se guardarán las imágenes
+                String originalFilename = file.getOriginalFilename();
+                String fileName = String.valueOf(new Date().getTime());
                 String filePath = Paths.get(uploadsDir, fileName).toString();
+
+                // Crear directorios si no existen
+                Files.createDirectories(Paths.get(uploadsDir));
+
                 Files.copy(file.getInputStream(), Paths.get(filePath));
-                usuario.setImagen(filePath);
+                System.out.println("LA RUTA DE LA IMAGEN ES " + filePath);
+                usuario.setImagen("/uploads/"+fileName); // Establecer el nombre del archivo en la entidad Usuario
             } catch (IOException e) {
                 e.printStackTrace();
+                System.out.println(e.getMessage());
             }
-        }else if (busqueda!=null){
+        } else if (busqueda != null) {
             usuario.setImagen(busqueda.getImagen());
-
         }
-
 
         usuarioService.crearUsuario(usuario);
 
-
-
-
         return "redirect:/admin/usuarios";
     }
+
 
 
 
