@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function enviarDatosPOSTCPL() {
   var url2 = document.getElementById("url2");
   var id2 = document.getElementById("id2");

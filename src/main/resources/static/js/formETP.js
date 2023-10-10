@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function enviarDatosPOSTETP() {
   var id4 = document.getElementById('id4').value;
 var usuarioDeCreacion4 = document.getElementById('usuarioDeCreacion4').value;
@@ -17,6 +17,7 @@ var marcoDeReferencia4 = document.getElementById('marcoDeReferencia4').value;
 //var normaAprobatoriaDelPlanDeEstudioDisenoCurricular4 = document.getElementById('normaAprobatoriaDelPlanDeEstudioDisenoCurricular4').value;
 var normaDeValidezNacional4 = document.getElementById('normaDeValidezNacional4').value;
 var cargaHorariaHSReloj4 = document.getElementById('cargaHorariaHSReloj4').value;
+var institucionesDondeSeDictaLaOferta4 =document.getElementById('institucionesDondeSeDictaLaOferta4').value;
 var plazoDeVigencia4 = document.getElementById('plazoDeVigencia4').value;
 var plazoDeValidezNacional4 = document.getElementById('plazoDeValidezNacional4').value;
 var url4 = document.getElementById('url4').value;
@@ -37,6 +38,7 @@ marcoDeReferencia:marcoDeReferencia4,
 //normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular4,
 normaDeValidezNacional:normaDeValidezNacional4,
 cargaHorariaHSReloj:cargaHorariaHSReloj4,
+   institucionesDondeSeDictaLaOferta:institucionesDondeSeDictaLaOferta4,
 plazoDeVigencia:plazoDeVigencia4,
 plazoDeValidezNacional:plazoDeValidezNacional4,
 url:url4
@@ -122,6 +124,7 @@ function modificarResolucionETP(id) {
         var normaAprobatoriaDelPlanDeEstudioDisenoCurricular4 = document.getElementById('normaAprobatoriaDelPlanDeEstudioDisenoCurricular4');
         var normaDeValidezNacional4 = document.getElementById('normaDeValidezNacional4');
         var cargaHorariaHSReloj4 = document.getElementById('cargaHorariaHSReloj4');
+        var institucionesDondeSeDictaLaOferta4 = document.getElementById('institucionesDondeSeDictaLaOferta4');
         var plazoDeVigencia4 = document.getElementById('plazoDeVigencia4');
         var plazoDeValidezNacional4 = document.getElementById('plazoDeValidezNacional4');
         var url4 = document.getElementById('url4');
@@ -145,6 +148,7 @@ function modificarResolucionETP(id) {
        // normaAprobatoriaDelPlanDeEstudioDisenoCurricular4.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
         normaDeValidezNacional4.value=normaDeValidezNacional
         cargaHorariaHSReloj4.value=cargaHorariaHSReloj
+        institucionesDondeSeDictaLaOferta4.value=institucionesDondeSeDictaLaOferta
         plazoDeVigencia4.value=plazoDeVigencia
         plazoDeValidezNacional4.value=plazoDeValidezNacional
         url4.value=url
