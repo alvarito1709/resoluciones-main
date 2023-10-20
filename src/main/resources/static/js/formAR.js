@@ -23,6 +23,7 @@ function enviarDatosPOSTAR() {
   var institucionesDondeSeDictaLaOferta1 = document.getElementById("institucionesDondeSeDictaLaOferta1");
   var plazoDeVigencia1 = document.getElementById("plazoDeVigencia1");
   var plazoDeValidezNacional1 = document.getElementById("plazoDeValidezNacional1");
+  var nombreDeLaOfertaEducativa1 = document.getElementById("nombreDeLaOfertaEducativa");
 
   // Crear un objeto con los datos que deseas enviar
   var data = {
@@ -46,6 +47,7 @@ function enviarDatosPOSTAR() {
     institucionesDondeSeDictaLaOferta: institucionesDondeSeDictaLaOferta1.value,
     plazoDeVigencia: plazoDeVigencia1.value,
     plazoDeValidezNacional: plazoDeValidezNacional1.value,
+      nombreDeLaOfertaEducativa: nombreDeLaOfertaEducativa1.value,
   };
 
 
@@ -116,6 +118,7 @@ function modificarResolucionAR(id) {
         const area = data.area;
         const institucionesDondeSeDictaLaOferta = data.institucionesDondeSeDictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
+        const nombreDeLaOfertaEducativa =data.nombreDeLaOfertaEducativa
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
 // 
 console.log('ID:', id);
@@ -206,6 +209,8 @@ console.log('Lenguaje Disciplina:', lenguajeDisciplina);
         var url1 = document.getElementById("url1");
         url1.value = url
 
+          var nombreDeLaOfertaEducativa1 = document.getElementById("nombreDeLaOfertaEducativa");
+          nombreDeLaOfertaEducativa1.value = nombreDeLaOfertaEducativa
       } else {
         console.log('No se encontró la resolución.');
       }
@@ -248,7 +253,8 @@ function borrarFormulariosAR(){
     "cargaHorariaHSReloj1",
     "institucionesDondeSeDictaLaOferta1",
     "plazoDeVigencia1",
-    "plazoDeValidezNacional1"
+    "plazoDeValidezNacional1",
+      "nombreDeLaOfertaEducativa"
   ];
 
   fields1.forEach(function (field) {

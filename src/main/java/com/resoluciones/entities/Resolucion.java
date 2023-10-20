@@ -65,6 +65,8 @@ private String resolucionAprobatoria;
 private String numeroDeAnexo;
 
 private String cnofDondeSedictaLaOferta;
+
+private String nombreDeLaOfertaEducativa;
     public Resolucion() {
     }
 
@@ -306,6 +308,10 @@ private String cnofDondeSedictaLaOferta;
 
     public void setCnofDondeSedictaLaOferta(String cnofDondeSedictaLaOferta){this.cnofDondeSedictaLaOferta = cnofDondeSedictaLaOferta;}
 
+    public String getNombreDeLaOfertaEducativa(){return nombreDeLaOfertaEducativa;}
+
+    public  void setNombreDeLaOfertaEducativa(String nombreDeLaOfertaEducativa){this.nombreDeLaOfertaEducativa = nombreDeLaOfertaEducativa;}
+
     @Override
     public String toString() {
         return "Resolucion{" +
@@ -337,6 +343,7 @@ private String cnofDondeSedictaLaOferta;
                 ", resolucionAprobatoria='" + resolucionAprobatoria + '\'' +
                 ", numeroDeAnexo='" + numeroDeAnexo + '\'' +
                 ", cnofDondeSeDictaLaOferta='" + cnofDondeSedictaLaOferta + '\'' +
+                ", nombreDeLaOfertaEducativa=" + nombreDeLaOfertaEducativa + '\'' +
                 '}';
     }
 }
