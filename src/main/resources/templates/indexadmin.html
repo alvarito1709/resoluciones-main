@@ -466,21 +466,25 @@
     <section class="panelGeneral" >
         <div class="container-tituloSeccion">
        <div class="tituloSeccion">
-        <span>CATÁLOGO DE TITULOS Y CERTIFICADOS</span>
+        <h3>Catálogo de Títulos y Certificados</h3>
         </div>
-            <br>
-            <br>
+            <div class="subtitulo">
+        <span><p>Catálogo de Títulos y Certificados para la Educación Técnico Profesional en el nivel
+            de Tecnicatura Superior y el ámbito de la Formación Profesional Inicial y Continua y la
+            Capacitación Laboral; y del nivel Superior no Universitario y del ámbito de la Formación
+            Profesional Continua para las ofertas educativas de Socio Humanística y de Educación Artística
+            Específica</p></span>
+            </div>
 
-       <div class="busquedaPorNroResolucion">
-        <form th:action="@{/admin/resolucion/numero}">
-            <label for="resolucionNro">BÚSQUEDA POR N° DE RESOLUCIÓN:</label><input type="text" name="resolucionNro" id="resolucionNro" class="boton buscardorReso" placeholder="RESOL-2023-3798-GCABA-MEDGC">
-        <label class="boton amarillo buscardorReso" for="bucarResolucionAprobatoria">BUSCAR</label> 
-        <input type="submit" value="enviar" hidden id="bucarResolucionAprobatoria">  
-        </form>
-       </div>
         </div>
-        
-     
+
+        <div class="busquedaPorNroResolucion">
+            <form th:action="@{/admin/resolucion/numero}">
+                <label for="resolucionNro">BÚSQUEDA POR NUMERO DE RESOLUCIÓN:</label><input type="text" name="resolucionNro" id="resolucionNro" class="boton buscardorReso" placeholder="RESOL-2023-3798-GCABA-MEDGC">
+                <label class="boton azul buscardorReso" for="bucarResolucionAprobatoria">BUSCAR</label>
+                <input type="submit" value="enviar" hidden id="bucarResolucionAprobatoria">
+            </form>
+        </div>
 
 
        
@@ -488,7 +492,7 @@
         <div class="div-redirecciones">
             
  
-            <div class="redirecciones" onclick="redirigirA('/admin/panel')"><img th:src="@{/img/cargaroferta.png}" alt="" class="iconoRedireccion"><span class="tituloRedireccion">CARGAR OFERTA</span></div>
+            <div class="redirecciones" style="display: none !important;" onclick="redirigirA('/admin/panel')"><img th:src="@{/img/cargaroferta.png}" alt="" class="iconoRedireccion"><span class="tituloRedireccion">CARGAR OFERTA</span></div>
             <div class="redirecciones" onclick="redirigirA('/admin/panel')"><img th:src="@{/img/vercatalogo.png}" alt="" class="iconoRedireccion"><span class="tituloRedireccion">VER CATALOGO</span></div>
             <div class="redirecciones" style="display: none !important;" onclick="redirigirA('/admin/graficas')"><img th:src="@{/img/reportes.png}" alt="" class="iconoRedireccion"><span class="tituloRedireccion">REPORTE</span></div>
         </div>

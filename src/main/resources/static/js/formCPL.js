@@ -1,5 +1,5 @@
-var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-//var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+var urlBase = "http://localhost:8080";
 function enviarDatosPOSTCPL() {
   var url2 = document.getElementById("url2");
   var id2 = document.getElementById("id2");
@@ -13,9 +13,10 @@ function enviarDatosPOSTCPL() {
   var cargaHorariaHSReloj2 = document.getElementById("cargaHorariaHSReloj2");
   var institucionesDondeSeDictaLaOferta2 = document.getElementById("institucionesDondeSeDictaLaOferta2");
   var cenofDondeSeDictaLaOferta = document.getElementById("cenofDondeSeDictaLaOferta");
+  var otrasInstitucionesDondeSeDictaLaOferta2 = document.getElementById("otrasInstitucionesDondeSeDictaLaOferta");
   var plazoDeVigencia2 = document.getElementById("plazoDeVigencia2");
 
-  var data = {     
+  var data = {
     id:id2.value,
     tipoDeOferta:tipoDeOferta2.value,
     resolucionAprobatoria:resolucionAprobatoria2.value,
@@ -27,6 +28,7 @@ function enviarDatosPOSTCPL() {
     cargaHorariaHSReloj:cargaHorariaHSReloj2.value,
     institucionesDondeSeDictaLaOferta:institucionesDondeSeDictaLaOferta2.value,
     cnofDondeSedictaLaOferta:cenofDondeSeDictaLaOferta.value,
+    otrasInstitucionesDondeSeDictaLaOferta:otrasInstitucionesDondeSeDictaLaOferta2.value,
     plazoDeVigencia:plazoDeVigencia2.value,
     url:url2.value
   };
@@ -52,11 +54,11 @@ function enviarDatosPOSTCPL() {
     .then(response => response.json())
     .then(result => {
       console.log('Respuesta del servidor:', result);
-     
+
       var popupContainer = document.getElementById("containerGralForm");
       popupContainer.setAttribute("style","display:none")
       borrarFormulariosCPL()
-      
+
       retrieveGuests()
     })
     .catch(error => {
@@ -97,6 +99,7 @@ function modificarResolucionCPL(id) {
         const area = data.area;
         const institucionesDondeSeDictaLaOferta = data.institucionesDondeSeDictaLaOferta;
         const cenofDondeSeDictaLaOferta = data.cnofDondeSedictaLaOferta;
+        const otrasInstitucionesDondeSeDictaLaOferta = data.otrasInstitucionesDondeSeDictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
         var url2 = document.getElementById("url2");
@@ -109,16 +112,17 @@ function modificarResolucionCPL(id) {
         var cargaHorariaHSReloj2 = document.getElementById("cargaHorariaHSReloj2");
         var institucionesDondeSeDictaLaOferta2 = document.getElementById("institucionesDondeSeDictaLaOferta2");
         var cenofDondeSeDictaLaOferta2 = document.getElementById("cenofDondeSeDictaLaOferta");
+        var otrasInstitucionesDondeSeDictaLaOferta2 = document.getElementById("otrasInstitucionesDondeSeDictaLaOferta");
         var plazoDeVigencia2 = document.getElementById("plazoDeVigencia2");
-      
-        
-           
+
+
+
           id2.value=id
           tipoDeOferta2.value=tipoDeOferta
 
           var resolucionAprobatoria2=document.getElementById("resolucionAprobatoria2");
           resolucionAprobatoria2.value=resolucionAprobatoria
-  
+
           var numeroDeAnexo2=document.getElementById("numeroDeAnexo2");
           numeroDeAnexo2.value=numeroDeAnexo
 
@@ -130,8 +134,9 @@ function modificarResolucionCPL(id) {
           institucionesDondeSeDictaLaOferta2.value=institucionesDondeSeDictaLaOferta
           plazoDeVigencia2.value=plazoDeVigencia
           cenofDondeSeDictaLaOferta2.value=cenofDondeSeDictaLaOferta;
+          otrasInstitucionesDondeSeDictaLaOferta2.value=otrasInstitucionesDondeSeDictaLaOferta;
           url2.value=url
-      
+
 
       } else {
         console.log('No se encontró la resolución.');
@@ -148,11 +153,11 @@ function abrirPopCPL(id){
 
   modificarResolucionCPL(id);
   const popupContainer = document.getElementById("containerGralForm");
-   
-popupContainer.style.display = "flex";
- 
 
- 
+popupContainer.style.display = "flex";
+
+
+
 }
 
 
@@ -170,6 +175,7 @@ function borrarFormulariosCPL(){
     "cargaHorariaHSReloj2",
     "institucionesDondeSeDictaLaOferta2",
     "cnofDondeSeDictaLaOferta",
+      "otrasInstitucionesDondeSeDictaLaOferta2",
     "plazoDeVigencia2"
   ];
 
@@ -193,7 +199,6 @@ function retrieveGuests() {
   var area = null;
   var nombreDeTitulos = null;
   var institucionDondeSeDicta = null;
-  var cnofDondeSeDicta = null;
   var id = null;
 
   $.ajax({
@@ -207,7 +212,6 @@ function retrieveGuests() {
           area: area,
           nombreDeTitulos: nombreDeTitulos,
           institucionDondeSeDicta: institucionDondeSeDicta,
-       
           id: id
       },
       success: function (response) {

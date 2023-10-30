@@ -13,15 +13,20 @@
     --negro: black;
 }
 
+h3{ font-size: 0.8em; }
+p{font-size: 0.9em;}
+
 
 .panelSec {
     display: flex;
     flex-direction: row;
-  
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 60vh;
+    height: fit-content;
+    width: 75%;
+    margin: auto;
+    padding: 5px;
 
 }
 
@@ -45,7 +50,7 @@
     width: 20%;
 }
 .container-tituloSeccion{
-    background-color: #f3a32d;
+    background-color: var(--gris);
     display: flex;
     align-self: center;
     align-content: center;
@@ -110,10 +115,11 @@ width: calc(100% / 4) !important;
    align-content:center ;
    justify-content: center;
     display: flex;
-width: 15% !important;
+    width: 15% !important;
 }
 .boton {
-    width: 400px;
+    width: 75%;
+    max-width: 300px;
     border: none;
     padding: 10px 0;
     margin: 20px;
