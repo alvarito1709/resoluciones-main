@@ -60,14 +60,15 @@ public class PublicController {
             @RequestParam(value = "tipoDeNomina", required = false) String tipoDeNomina,
             @RequestParam(value = "area", required = false) String area,
             @RequestParam(value = "nombreDeTitulo", required = false) String nombreDeTitulo,
-            @RequestParam(value = "institucionDondeSeDicta", required = false) String institucionDondeSeDicta,
-                                        @RequestParam(value = "cnofDondeSeDicta", required = false) String cnofDondeSeDicta,
+            @RequestParam(value = "vistaUsuario", required = false) Boolean vistaUsuario,
+
             @RequestParam(value = "id", required = false) String id
             ) {
-        ResolucionSpecifications resolucionSpecifications=new ResolucionSpecifications( tipoDeGestion,  tipoDeOferta,  tipoDeTitulos,  tipoDeNomina,  area,  nombreDeTitulo,  institucionDondeSeDicta,cnofDondeSeDicta,  id);
+        ResolucionSpecifications resolucionSpecifications=new ResolucionSpecifications( tipoDeGestion,  tipoDeOferta,  tipoDeTitulos,  tipoDeNomina,  area,  nombreDeTitulo,  id);
         List<Resolucion> resoluciones = resolucionService.buscarResolucionesConFiltros(resolucionSpecifications);
         model.addAttribute("resoluciones", resoluciones);
         model.addAttribute("tipo",tipoDeOferta);
+        model.addAttribute("usuario", vistaUsuario);
         return new ModelAndView("tablas :: tablaPedidos");
     }
 

@@ -80,19 +80,16 @@ public class ResolucionSpecifications implements Specification<Resolucion> {
             private final String tipoDeNomina;
             private final String area;
             private final String nombreDeTitulo;
-            private final String institucionesDondeSeDictaLaOferta;
-             private final String cnofDondeSeDictaLaOferta;
+
            private final String id;
 
-    public ResolucionSpecifications(String tipoDeGestion, String tipoDeOferta, String tipoDeTitulo, String tipoDeNomina, String area, String nombreDeTitulo, String institucionesDondeSeDictaLaOferta, String cnofDondeSeDictaLaOferta, String id) {
+    public ResolucionSpecifications(String tipoDeGestion, String tipoDeOferta, String tipoDeTitulo, String tipoDeNomina, String area, String nombreDeTitulo, String id) {
         this.tipoDeGestion = tipoDeGestion;
         this.tipoDeOferta = tipoDeOferta;
         this.tipoDeTitulo = tipoDeTitulo;
         this.tipoDeNomina = tipoDeNomina;
         this.area = area;
         this.nombreDeTitulo = nombreDeTitulo;
-        this.institucionesDondeSeDictaLaOferta = institucionesDondeSeDictaLaOferta;
-        this.cnofDondeSeDictaLaOferta = cnofDondeSeDictaLaOferta;
         this.id = id;
     }
 
@@ -121,13 +118,7 @@ public class ResolucionSpecifications implements Specification<Resolucion> {
                 predicates.add(criteriaBuilder.like(root.get("nombreDeTitulo"),"%" + nombreDeTitulo + "%" ));
             }
 
-            if (!StringUtils.isEmpty(institucionesDondeSeDictaLaOferta)) {
-                predicates.add(criteriaBuilder.like(root.get("institucionesDondeSeDictaLaOferta"), institucionesDondeSeDictaLaOferta));
-            }
 
-        if (!StringUtils.isEmpty(cnofDondeSeDictaLaOferta)) {
-            predicates.add(criteriaBuilder.like(root.get("cnofDondeSeDictaLaOferta"), cnofDondeSeDictaLaOferta));
-        }
 
             if (!StringUtils.isEmpty(id )) {
                 predicates.add(criteriaBuilder.equal(root.get("id"), id));

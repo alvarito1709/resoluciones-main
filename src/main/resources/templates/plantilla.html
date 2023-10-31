@@ -16,7 +16,8 @@
  <link rel="icon" th:href="@{/img/logohead.webp}" th:width="48"  />
     <title>Resoluciones BA</title>
    </section>
-    
+
+    <script th:src="@{/js/plantilla.js}"></script>
   
 </head>
 <body>
@@ -87,80 +88,42 @@ for (const iterator of botonesMenu) {
         <br>
         <span><p>Seleccione criterios de búsqueda.</p></span>
         <div class="resolution-filters">
-            <select name="tipoDeOferta">
-                <option selected>Catálogo</option>
-                <option value="ETP">Educacion Tecnica Profesional</option>
-                <option value="SH">Socio Humanistica</option>
-                <option value="AR">Artistica Especifica</option>
-                <option value="CPL">Capacitacion Laboral</option>
+            <select name="tipoDeOferta" id="tipoOfertaOut">
+                <option value="" selected>Catálogo</option>
+                <option value="EDUCACIÓN TECNICA PROFESIONAL">Educacion Tecnica Profesional</option>
+                <option value="SOCIO HUMANISTICA">Socio Humanistica</option>
+                <option value="ARTISTICA ESPECIFICA">Artistica Especifica</option>
+                <option value="CAPACITACIÓN LABORAL">Capacitacion Laboral</option>
             </select>
 
-            <select name="tipoDeGestion">
-                <option selected>Tipo de gestión</option>
-                <option value="estatal">Estatal(SSAALV)</option>
-                <option value="privada">Privada(DGEGP)</option>
+            <select name="tipoDeGestion" id="tipoGetionOut">
+                <option value="" selected>Tipo de gestión</option>
+                <option value="GESTIÓN ESTATAL (SSAALV)">Estatal(SSAALV)</option>
+                <option value="GESTIÓN PRIVADA (DGEGP)">Privada(DGEGP)</option>
             </select>
 
-            <select name="tipoDeTitulo">
-                <option selected>Tipo de titulo</option>
-                <option value="TS">Tecnicatura Superior</option>
-                <option value="FPI">Formación Profesional Inicial</option>
-                <option value="FPC">Formación Profesional Continua</option>
+            <select name="tipoDeTitulo" id="tipoTituloOut">
+                <option value="" selected>Tipo de titulo</option>
+                <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
+                <option value="FORMACION PROFESIONAL INICIAL">Formación Profesional Inicial</option>
+                <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
             </select>
 
             <input type="text" id="titleNameSearch" placeholder="Nombre de Oferta Educativa">
+
+
         </div>
     </div>
 
-
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>TIPO DE OFERTA</th>
-                    <th>TIPO DE GESTIÓN</th>
-                    <th>TIPO DE TÍTULOS</th>
-                    <th>NOMBRE DE LA OFERTA EDUCATIVA</th>
-                    <th>RESOLUCION APROBATORIA</th>
-                    <th>FAMILIA PROFESIONAL</th>
+    <div class="contenedorBuscar">
+        <button type="button" onclick="retrieveGuests()">Buscar</button>
+    </div>
 
 
-                </tr>
+    <div class="table-container" >
+        <section id="tablaResoluciones">
 
-                
-
-            </thead>
-            <tbody>
-                <tr>
-                    <td>EDUCACION TECNICA PROFESIONAL</td>
-                    <td>GESTIÓN ESTATAL(SSAALV)</td>
-                    <td>TECNICATURA SUPERIOR</td>
-                    <td>TECNICO SUPERIOR EN EMPRENDIMIENTOS GRASTRONOMICOS</td>
-                    <td>Res. Min 1202/2007</td>
-                    <td>ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES</td>
-                </tr>
-
-                <tr>
-                    <td>EDUCACION TECNICA PROFESIONAL</td>
-                    <td>GESTIÓN ESTATAL(SSAALV)</td>
-                    <td>TECNICATURA SUPERIOR</td>
-                    <td>TECNICO SUPERIOR EN EMPRENDIMIENTOS GRASTRONOMICOS</td>
-                    <td>Res. Min 1202/2007</td>
-                    <td>ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES</td>
-                </tr>
-
-                <tr>
-                    <td>EDUCACION TECNICA PROFESIONAL</td>
-                    <td>GESTIÓN ESTATAL(SSAALV)</td>
-                    <td>TECNICATURA SUPERIOR</td>
-                    <td>TECNICO SUPERIOR EN EMPRENDIMIENTOS GRASTRONOMICOS</td>
-                    <td>Res. Min 1202/2007</td>
-                    <td>ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES</td>
-                </tr>
-
-                
-            </tbody>
-        </table>
+        </section>
     </div>
 
     

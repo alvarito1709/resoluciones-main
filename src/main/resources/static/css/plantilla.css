@@ -26,7 +26,7 @@ header{
 
 .table-container {
     padding: 20px;
-    width: 90%;
+    width: 95%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -35,9 +35,8 @@ header{
     overflow-x: auto;
 }
 
-table {
+#tablaResoluciones {
     border-collapse: collapse;
-    border: 1px solid var(--grisFuerte);
     background-color: white;
     font-size: .6em;
     margin: auto auto 40px;
@@ -47,7 +46,7 @@ table {
 th,
 td {
     text-align: left;
-    padding: 10px;
+    padding: 20px;
 }
 
 th {
@@ -118,6 +117,27 @@ tr:nth-child(even) {
     font-weight: 450;
 }
 
+.contenedorBuscar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contenedorBuscar button{
+    margin: auto;
+    padding: 8px;
+    width: 10%;
+    min-width: fit-content;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--azul);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.contenedorBuscar button:hover{
+    scale: 105%;
+}
 @media screen and (max-width: 768px) {
 
   /*  th,
