@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,11 @@
 </head>
 
 <body>
-    <div class="table-container" th:fragment="tablaPedidos(${resoluciones},${tipo})" id="tablaQueCargo">
+    <div class="table-container" th:fragment="tablaPedidos(${resoluciones},${tipo},${usuario})" id="tablaQueCargo">
         <table  id="tablaQueCargoContenido">
             <thead>
 
+            <div th:if="${usuario == null}">
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}"  >
                     <th>ACCIONES</th>
                     <th>ID</th>
@@ -32,6 +33,7 @@
                     <th>NORMA DE VALIDEZ NACIONAL</th>
                     <th>PLAZO DE VALIDEZ NACIONAL</th>
                     <th>CARGA HORARIA (HS RELOJ)</th>
+                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'SOCIO HUMANISTICA'}">
@@ -40,6 +42,7 @@
                     <th>TIPO DE OFERTA</th>
                     <th>TIPO DE GESTIÓN</th>
                     <th>TIPO DE TÍTULOS</th>
+                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
                     <th>RESOLUCIÓN APROBATORIA</th>
                     <th>PLAZO DE VIGENCIA</th>
                     <th>PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
@@ -61,6 +64,7 @@
                     <th>TIPO DE GESTIÓN</th>
                     <th>TIPO DE TÍTULOS</th>
                     <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
+                    <th>NOMBRE DE LA OFERTA EDUCATIVA</th>
                     <th>RESOLUCIÓN APROBATORIA</th>
                     <th>PLAZO DE VIGENCIA</th>
                     <th>PLAN DE ESTUDIO / DISEÑO CURRICULAR</th>
@@ -84,16 +88,32 @@
                     <th>PLAZO DE VIGENCIA</th>
                     <th>DISEÑO CURRICULAR</th>
                     <th>FAMILIA PROFESIONAL</th>
-                    <th>RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</th>
+                    <!--<th>RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</th>-->
                     <th>CARGA HORARIA (HS RELOJ)</th>
                     <th>CFP DONDE SE DICTA LA CAPACITACION LABORAL</th>
+                    <th>CENOF DONDE SE DICTA LA CAPACITACION LABORAL</th>
+                    <th>OTRAS INSTITUCIONES DONDE SE DICTA LA CAPACITACIÓN</th>
                     <th>DESCARGABLES</th>
                 </tr>
+            </div>
+                <tr th:if="${usuario == true}">
+
+                <th>TIPO DE OFERTA</th>
+                <th>TIPO DE GESTIÓN</th>
+                <th>TIPO DE TÍTULOS</th>
+                <th>NOMBRE DE LA OFERTA EDUCATIVA</th>
+                <th>RESOLUCION APROBATORIA</th>
+                <th>FAMILIA PROFESIONAL</th>
+
+
+                </tr>
+
 
 
             </thead>
             <tbody>
 
+            <div th:if="${usuario == null}">
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}" th:each="resolucion : ${resoluciones}">
                     <td>
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
@@ -117,9 +137,11 @@
                     <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
+                    <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
+                    </td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
-                <tr th:if="${tipo == 'SOCIO HUMANISTICA'}" th:each="resolucion : ${resoluciones}">
+                <tr th:if="${tipo == 'SOCIO HUMANISTICA'} " th:each="resolucion : ${resoluciones}">
                     <td>
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
                               th:attr="onclick='abrirPopSH(\'' + ${resolucion.id} + '\')'"></span>
@@ -130,6 +152,8 @@
                     <td th:text="${resolucion.tipoDeOferta}">TIPO DE OFERTA</td>
                     <td th:text="${resolucion.tipoDeGestion}">TIPO DE GESTIÓN</td>
                     <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
+                    <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
+                        CERTIFICACIÓN</td>
                     <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
                     <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.numeroDeAnexo}">PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
@@ -159,6 +183,7 @@
                     <td th:text="${resolucion.tipoDeTitulos}">TIPO DE TÍTULOS</td>
                     <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">DENOMINACIÓN DE LA TITULACIÓN O
                         CERTIFICACIÓN</td>
+                    <td th:text="${resolucion.nombreDeLaOfertaEducativa}">NOMBRE DE LA OFERTA EDUCATIVA</td>
                     <td th:text="${resolucion.resolucionAprobatoria}">RESOLUCIÓN APROBATORIA</td>
                     <td th:text="${resolucion.plazoDeVigencia}">PLAZO DE VIGENCIA</td>
                     <td th:text="${resolucion.numeroDeAnexo}">PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
@@ -191,9 +216,21 @@
                     <!-- <td th:text="${resolucion.resolucionAprobatoriaDeCapacitacionLaboral}">RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</td> -->
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
+                        <td th:text="${resolucion.cnofDondeSedictaLaOferta}">CNOF DONDE SE DICTA LA OFERTA</td>
+                    <td th:text="${resolucion.otrasInstitucionesDondeSeDictaLaOferta}">OTRAS INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
 
+            </div>
+
+            <tr th:if="${usuario == true}" th:each="resolucion : ${resoluciones}">
+                <td th:text="${resolucion.tipoDeOferta}">EDUCACION TECNICA PROFESIONAL</td>
+                <td th:text="${resolucion.tipoDeGestion}">GESTIÓN ESTATAL(SSAALV)</td>
+                <td th:text="${resolucion.tipoDeTitulos}">TECNICATURA SUPERIOR</td>
+                <td th:text="${resolucion.denominacionDeLaTitulacionOCertificacion}">TECNICO SUPERIOR EN EMPRENDIMIENTOS GRASTRONOMICOS</td>
+                <td th:text="${resolucion.resolucionAprobatoria}">Res. Min 1202/2007</td>
+                <td th:text="${resolucion.nominaDeFamiliasProfesionales}">ADMINISTRACIÓN, GESTIÓN Y SERVICIOS EMPRESARIALES</td>
+            </tr>
 
 
 

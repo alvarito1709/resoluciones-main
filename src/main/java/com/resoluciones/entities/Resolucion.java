@@ -63,6 +63,13 @@ public class Resolucion implements Serializable {
 //    private String resolucionAprobatoriaDeCapacitacionLaboral;
 private String resolucionAprobatoria;
 private String numeroDeAnexo;
+
+private String cnofDondeSedictaLaOferta;
+
+private String nombreDeLaOfertaEducativa;
+
+private String otrasInstitucionesDondeSeDictaLaOferta;
+
     public Resolucion() {
     }
 
@@ -300,6 +307,18 @@ private String numeroDeAnexo;
         this.anexoPlandeEstudioDisenioCurricular = anexoPlandeEstudioDisenioCurricular;
     }
 
+    public String getCnofDondeSedictaLaOferta(){return cnofDondeSedictaLaOferta;}
+
+    public void setCnofDondeSedictaLaOferta(String cnofDondeSedictaLaOferta){this.cnofDondeSedictaLaOferta = cnofDondeSedictaLaOferta;}
+
+    public String getNombreDeLaOfertaEducativa(){return nombreDeLaOfertaEducativa;}
+
+    public  void setNombreDeLaOfertaEducativa(String nombreDeLaOfertaEducativa){this.nombreDeLaOfertaEducativa = nombreDeLaOfertaEducativa;}
+
+    public String getOtrasInstitucionesDondeSeDictaLaOferta(){return otrasInstitucionesDondeSeDictaLaOferta;}
+
+    public void setOtrasInstitucionesDondeSeDictaLaOferta(String otrasInstitucionesDondeSeDictaLaOferta){this.otrasInstitucionesDondeSeDictaLaOferta = otrasInstitucionesDondeSeDictaLaOferta;}
+
     @Override
     public String toString() {
         return "Resolucion{" +
@@ -330,6 +349,9 @@ private String numeroDeAnexo;
                 ", lenguajeDisciplina='" + lenguajeDisciplina + '\'' +
                 ", resolucionAprobatoria='" + resolucionAprobatoria + '\'' +
                 ", numeroDeAnexo='" + numeroDeAnexo + '\'' +
+                ", cnofDondeSeDictaLaOferta='" + cnofDondeSedictaLaOferta + '\'' +
+                ", nombreDeLaOfertaEducativa=" + nombreDeLaOfertaEducativa + '\'' +
+                ",otrasInstitucionesDondeSeDictaLaOferta=" + otrasInstitucionesDondeSeDictaLaOferta + '\''+
                 '}';
     }
 }

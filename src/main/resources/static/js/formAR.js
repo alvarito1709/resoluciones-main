@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.com.ar/resoluciones-v2";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function enviarDatosPOSTAR() {
   var url1 = document.getElementById("url1");
   var id1 = document.getElementById("id1");
@@ -23,6 +23,7 @@ function enviarDatosPOSTAR() {
   var institucionesDondeSeDictaLaOferta1 = document.getElementById("institucionesDondeSeDictaLaOferta1");
   var plazoDeVigencia1 = document.getElementById("plazoDeVigencia1");
   var plazoDeValidezNacional1 = document.getElementById("plazoDeValidezNacional1");
+  var nombreDeLaOfertaEducativa1 = document.getElementById("nombreDeLaOfertaEducativa");
 
   // Crear un objeto con los datos que deseas enviar
   var data = {
@@ -46,6 +47,7 @@ function enviarDatosPOSTAR() {
     institucionesDondeSeDictaLaOferta: institucionesDondeSeDictaLaOferta1.value,
     plazoDeVigencia: plazoDeVigencia1.value,
     plazoDeValidezNacional: plazoDeValidezNacional1.value,
+      nombreDeLaOfertaEducativa: nombreDeLaOfertaEducativa1.value,
   };
 
 
@@ -116,6 +118,7 @@ function modificarResolucionAR(id) {
         const area = data.area;
         const institucionesDondeSeDictaLaOferta = data.institucionesDondeSeDictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
+        const nombreDeLaOfertaEducativa =data.nombreDeLaOfertaEducativa
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
 // 
 console.log('ID:', id);
@@ -185,8 +188,8 @@ console.log('Lenguaje Disciplina:', lenguajeDisciplina);
         var marcoDeReferencia1 = document.getElementById("marcoDeReferencia1");
         marcoDeReferencia1.value = marcoDeReferencia
 
-        var normaAprobatoriaDelPlanDeEstudioDisenoCurricular1 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular1");
-        normaAprobatoriaDelPlanDeEstudioDisenoCurricular1.value = normaAprobatoriaDelPlanDeEstudioDisenoCurricular
+        //var normaAprobatoriaDelPlanDeEstudioDisenoCurricular1 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular1");
+        //normaAprobatoriaDelPlanDeEstudioDisenoCurricular1.value = normaAprobatoriaDelPlanDeEstudioDisenoCurricular
 
         var normaDeValidezNacional1 = document.getElementById("normaDeValidezNacional1");
         normaDeValidezNacional1.value = normaDeValidezNacional
@@ -206,6 +209,8 @@ console.log('Lenguaje Disciplina:', lenguajeDisciplina);
         var url1 = document.getElementById("url1");
         url1.value = url
 
+          var nombreDeLaOfertaEducativa1 = document.getElementById("nombreDeLaOfertaEducativa");
+          nombreDeLaOfertaEducativa1.value = nombreDeLaOfertaEducativa
       } else {
         console.log('No se encontró la resolución.');
       }
@@ -248,7 +253,8 @@ function borrarFormulariosAR(){
     "cargaHorariaHSReloj1",
     "institucionesDondeSeDictaLaOferta1",
     "plazoDeVigencia1",
-    "plazoDeValidezNacional1"
+    "plazoDeValidezNacional1",
+      "nombreDeLaOfertaEducativa"
   ];
 
   fields1.forEach(function (field) {

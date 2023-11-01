@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.com.ar/resoluciones-v2";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function enviarDatosPOSTSH() {
   var id = document.getElementById("id3").value;
   var usuarioDeCreacion = document.getElementById("usuarioDeCreacion3").value;
@@ -11,6 +11,7 @@ function enviarDatosPOSTSH() {
   var ambitoDeLaEducacion = document.getElementById("ambitoDeLaEducacion3").value;
   var disciplinaSociohumanistica = document.getElementById("disciplinaSociohumanistica3").value;
   var area = document.getElementById("area3").value;
+  var denominacionDeLaTitulacionOCertificacion3 = document.getElementById("denominacionDeLaTitulacionOCertificacion3").value;
   var marcoDeReferencia = document.getElementById("marcoDeReferencia3").value;
   //var normaAprobatoriaDelPlanDeEstudioDisenoCurricular = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular3").value;
   var normaDeValidezNacional = document.getElementById("normaDeValidezNacional3").value;
@@ -31,6 +32,7 @@ function enviarDatosPOSTSH() {
     ambitoDeLaEducacion:ambitoDeLaEducacion,
     disciplinaSociohumanistica:disciplinaSociohumanistica,
     area:area,
+    denominacionDeLaTitulacionOCertificacion: denominacionDeLaTitulacionOCertificacion3,
     marcoDeReferencia:marcoDeReferencia,
     //normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular,
     normaDeValidezNacional:normaDeValidezNacional,
@@ -98,7 +100,6 @@ function modificarResolucionSH(id) {
         const ambitoDeLaETP = data.ambitoDeLaETP;
         const nominaDeFamiliasProfesionales = data.nominaDeFamiliasProfesionales;
         const titulacionOTipoDeCertificacion = data.titulacionOTipoDeCertificacion;
-        const denominacionDeLaTitulacionOCertificacion = data.denominacionDeLaTitulacionOCertificacion;
         const marcoDeReferencia = data.marcoDeReferencia;
         const normaAprobatoriaDelPlanDeEstudioDisenoCurricular = data.normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
         const normaDeValidezNacional = data.normaDeValidezNacional;
@@ -108,6 +109,7 @@ function modificarResolucionSH(id) {
         const ambitoDeLaEducacion = data.ambitoDeLaEducacion;
         const disciplinaSociohumanistica = data.disciplinaSociohumanistica;
         const area = data.area;
+        const denominacionDeLaTitulacionOCertificacion = data.denominacionDeLaTitulacionOCertificacion;
         const institucionesDondeSeDictaLaOferta = data.institucionesDondeSeDictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
@@ -119,6 +121,7 @@ function modificarResolucionSH(id) {
         var ambitoDeLaEducacion3 = document.getElementById("ambitoDeLaEducacion3")
         var disciplinaSociohumanistica3 = document.getElementById("disciplinaSociohumanistica3")
         var area3 = document.getElementById("area3")
+        var denominacionDeLaTitulacionOCertificacion3 = document.getElementById("denominacionDeLaTitulacionOCertificacion3")
         var marcoDeReferencia3 = document.getElementById("marcoDeReferencia3")
         var normaAprobatoriaDelPlanDeEstudioDisenoCurricular3 = document.getElementById("normaAprobatoriaDelPlanDeEstudioDisenoCurricular3")
         var normaDeValidezNacional3 = document.getElementById("normaDeValidezNacional3")
@@ -135,8 +138,9 @@ function modificarResolucionSH(id) {
         ambitoDeLaEducacion3.value=ambitoDeLaEducacion
         disciplinaSociohumanistica3.value=disciplinaSociohumanistica
         area3.value=area
+        denominacionDeLaTitulacionOCertificacion3.value = denominacionDeLaTitulacionOCertificacion
         marcoDeReferencia3.value=marcoDeReferencia
-        normaAprobatoriaDelPlanDeEstudioDisenoCurricular3.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
+        //normaAprobatoriaDelPlanDeEstudioDisenoCurricular3.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
         normaDeValidezNacional3.value=normaDeValidezNacional
         cargaHorariaHSReloj3.value=cargaHorariaHSReloj
         institucionesDondeSeDictaLaOferta3.value=institucionesDondeSeDictaLaOferta
@@ -186,6 +190,7 @@ function borrarFormulariosSH(){
     "ambitoDeLaEducacion3",
     "disciplinaSociohumanistica3",
     "area3",
+    "denominacionDeLaTitulacionOCertificacion3",
     "marcoDeReferencia3",
     "normaAprobatoriaDelPlanDeEstudioDisenoCurricular3",
     "normaDeValidezNacional3",

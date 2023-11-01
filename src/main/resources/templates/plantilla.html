@@ -1,33 +1,23 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <section th:fragment="header&footer">
+       <link rel="stylesheet" th:href="@{/css/plantilla.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
     <script th:src="@{/js/header.js}"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-       <style>
-           .proximamenteContainer{
-               width: 100%;
-               height:30vw;
-               display: flex;
-           }
 
-           .proximamente{
-               margin: auto;
-               text-align: center;
-           }
-       </style>
- 
-
-    <link rel="icon" th:href="@{/img/logohead.webp}">
+ <link rel="icon" th:href="@{/img/logohead.webp}" th:width="48"  />
     <title>Resoluciones BA</title>
    </section>
-    
+
+    <script th:src="@{/js/plantilla.js}"></script>
   
 </head>
 <body>
@@ -39,8 +29,8 @@
             <div class="userName" th:if="${usuario}">
                 <span th:text="${usuario.nombre.toUpperCase()}" class="user-name">JORGE</span>
                 <div th:if="${usuario.imagen}">
-                    <!-- <img th:src="'https://inscripcionesagencia.com.ar/resoluciones-v2'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" /> -->
-                    <img th:src="'http://localhost:8080'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" />
+                    <img th:src="'https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" />
+                    <!-- <img th:src="'http://localhost:8080'+${usuario.imagen}" alt="Imagen de Usuario" class="user-avatar" /> -->
 
                     
                 </div>
@@ -86,159 +76,54 @@ for (const iterator of botonesMenu) {
       <script th:src="@{/js/header.js}"></script>
     </header>
 
-    <div class="proximamenteContainer">
-        <h1 class="proximamente">Proximamente...</h1>
+   <div class="title-container">
+       <h3>Catálogo de Títulos y Certificados</h3>
+       <p>Catálogo de Titulos y Certificados para la Educación Técnico Profesional,
+           <br>
+           y de ofertas educativas Socio Humanistica de nivel superior no universitario</p>
+   </div>
+
+    <div class="busquedaDeTitulos">
+        <h3>Busqueda de titulos:</h3>
+        <br>
+        <span><p>Seleccione criterios de búsqueda.</p></span>
+        <div class="resolution-filters">
+            <select name="tipoDeOferta" id="tipoOfertaOut">
+                <option value="" selected>Catálogo</option>
+                <option value="EDUCACIÓN TECNICA PROFESIONAL">Educacion Tecnica Profesional</option>
+                <option value="SOCIO HUMANISTICA">Socio Humanistica</option>
+                <option value="ARTISTICA ESPECIFICA">Artistica Especifica</option>
+                <option value="CAPACITACIÓN LABORAL">Capacitacion Laboral</option>
+            </select>
+
+            <select name="tipoDeGestion" id="tipoGetionOut">
+                <option value="" selected>Tipo de gestión</option>
+                <option value="GESTIÓN ESTATAL (SSAALV)">Estatal(SSAALV)</option>
+                <option value="GESTIÓN PRIVADA (DGEGP)">Privada(DGEGP)</option>
+            </select>
+
+            <select name="tipoDeTitulo" id="tipoTituloOut">
+                <option value="" selected>Tipo de titulo</option>
+                <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
+                <option value="FORMACION PROFESIONAL INICIAL">Formación Profesional Inicial</option>
+                <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
+            </select>
+
+            <input type="text" id="titleNameSearch" placeholder="Nombre de Oferta Educativa">
+
+
+        </div>
+    </div>
+
+    <div class="contenedorBuscar">
+        <button type="button" onclick="retrieveGuests()">Buscar</button>
     </div>
 
 
-    <div class="table-container" hidden>
-        <table>
-            <thead>
-                <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}">
-                    <th>ACCIONES</th>
-                    <th>ID</th>
-                    <th>TIPO DE OFERTA</th>
-                    <th>TIPO DE GESTIÓN</th>
-                    <th>TIPO DE TÍTULOS</th>
-                    <th>ÁMBITO DE LA ETP</th>
-                    <th>NÓMINA DE FAMILIAS PROFESIONALES</th>
-                    <th>TITULACIÓN O TIPO DE CERTIFICACIÓN</th>
-                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
-                    <th>MARCO DE REFERENCIA</th>
-                    <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
-                    <th>NORMA DE VALIDEZ NACIONAL</th>
-                    <th>CARGA HORARIA (HS RELOJ)</th>
-                    <th>PLAZO DE VIGENCIA</th>
-                    <th>PLAZO DE VALIDEZ NACIONAL</th>
-                    <th>ARCHIVO</th>
-                </tr>
-                <tr th:if="${tipo == 'SOCIO HUMANISTICA'}">
-                    <th>ACCIONES</th>
-                    <th>ID</th>
-                    <th>TIPO DE OFERTA</th>
-                    <th>TIPO DE GESTIÓN</th>
-                    <th>TIPO DE TÍTULOS</th>
-                    <th>ÁMBITO DE LA EDUCACIÓN</th>
-                    <th>DISCIPLINA SOCIO HUMANÍSTICA</th>
-                    <th>ÁREA</th>
-                    <th>MARCO DE REFERENCIA</th>
-                    <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
-                    <th>NORMA DE VALIDEZ NACIONAL</th>
-                    <th>CARGA HORARIA (HS RELOJ)</th>
-                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
-                    <th>PLAZO DE VIGENCIA</th>
-                    <th>PLAZO DE VALIDEZ NACIONAL</th>
-                    <th>ARCHIVO</th>
-                </tr>
-                <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}">
-                    <th>ACCIONES</th>
-                    <th>ID</th>
-                    <th>TIPO DE OFERTA</th>
-                    <th>TIPO DE GESTIÓN</th>
-                    <th>TIPO DE TÍTULOS</th>
-                    <th>ÁMBITO DE LA EDUCACIÓN</th>
-                    <th>LENGUAJE DISCIPLINA</th>
-                    <th>ÁREA</th>
-                    <th>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</th>
-                    <th>MARCO DE REFERENCIA</th>
-                    <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th>
-                    <th>NORMA DE VALIDEZ NACIONAL</th>
-                    <th>CARGA HORARIA (HS RELOJ)</th>
-                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
-                    <th>PLAZO DE VIGENCIA</th>
-                    <th>PLAZO DE VALIDEZ NACIONAL</th>
-                    <th>ARCHIVO</th>
-                </tr>
-                <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}">
-                    <th>ACCIONES</th>
-                    <th>ID</th>
-                    <th>TIPO DE OFERTA</th>
-                    <th>TIPO DE GESTIÓN</th>
-                    <th>TIPO DE TÍTULOS</th>
-                    <th>NÓMINA DE FAMILIAS PROFESIONALES</th>
-                    <th>DENOMINACIÓN DE LA CERTIFICACIÓN</th>
-                    <th>RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</th>
-                    <th>CARGA HORARIA (HS RELOJ)</th>
-                    <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
-                    <th>PLAZO DE VIGENCIA</th>
-                    <th>ARCHIVO</th>
-                </tr>
-                
+    <div class="table-container" >
+        <section id="tablaResoluciones">
 
-            </thead>
-            <tbody>
-                <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}">
-                    <td>ACCIONES</td>
-                    <td>ID</td>
-                    <td>TIPO DE OFERTA</td>
-                    <td>TIPO DE GESTIÓN</td>
-                    <td>TIPO DE TÍTULOS</td>
-                    <td>ÁMBITO DE LA ETP</td>
-                    <td>NÓMINA DE FAMILIAS PROFESIONALES</td>
-                    <td>TITULACIÓN O TIPO DE CERTIFICACIÓN</td>
-                    <td>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</td>
-                    <td>MARCO DE REFERENCIA</td>
-                    <td>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
-                    <td>NORMA DE VALIDEZ NACIONAL</td>
-                    <td>CARGA HORARIA (HS RELOJ)</td>
-                    <td>PLAZO DE VIGENCIA</td>
-                    <td>PLAZO DE VALIDEZ NACIONAL</td>
-                    <td>ARCHIVO</td>
-                </tr>
-                <tr th:if="${tipo == 'SOCIO HUMANISTICA'}">
-                    <td>ACCIONES</td>
-                    <td>ID</td>
-                    <td>TIPO DE OFERTA</td>
-                    <td>TIPO DE GESTIÓN</td>
-                    <td>TIPO DE TÍTULOS</td>
-                    <td>ÁMBITO DE LA EDUCACIÓN</td>
-                    <td>DISCIPLINA SOCIO HUMANÍSTICA</td>
-                    <td>ÁREA</td>
-                    <td>MARCO DE REFERENCIA</td>
-                    <td>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
-                    <td>NORMA DE VALIDEZ NACIONAL</td>
-                    <td>CARGA HORARIA (HS RELOJ)</td>
-                    <td>INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
-                    <td>PLAZO DE VIGENCIA</td>
-                    <td>PLAZO DE VALIDEZ NACIONAL</td>
-                    <td>ARCHIVO</td>
-                </tr>
-                <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}">
-                    <td>ACCIONES</td>
-                    <td>ID</td>
-                    <td>TIPO DE OFERTA</td>
-                    <td>TIPO DE GESTIÓN</td>
-                    <td>TIPO DE TÍTULOS</td>
-                    <td>ÁMBITO DE LA EDUCACIÓN</td>
-                    <td>LENGUAJE DISCIPLINA</td>
-                    <td>ÁREA</td>
-                    <td>DENOMINACIÓN DE LA TITULACIÓN O CERTIFICACIÓN</td>
-                    <td>MARCO DE REFERENCIA</td>
-                    <td>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</td>
-                    <td>NORMA DE VALIDEZ NACIONAL</td>
-                    <td>CARGA HORARIA (HS RELOJ)</td>
-                    <td>INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
-                    <td>PLAZO DE VIGENCIA</td>
-                    <td>PLAZO DE VALIDEZ NACIONAL</td>
-                    <td>ARCHIVO</td>
-                </tr>
-                <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}">
-                    <td>ACCIONES</td>
-                    <td>ID</td>
-                    <td>TIPO DE OFERTA</td>
-                    <td>TIPO DE GESTIÓN</td>
-                    <td>TIPO DE TÍTULOS</td>
-                    <td>NÓMINA DE FAMILIAS PROFESIONALES</td>
-                    <td>DENOMINACIÓN DE LA CERTIFICACIÓN</td>
-                    <td>RESOLUCIÓN APROBATORIA DE LA CAPACITACIÓN LABORAL</td>
-                    <td>CARGA HORARIA (HS RELOJ)</td>
-                    <td>INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
-                    <td>PLAZO DE VIGENCIA</td>
-                    <td>ARCHIVO</td>
-                </tr>
-                
-            </tbody>
-        </table>
+        </section>
     </div>
 
     
@@ -282,7 +167,7 @@ for (const iterator of botonesMenu) {
                    style="color: white; width: 25px;height: 25px;"></i>
             </a>
             <a href="https://twitter.com/gcba" target="blank">
-                <i class="iconify" data-icon="ant-design:twitter-outlined"
+                <i class="iconify" data-icon="line-md:twitter-x-alt"
                    style="color: white;width: 25px;height: 25px;"></i>
             </a>
             <a href="https://www.instagram.com/buenosaires/" target="blank">
@@ -365,7 +250,7 @@ for (const iterator of botonesMenu) {
                                style="color: white; width: 25px;height: 25px;"></i>
                         </a>
                         <a href="https://twitter.com/gcba" target="blank">
-                            <i class="iconify" data-icon="ant-design:twitter-outlined"
+                            <i class="iconify" data-icon="line-md:twitter-x-alt"
                                style="color: white;width: 25px;height: 25px;"></i>
                         </a>
                         <a href="https://www.instagram.com/buenosaires/" target="blank">
@@ -407,56 +292,7 @@ for (const iterator of botonesMenu) {
     </div>
   </footer>
   <style>
-    :root {
-        --violeta: #b49fff;
-        --violetaFuerte: #a374ff;
-        --amarilloMas: #f8d246;
-        --amarillo: #ffd84a;
-        --azul: #7fb8ff;
-        --azulFuerte: #3280e4;
-        --verde: #bfff9f;
-        --verdeFuerte: #86E57F;
-        --gris: #f3f0ed;
-        --grisFuerte: #D0CECD;
-        --negro: black;
-    }
 
-   
-
-    .table-container {
-        overflow-x: auto;
-        margin: 20px;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        border: 1px solid var(--grisFuerte);
-        background-color: white;
-    }
-
-    th,
-    td {
-        text-align: left;
-        padding: 8px;
-    }
-
-    th {
-        background-color: var(--violeta);
-        color: var(--negro);
-    }
-
-    tr:nth-child(even) {
-        background-color: var(--gris);
-    }
-
-    @media screen and (max-width: 768px) {
-
-        th,
-        td {
-            font-size: 14px;
-        }
-    }
 </style>
 
 

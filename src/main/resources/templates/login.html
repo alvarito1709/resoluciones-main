@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,12 @@
     <section class="secLogin">
         <div class="login">
             <form th:action="@{/login}" method="post" class="login-form">
-                <label for="username">USUARIO</label>
+                <label for="username" class="formLabel">USUARIO</label>
                 <div class="input-container">
                     <input type="email" name="username" id="username" required>
                     <span class="iconify icono" data-icon="carbon:user-filled"></span>
                 </div>
-                <label for="password">CONTRASEÑA</label>
+                <label for="password" class="formLabel">CONTRASEÑA</label>
                 <div class="input-container">
                     <input type="password" name="password" id="password" required>
                     <span class="iconify icono" data-icon="vaadin:key"></span>
@@ -56,14 +57,18 @@
         height: 80vh;
     }
 
+    .formLabel{
+        font-size: .8rem;
+    }
+
     .secLogin> div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 90%;
-        max-width: 400px;
+        width: 75%;
+        max-width: 300px;
         padding: 20px;
         border-radius: 40px;
         background-color: var(--gris);

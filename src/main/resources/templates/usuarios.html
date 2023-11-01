@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,8 +118,8 @@
                                     </a>
                             </td>
                             <td th:text="${usuario.id}" hidden>ID</td>
-                            <!-- <td><img th:src="'https://inscripcionesagencia.com.ar/resoluciones-v2'+${usuario.imagen}" class="user-avatar" alt="imagen de usuario"></td> -->
-                            <td><img th:src="'http://localhost:8080'+${usuario.imagen}" class="user-avatar" alt="imagen de usuario"></td>
+                            <td><img th:src="'https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones'+${usuario.imagen}" class="user-avatar" alt="imagen de usuario"></td>
+                            <!-- <td><img th:src="'http://localhost:8080'+${usuario.imagen}" class="user-avatar" alt="imagen de usuario"></td> -->
                             <td th:text="${usuario.nombre}">NOMBRE</td>
                             <td th:text="${usuario.apellido}">APELLIDO</td>
                             <td th:text="${usuario.documento}">DOCUMENTO</td>
