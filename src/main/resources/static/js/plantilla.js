@@ -1,5 +1,5 @@
-var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-//var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+var urlBase = "http://localhost:8080";
 
 function retrieveGuests() {
     var url = urlBase+'/filtro-resoluciones';
@@ -29,3 +29,35 @@ function retrieveGuests() {
         }
     });
 }
+
+
+
+var tipoOfertaOut = document.getElementById("tipoOfertaOut")
+
+tipoOfertaOut.addEventListener("change",
+    function (){
+    var tipoDeOferta = document.getElementById("tipoOfertaOut").value
+
+    if(tipoDeOferta == "EDUCACIÓN TECNICA PROFESIONAL"){
+        console.log("esto esta ejecutando")
+        document.querySelector(".ETP").style.display ="block";
+        document.querySelector(".ArSh").style.display ="none";
+        document.querySelector(".CP").style.display ="none";
+
+    }
+        if(tipoDeOferta == "SOCIO HUMANISTICA" || tipoDeOferta == "ARTISTICA ESPECIFICA"){
+            console.log("esto esta ejecutando")
+            document.querySelector(".ETP").style.display ="none";
+            document.querySelector(".ArSh").style.display ="block";
+            document.querySelector(".CP").style.display ="none";
+
+        }
+
+        if(tipoDeOferta == "CAPACITACIÓN LABORAL"){
+            console.log("esto esta ejecutando")
+            document.querySelector(".ETP").style.display ="none";
+            document.querySelector(".ArSh").style.display ="none";
+            document.querySelector(".CP").style.display ="block";
+
+        }
+})

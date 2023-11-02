@@ -17,7 +17,7 @@
     <title>Resoluciones BA</title>
    </section>
 
-    <script th:src="@{/js/plantilla.js}"></script>
+
   
 </head>
 <body>
@@ -88,12 +88,15 @@ for (const iterator of botonesMenu) {
         <br>
         <span><p>Seleccione criterios de búsqueda.</p></span>
         <div class="resolution-filters">
+
             <select name="tipoDeOferta" id="tipoOfertaOut">
+
                 <option value="" selected>Catálogo</option>
                 <option value="EDUCACIÓN TECNICA PROFESIONAL">Educacion Tecnica Profesional</option>
-                <option value="SOCIO HUMANISTICA">Socio Humanistica</option>
-                <option value="ARTISTICA ESPECIFICA">Artistica Especifica</option>
+                <option value="SOCIO HUMANISTICA" >Socio Humanistica</option>
+                <option value="ARTISTICA ESPECIFICA" >Artistica Especifica</option>
                 <option value="CAPACITACIÓN LABORAL">Capacitacion Laboral</option>
+
             </select>
 
             <select name="tipoDeGestion" id="tipoGetionOut">
@@ -102,12 +105,28 @@ for (const iterator of botonesMenu) {
                 <option value="GESTIÓN PRIVADA (DGEGP)">Privada(DGEGP)</option>
             </select>
 
-            <select name="tipoDeTitulo" id="tipoTituloOut">
-                <option value="" selected>Tipo de titulo</option>
-                <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
-                <option value="FORMACION PROFESIONAL INICIAL">Formación Profesional Inicial</option>
-                <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
+            <select name="tipoDeTitulo" id="tipoTituloOut" class="ETP" style="display: none">
+
+
+                    <option value="" selected>Tipo de titulo</option>
+                    <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
+                    <option value="FORMACION PROFESIONAL INICIAL">Formación Profesional Inicial</option>
+                    <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
             </select>
+
+                <select name="tipoDeTitulo" id="tipoTituloOut" class="ArSh" style="display: none">
+                    <option value="" selected>Tipo de titulo</option>
+                    <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
+                    <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
+                </select>
+
+                <select name="tipoDeTitulo" id="tipoTituloOut" class="CP"  style="display: block">
+                    <option value="" selected>-</option>
+                </select>
+            </select>
+
+
+
 
             <input type="text" id="titleNameSearch" placeholder="Nombre de Oferta Educativa">
 
@@ -295,6 +314,6 @@ for (const iterator of botonesMenu) {
 
 </style>
 
-
+    <script th:src="@{/js/plantilla.js}"></script>
 </body>
 </html>
