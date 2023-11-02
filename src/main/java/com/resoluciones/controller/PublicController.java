@@ -64,6 +64,11 @@ public class PublicController {
 
             @RequestParam(value = "id", required = false) String id
             ) {
+        System.out.println(tipoDeOferta);
+        System.out.println(tipoDeGestion);
+        System.out.println(tipoDeTitulos);
+
+
         ResolucionSpecifications resolucionSpecifications=new ResolucionSpecifications( tipoDeGestion,  tipoDeOferta,  tipoDeTitulos,  tipoDeNomina,  area,  nombreDeTitulo,  id);
         List<Resolucion> resoluciones = resolucionService.buscarResolucionesConFiltros(resolucionSpecifications);
         model.addAttribute("resoluciones", resoluciones);

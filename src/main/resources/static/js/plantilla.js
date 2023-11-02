@@ -6,7 +6,23 @@ function retrieveGuests() {
 
     var tipoDeOferta = document.getElementById("tipoOfertaOut").value
     var tipoDeGestion = document.getElementById("tipoGetionOut").value
-    var tipoDeTitulos = document.getElementById("tipoTituloOut").value
+    let tipoDeTitulos ="";
+    // switch(tipoDeOferta){
+    //     case "EDUCACIÓN TECNICA PROFESIONAL":
+    //          tipoDeTitulos = document.getElementById("tipoTituloOutETP").value
+    //         break;
+    //     case "SOCIO HUMANISTICA":
+    //          tipoDeTitulos = document.getElementById("tipoTituloOutArSh").value
+    //         break;
+    //     case "ARTISTICA ESPECIFICA":
+    //          tipoDeTitulos = document.getElementById("tipoTituloOutArSh").value
+    //         break;
+    //     case "CAPACITACIÓN LABORAL":
+    //         tipoDeTitulos = document.getElementById("tipoTituloOutCp").value
+    //         break;
+
+    // }
+   
     var vistaUsuario = true
 
 
@@ -16,6 +32,7 @@ function retrieveGuests() {
         url: url,
         data: {
             tipoDeOferta: tipoDeOferta,
+            
             tipoDeGestion: tipoDeGestion,
             tipoDeTitulos: tipoDeTitulos,
             vistaUsuario: vistaUsuario,
