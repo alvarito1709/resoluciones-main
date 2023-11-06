@@ -5,23 +5,42 @@ function retrieveGuests() {
     var url = urlBase+'/filtro-resoluciones';
 
     var tipoDeOferta = document.getElementById("tipoOfertaOut").value
-    var tipoDeGestion = document.getElementById("tipoGetionOut").value
-    let tipoDeTitulos ="";
-    // switch(tipoDeOferta){
-    //     case "EDUCACIÓN TECNICA PROFESIONAL":
-    //          tipoDeTitulos = document.getElementById("tipoTituloOutETP").value
-    //         break;
-    //     case "SOCIO HUMANISTICA":
-    //          tipoDeTitulos = document.getElementById("tipoTituloOutArSh").value
-    //         break;
-    //     case "ARTISTICA ESPECIFICA":
-    //          tipoDeTitulos = document.getElementById("tipoTituloOutArSh").value
-    //         break;
-    //     case "CAPACITACIÓN LABORAL":
-    //         tipoDeTitulos = document.getElementById("tipoTituloOutCp").value
-    //         break;
+    let tipoDeGestion
+    let tipoDeTitulos
 
-    // }
+    switch (tipoDeOferta){
+        case "EDUCACIÓN TECNICA PROFESIONAL":
+            tipoDeGestion = document.getElementById("tipoGetionOutETP").value
+            break;
+
+        case "SOCIO HUMANISTICA":
+            tipoDeGestion = document.getElementById("tipoGetionOutSH").value
+            break;
+
+        case "ARTISTICA ESPECIFICA":
+            tipoDeGestion = document.getElementById("tipoGetionOutAR").value
+            break;
+
+        case "CAPACITACIÓN LABORAL":
+            tipoDeGestion = document.getElementById("tipoGetionOutCP").value
+            break;
+    }
+
+     switch(tipoDeOferta){
+         case "EDUCACIÓN TECNICA PROFESIONAL":
+             tipoDeTitulos = document.getElementById("tipoTituloOutETP").value
+             break;
+         case "SOCIO HUMANISTICA":
+              tipoDeTitulos = document.getElementById("tipoTituloOutArSh").value
+             break;
+         case "ARTISTICA ESPECIFICA":
+              tipoDeTitulos = document.getElementById("tipoTituloOutArSh").value
+             break;
+         case "CAPACITACIÓN LABORAL":
+             tipoDeTitulos = document.getElementById("tipoTituloOutCp").value
+             break;
+
+     }
    
     var vistaUsuario = true
 
@@ -78,3 +97,43 @@ tipoOfertaOut.addEventListener("change",
 
         }
 })
+
+tipoOfertaOut.addEventListener("change",
+    function (){
+        var tipoDeOferta = document.getElementById("tipoOfertaOut").value
+
+        if(tipoDeOferta == "EDUCACIÓN TECNICA PROFESIONAL"){
+            console.log("esto esta ejecutando")
+            document.getElementById("tipoGetionOutETP").style.display ="block";
+            document.getElementById("tipoGetionOutSH").style.display ="none";
+            document.getElementById("tipoGetionOutAR").style.display ="none";
+            document.getElementById("tipoGetionOutCP").style.display ="none";
+
+        }
+        if(tipoDeOferta == "SOCIO HUMANISTICA"){
+            console.log("esto esta ejecutando")
+            document.getElementById("tipoGetionOutETP").style.display ="none";
+            document.getElementById("tipoGetionOutSH").style.display ="block";
+            document.getElementById("tipoGetionOutAR").style.display ="none";
+            document.getElementById("tipoGetionOutCP").style.display ="none";
+
+        }
+
+        if( tipoDeOferta == "ARTISTICA ESPECIFICA"){
+            console.log("esto esta ejecutando")
+            document.getElementById("tipoGetionOutETP").style.display ="none";
+            document.getElementById("tipoGetionOutSH").style.display ="none";
+            document.getElementById("tipoGetionOutAR").style.display ="block";
+            document.getElementById("tipoGetionOutCP").style.display ="none";
+
+        }
+
+        if(tipoDeOferta == "CAPACITACIÓN LABORAL"){
+            console.log("esto esta ejecutando")
+            document.getElementById("tipoGetionOutETP").style.display ="none";
+            document.getElementById("tipoGetionOutSH").style.display ="none";
+            document.getElementById("tipoGetionOutAR").style.display ="none";
+            document.getElementById("tipoGetionOutCP").style.display ="block";
+
+        }
+    })

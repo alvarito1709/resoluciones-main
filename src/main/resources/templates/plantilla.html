@@ -105,31 +105,54 @@
 
             </select>
 
-            <select name="tipoDeGestion" id="tipoGetionOut">
+            <!-- SELECCIONA EL TIPO DE GESTIÓN -->
+            <select name="tipoDeGestion" id="tipoGetionOutETP" style="display: none">
                 <option value="" selected>Tipo de gestión</option>
-                <option value="GESTIÓN ESTATAL (SSAALV)">Estatal(SSAALV)</option>
-                <option value="GESTIÓN PRIVADA (DGEGP)">Privada(DGEGP)</option>
+                <option value="GESTIÓN ESTATAL (SSAALV)">Estatal (SSAALV)</option>
+                <option value="GESTIÓN PRIVADA (DGEGP)">Privada (DGEGP)</option>
             </select>
 
-            <select name="tipoDeTitulo" id="tipoTituloOutETP" class="ETP" style="display: none">
-
-
-                <option value="" selected>Tipo de titulo</option>
-                <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
-                <option value="FORMACION PROFESIONAL INICIAL">Formación Profesional Inicial</option>
-                <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
+            <select name="tipoDeGestion" id="tipoGetionOutSH" style="display: none">
+                <option value="" selected>Tipo de gestión</option>
+                <option value="GESTIÓN ESTATAL (SSAALV/SSCPEE)">Estatal (SSAALV/SSCPEE)</option>
+                <option value="GESTIÓN PRIVADA (DGEGP)">Privada (DGEGP)</option>
             </select>
 
-            <select name="tipoDeTitulo" id="tipoTituloOutArSh" class="ArSh" style="display: none">
-                <option value="" selected>Tipo de titulo</option>
-                <option value="TECNICATURA SUPERIOR">Tecnicatura Superior</option>
-                <option value="FORMACION PROFESIONAL CONTINUA">Formación Profesional Continua</option>
+            <select name="tipoDeGestion" id="tipoGetionOutAR" style="display: none">
+                <option value="" selected>Tipo de gestión</option>
+                <option value="GESTIÓN ESTATAL (DGEART/SSCPEE)">Estatal (DGEART/SSCPEE)</option>
+                <option value="GESTIÓN PRIVADA (DGEGP)">Privada (DGEGP)</option>
             </select>
 
-            <select name="tipoDeTitulo" id="tipoTituloOutCp" class="CP" style="display: block">
+            <select name="tipoDeGestion" id="tipoGetionOutCP">
                 <option value="" selected>-</option>
             </select>
+
+            <!-- selecciona el tipo de titulo -->
+            <select name="tipoDeTitulo" id="tipoTituloOutETP" class="ETP" style="display: none">
+
+                    <!-- tipo de titulos para EDUCACION TECNICA PROFESIONAL -->
+                <option value="" selected class="ETP">Tipo de titulo</option>
+                <option value="TECNICATURA SUPERIOR" class="ETP">Tecnicatura Superior</option>
+                <option value="FORMACION PROFESIONAL INICIAL" class="ETP">Formación Profesional Inicial</option>
+                <option value="FORMACION PROFESIONAL CONTINUA" class="ETP">Formación Profesional Continua</option>
+                </select>
+
+                <!-- TIPO DE TITULOS PARA ARTISTICA Y SOCIO HUMANISTICA -->
+
+                <select class="ArSh" id="tipoTituloOutArSh" style="display: none">
+                <option value="" selected class="ArSh">Tipo de titulo</option>
+                <option value="TECNICATURA SUPERIOR" class="ArSh">Tecnicatura Superior</option>
+                <option value="FORMACION PROFESIONAL CONTINUA" class="ArSh">Formación Profesional Continua</option>
+                </select>
+                <!-- TIPO DE TITULOS PARA CAPACITACION LABORAL -->
+
+                <select class="CP" id="tipoTituloOutCp">
+                <option value="" selected class="CP">-</option>
+                </select>
             </select>
+
+
 
 
 
