@@ -24,4 +24,11 @@ public interface ResolucionRepository extends JpaRepository<Resolucion, String>,
             "WHERE " +
             "    r.tipoDeOferta = :tipoOfertaParam")
     Double calculatePercentageByTipoOferta(@Param("tipoOfertaParam") String tipoOferta);
+
+
+    @Query(value = "SELECT r " +
+            "FROM Resolucion r " +
+            "WHERE r.denominacionDeLaTitulacionOCertificacion " +
+            "like  %:denominacion%")
+    List<Resolucion> findByDenominacion(String denominacion);
 }

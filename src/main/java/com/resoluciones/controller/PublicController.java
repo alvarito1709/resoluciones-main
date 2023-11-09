@@ -77,4 +77,17 @@ public class PublicController {
         return new ModelAndView("tablas :: tablaPedidos");
     }
 
+    @PostMapping ("/buscarResolucion/denominacion")
+    public ModelAndView resolucionesPorDenominacion( Model model,
+                                                     @RequestParam (value = "denominacion") String denominacion
+    ){
+
+        var vistaUsuario = true;
+
+        List<Resolucion> resoluciones = resolucionService.buscarPorDenominacion(denominacion);
+        model.addAttribute("resoluciones", resoluciones);
+        model.addAttribute("usuario", vistaUsuario);
+        return new ModelAndView("tablas :: tablaPedidos");
+    }
+
 }

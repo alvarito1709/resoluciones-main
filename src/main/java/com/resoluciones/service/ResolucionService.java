@@ -188,4 +188,8 @@ public class ResolucionService {
     public Resolucion buscarPorResolucionAprobatoria(String resolucionAprobatoriaDeCapacitacionLaboral) {
         return resolucionRepository.findByResolucionAprobatoria(resolucionAprobatoriaDeCapacitacionLaboral);
     }
+
+    public List<Resolucion> buscarPorDenominacion(String denominacion){
+        return resolucionRepository.findByDenominacion(denominacion) ;
+    }
 }

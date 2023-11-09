@@ -67,9 +67,33 @@ function retrieveGuests() {
 }
 
 
+function buscarPorDenominacion() {
+    var url = urlBase+'/buscarResolucion/denominacion';
+
+    var denominacion = document.getElementById("titleNameSearch").value;
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            denominacion: denominacion
+        },
+        success: function (response) {
+            // Aquí puedes manejar la respuesta del servidor, si es necesario
+            $("#tablaResoluciones").html(response); // Actualizar el contenido de la tabla
+        },
+        error: function (xhr, status, error) {
+            // Manejar errores aquí
+        }
+    });
+}
+
+
 
 var tipoOfertaOut = document.getElementById("tipoOfertaOut")
 
+
+//OCULTA LOS SELECT DE TIPO DE OFERTA
 tipoOfertaOut.addEventListener("change",
     function (){
     var tipoDeOferta = document.getElementById("tipoOfertaOut").value
@@ -98,6 +122,8 @@ tipoOfertaOut.addEventListener("change",
         }
 })
 
+
+//OCULTA LOS SELECT DE TIPO DE GESTION
 tipoOfertaOut.addEventListener("change",
     function (){
         var tipoDeOferta = document.getElementById("tipoOfertaOut").value

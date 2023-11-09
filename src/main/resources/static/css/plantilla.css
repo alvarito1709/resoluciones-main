@@ -98,15 +98,18 @@ tr:nth-child(even) {
     margin-bottom: 5px;
 }
 
-.resolution-filters select{
 
-}
 
 .resolution-filters option{
     background-color: var(--azul);
    font-weight: bold;
     margin-top: 10px;
 
+}
+
+.resolution-filters span{
+    align-self: center;
+    cursor: pointer;
 }
 
 .title-container h3{
