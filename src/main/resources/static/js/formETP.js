@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function enviarDatosPOSTETP() {
   var id4 = document.getElementById('id4').value;
 var usuarioDeCreacion4 = document.getElementById('usuarioDeCreacion4').value;
@@ -16,6 +16,8 @@ var denominacionDeLaTitulacionOCertificacion4 = document.getElementById('denomin
 var marcoDeReferencia4 = document.getElementById('marcoDeReferencia4').value;
 //var normaAprobatoriaDelPlanDeEstudioDisenoCurricular4 = document.getElementById('normaAprobatoriaDelPlanDeEstudioDisenoCurricular4').value;
 var normaDeValidezNacional4 = document.getElementById('normaDeValidezNacional4').value;
+var validezDesde4 = document.getElementById('validezDesde4').value;
+var validezHasta4 = document.getElementById('validezHasta4').value;
 var cargaHorariaHSReloj4 = document.getElementById('cargaHorariaHSReloj4').value;
 var institucionesDondeSeDictaLaOferta4 =document.getElementById('institucionesDondeSeDictaLaOferta4').value;
 var plazoDeVigencia4 = document.getElementById('plazoDeVigencia4').value;
@@ -37,6 +39,8 @@ denominacionDeLaTitulacionOCertificacion:denominacionDeLaTitulacionOCertificacio
 marcoDeReferencia:marcoDeReferencia4,
 //normaAprobatoriaDelPlanDeEstudioDisenoCurricular:normaAprobatoriaDelPlanDeEstudioDisenoCurricular4,
 normaDeValidezNacional:normaDeValidezNacional4,
+   validezDesde: validezDesde4,
+   validezHasta: validezHasta4,
 cargaHorariaHSReloj:cargaHorariaHSReloj4,
    institucionesDondeSeDictaLaOferta:institucionesDondeSeDictaLaOferta4,
 plazoDeVigencia:plazoDeVigencia4,
@@ -102,6 +106,8 @@ function modificarResolucionETP(id) {
         const marcoDeReferencia = data.marcoDeReferencia;
         const normaAprobatoriaDelPlanDeEstudioDisenoCurricular = data.normaAprobatoriaDelPlanDeEstudioDisenoCurricular;
         const normaDeValidezNacional = data.normaDeValidezNacional;
+        const validezDesde = data.validezDesde;
+        const validezHasta = data.validezHasta;
         const cargaHorariaHSReloj = data.cargaHorariaHSReloj;
         const plazoDeVigencia = data.plazoDeVigencia;
         const plazoDeValidezNacional = data.plazoDeValidezNacional;
@@ -123,6 +129,8 @@ function modificarResolucionETP(id) {
         var marcoDeReferencia4 = document.getElementById('marcoDeReferencia4');
         var normaAprobatoriaDelPlanDeEstudioDisenoCurricular4 = document.getElementById('normaAprobatoriaDelPlanDeEstudioDisenoCurricular4');
         var normaDeValidezNacional4 = document.getElementById('normaDeValidezNacional4');
+        var validezDesde4 = document.getElementById('validezDesde4');
+        var validezHasta4 = document.getElementById('validezHasta4');
         var cargaHorariaHSReloj4 = document.getElementById('cargaHorariaHSReloj4');
         var institucionesDondeSeDictaLaOferta4 = document.getElementById('institucionesDondeSeDictaLaOferta4');
         var plazoDeVigencia4 = document.getElementById('plazoDeVigencia4');
@@ -147,6 +155,8 @@ function modificarResolucionETP(id) {
         marcoDeReferencia4.value=marcoDeReferencia
        // normaAprobatoriaDelPlanDeEstudioDisenoCurricular4.value=normaAprobatoriaDelPlanDeEstudioDisenoCurricular
         normaDeValidezNacional4.value=normaDeValidezNacional
+        validezDesde4.value= validezDesde
+        validezHasta4.value = validezHasta
         cargaHorariaHSReloj4.value=cargaHorariaHSReloj
         institucionesDondeSeDictaLaOferta4.value=institucionesDondeSeDictaLaOferta
         plazoDeVigencia4.value=plazoDeVigencia
@@ -183,7 +193,7 @@ function borrarFormulariosETP(){
     'tipoDeTitulosF4', 'ambitoDeLaETP4', 'nominaDeFamiliasProfesionales4',
     'titulacionOTipoDeCertificacion4', 'denominacionDeLaTitulacionOCertificacion4',
     'marcoDeReferencia4', 'normaAprobatoriaDelPlanDeEstudioDisenoCurricular4',
-    'normaDeValidezNacional4', 'cargaHorariaHSReloj4', 'plazoDeVigencia4',
+    'normaDeValidezNacional4', 'validezDesde4', 'validezHasta4', 'cargaHorariaHSReloj4', 'plazoDeVigencia4',
     'plazoDeValidezNacional4', 'url4',"resolucionAprobatoria4",
     "numeroDeAnexo4",
   ];

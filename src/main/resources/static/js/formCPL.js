@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function enviarDatosPOSTCPL() {
   var url2 = document.getElementById("url2");
   var id2 = document.getElementById("id2");
@@ -15,6 +15,9 @@ function enviarDatosPOSTCPL() {
   var cenofDondeSeDictaLaOferta = document.getElementById("cenofDondeSeDictaLaOferta");
   var otrasInstitucionesDondeSeDictaLaOferta2 = document.getElementById("otrasInstitucionesDondeSeDictaLaOferta");
   var plazoDeVigencia2 = document.getElementById("plazoDeVigencia2");
+  var fechaDeAprobacionDeCapacitacionLaboral2 = document.getElementById("fechaDeAprobacionDeCapacitacionLaboral2");
+  var fechaDeVencimientoDeCapacitacionLaboral2 = document.getElementById("fechaDeVencimientoDeCapacitacionLaboral2");
+
 
   var data = {
     id:id2.value,
@@ -30,6 +33,8 @@ function enviarDatosPOSTCPL() {
     cnofDondeSedictaLaOferta:cenofDondeSeDictaLaOferta.value,
     otrasInstitucionesDondeSeDictaLaOferta:otrasInstitucionesDondeSeDictaLaOferta2.value,
     plazoDeVigencia:plazoDeVigencia2.value,
+    fechaDeAprobacionDeCapacitacionLaboral: fechaDeAprobacionDeCapacitacionLaboral2.value,
+    fechaDeVencimientoDeCapacitacionLaboral: fechaDeVencimientoDeCapacitacionLaboral2.value,
     url:url2.value
   };
 
@@ -101,6 +106,8 @@ function modificarResolucionCPL(id) {
         const cenofDondeSeDictaLaOferta = data.cnofDondeSedictaLaOferta;
         const otrasInstitucionesDondeSeDictaLaOferta = data.otrasInstitucionesDondeSeDictaLaOferta;
         const lenguajeDisciplina = data.lenguajeDisciplina;
+        const fechaDeAprobacionDeCapacitacionLaboral= data.fechaDeAprobacionDeCapacitacionLaboral;
+        const fechaDeVencimientoDeCapacitacionLaboral = data.fechaDeVencimientoDeCapacitacionLaboral;
         // const resolucionAprobatoriaDeCapacitacionLaboral = data.resolucionAprobatoriaDeCapacitacionLaboral;
         var url2 = document.getElementById("url2");
         var id2 = document.getElementById("id2");
@@ -114,6 +121,8 @@ function modificarResolucionCPL(id) {
         var cenofDondeSeDictaLaOferta2 = document.getElementById("cenofDondeSeDictaLaOferta");
         var otrasInstitucionesDondeSeDictaLaOferta2 = document.getElementById("otrasInstitucionesDondeSeDictaLaOferta");
         var plazoDeVigencia2 = document.getElementById("plazoDeVigencia2");
+        var fechaDeAprobacionDeCapacitacionLaboral2 = document.getElementById("fechaDeAprobacionDeCapacitacionLaboral2");
+        var fechaDeVencimientoDeCapacitacionLaboral2 = document.getElementById("fechaDeVencimientoDeCapacitacionLaboral2");
 
 
 
@@ -136,6 +145,8 @@ function modificarResolucionCPL(id) {
           cenofDondeSeDictaLaOferta2.value=cenofDondeSeDictaLaOferta;
           otrasInstitucionesDondeSeDictaLaOferta2.value=otrasInstitucionesDondeSeDictaLaOferta;
           url2.value=url
+        fechaDeAprobacionDeCapacitacionLaboral2.value= fechaDeAprobacionDeCapacitacionLaboral;
+        fechaDeVencimientoDeCapacitacionLaboral2.value = fechaDeVencimientoDeCapacitacionLaboral;
 
 
       } else {
@@ -176,7 +187,9 @@ function borrarFormulariosCPL(){
     "institucionesDondeSeDictaLaOferta2",
     "cnofDondeSeDictaLaOferta",
       "otrasInstitucionesDondeSeDictaLaOferta2",
-    "plazoDeVigencia2"
+    "plazoDeVigencia2",
+      "fechaDeAprobacionDeCapacitacionLaboral2",
+      "fechaDeVencimientoDeCapacitacionLaboral2",
   ];
 
   fields2.forEach(function (field) {

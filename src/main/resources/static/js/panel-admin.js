@@ -1,5 +1,5 @@
-//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+//var urlBase = "http://localhost:8080";
 function validarDatos() {
 
     let tipoDeOferta = document.getElementById("tipoOfertaOut").value
@@ -592,3 +592,12 @@ function eliminarResolucion(id) {
   
   cancelButtonDelete.addEventListener('click', hideConfirmationPopupDelete);
   confirmButtonDelete.addEventListener('click', confirmDeletion);
+
+
+function abrirAclaracion(){
+    document.getElementById("aclaracionModal").style.display="block";
+}
+
+function cerrarModalAclaracion(){
+    document.getElementById("aclaracionModal").style.display="none";
+}

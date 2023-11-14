@@ -70,6 +70,18 @@ private String nombreDeLaOfertaEducativa;
 
 private String otrasInstitucionesDondeSeDictaLaOferta;
 
+@Temporal(TemporalType.DATE)
+private Date validezDesde;
+
+@Temporal(TemporalType.DATE)
+private Date validezHasta;
+
+@Temporal(TemporalType.DATE)
+private Date fechaDeAprobacionDeCapacitacionLaboral;
+
+@Temporal(TemporalType.DATE)
+private Date fechaDeVencimientoDeCapacitacionLaboral;
+
     public Resolucion() {
     }
 
@@ -319,6 +331,35 @@ private String otrasInstitucionesDondeSeDictaLaOferta;
 
     public void setOtrasInstitucionesDondeSeDictaLaOferta(String otrasInstitucionesDondeSeDictaLaOferta){this.otrasInstitucionesDondeSeDictaLaOferta = otrasInstitucionesDondeSeDictaLaOferta;}
 
+    public Date getValidezDesde() {
+        return validezDesde;
+    }
+    public void setValidezDesde(Date validezDesde){ this.validezDesde = validezDesde;}
+
+    public Date getValidezHasta(){
+        return validezHasta;
+    }
+
+    public void setValidezHasta(Date validezHasta) {
+        this.validezHasta = validezHasta;
+    }
+
+    public Date getFechaDeAprobacionDeCapacitacionLaboral() {
+        return fechaDeAprobacionDeCapacitacionLaboral;
+    }
+
+    public void setFechaDeAproBacionDeCapacitacionLaboral(Date fechaDeAprobacionDeCapacitacionLaboral) {
+        this.fechaDeAprobacionDeCapacitacionLaboral = fechaDeAprobacionDeCapacitacionLaboral;
+    }
+
+    public Date getFechaDeVencimientoDeCapacitacionLaboral() {
+        return fechaDeVencimientoDeCapacitacionLaboral;
+    }
+
+    public void setFechaDeVencimientoDeCapacitacionLaboral(Date fechaDeVencimientoDeCapacitacionLaboral) {
+        this.fechaDeVencimientoDeCapacitacionLaboral = fechaDeVencimientoDeCapacitacionLaboral;
+    }
+
     @Override
     public String toString() {
         return "Resolucion{" +
@@ -352,6 +393,10 @@ private String otrasInstitucionesDondeSeDictaLaOferta;
                 ", cnofDondeSeDictaLaOferta='" + cnofDondeSedictaLaOferta + '\'' +
                 ", nombreDeLaOfertaEducativa=" + nombreDeLaOfertaEducativa + '\'' +
                 ",otrasInstitucionesDondeSeDictaLaOferta=" + otrasInstitucionesDondeSeDictaLaOferta + '\''+
+                ",validezDesde=" + validezDesde + '\''+
+                ",validezHasta=" + validezHasta + '\''+
+                ",fechaDeAprobacionDeCapacitacionLaboral=" + fechaDeAprobacionDeCapacitacionLaboral + '\''+
+                ",fechaDeVencimientoDeCapacitacionLaboral=" + fechaDeVencimientoDeCapacitacionLaboral + '\''+
                 '}';
     }
 }

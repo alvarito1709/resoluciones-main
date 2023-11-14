@@ -230,6 +230,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="fechaDeAprobacionDeCapacitacionLaboral2">FECHA DE APROBACION DE CAPACITACION LABORAL</label>
+                        <input type="date" id="fechaDeAprobacionDeCapacitacionLaboral2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaDeVencimientoDeCapacitacionLaboral2">FECHA DE VENCIMIENTO DE CAPACITACION LABORAL </label>
+                        <input type="date" id="fechaDeVencimientoDeCapacitacionLaboral2">
+                    </div>
+
+                    <div class="form-group">
                         <label for="url2">URL DEL ARCHIVO</label>
                         <input type="text" id="url2" >
                     </div>
@@ -452,6 +462,14 @@
                         <input type="text" id="normaDeValidezNacional4" >
                     </div>
                     <div class="form-group">
+                        <label for="validezDesde4">VALIDEZ DESDE</label>
+                        <input type="date" id="validezDesde4" >
+                    </div>
+                    <div class="form-group">
+                        <label for="validezHasta4">VALIDEZ HASTA</label>
+                        <input type="date" id="validezHasta4" >
+                    </div>
+                    <div class="form-group">
                         <label for="plazoDeValidezNacional4">PLAZO DE VALIDEZ NACIONAL</label>
                         <input type="date" id="plazoDeValidezNacional4">
                     </div>
@@ -517,6 +535,25 @@
 
 
         <section id="tablaResoluciones"></section>
+        <div id="aclaracionModal" onclick="cerrarModalAclaracion()">
+
+            <div id="modalContainer">
+
+            <div   id="aclaracionETP">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onclick="cerrarModalAclaracion()">
+                    <path fill="currentColor" d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6l-5.6 5.6Z"/>
+                </svg>
+
+                <span>*La duración de la validez nacional de estas
+                ofertas educativas, se encuentra supeditada a las cohortes  establecidas en la
+                correspondiente resolución del ministerio de educación de nación, que concede la misma.
+                Se debe tener presente que la validez nacional perdura hasta la culminación de
+                las trayectorias educativas de todos/as los/las estudiantes inscriptos bajo la última
+                cohorte vigente</span>  </div>
+            </div>
+
+        </div>
         <section class="panelSec">
             <div class="botones-container" id="tipoOferta">
                 <span><p>SELECCIONE TIPO DE OFERTA EDUCATIVA</p></span>

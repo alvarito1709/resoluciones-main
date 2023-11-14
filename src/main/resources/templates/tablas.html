@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class="table-container" th:fragment="tablaPedidos(${resoluciones},${tipo},${usuario})" id="tablaQueCargo">
         <table  id="tablaQueCargoContenido">
             <thead>
@@ -31,6 +32,8 @@
                     <th>MARCO DE REFERENCIA</th>
                <!--     <th>NORMA APROBATORIA DEL PLAN DE ESTUDIO/DISEÑO CURRICULAR</th> -->
                     <th>NORMA DE VALIDEZ NACIONAL</th>
+                    <th onmouseover="abrirAclaracion()">*VALIDEZ DESDE</th>
+                    <th onmouseover="abrirAclaracion()">*VALIDEZ HASTA</th>
                     <th>PLAZO DE VALIDEZ NACIONAL</th>
                     <th>CARGA HORARIA (HS RELOJ)</th>
                     <th>INSTITUCIONES DONDE SE DICTA LA OFERTA</th>
@@ -93,6 +96,8 @@
                     <th>CFP DONDE SE DICTA LA CAPACITACION LABORAL</th>
                     <th>CENOF DONDE SE DICTA LA CAPACITACION LABORAL</th>
                     <th>OTRAS INSTITUCIONES DONDE SE DICTA LA CAPACITACIÓN</th>
+                    <th>FECHA DE APROBACIÓN DE CAPACITACIÓN LABORAL</th>
+                    <th>FECHA DE VENCIMIENTO DE CAPACITACIÓN LABORAL</th>
                     <th>DESCARGABLES</th>
                 </tr>
             </div>
@@ -113,8 +118,9 @@
             </thead>
             <tbody>
 
-            <div th:if="${usuario == null}">
+            <div id="contenedorNoUsuario" th:if="${usuario == null}">
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}" th:each="resolucion : ${resoluciones}">
+
                     <td>
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
                         th:attr="onclick='abrirPopETP(\'' + ${resolucion.id} + '\')'"></span>
@@ -135,11 +141,15 @@
                    <!-- <td th:text="${resolucion.normaAprobatoriaDelPlanDeEstudioDisenoCurricular}">NORMA APROBATORIA DEL
                         PLAN DE ESTUDIO/DISEÑO CURRICULAR</td> -->
                     <td th:text="${resolucion.normaDeValidezNacional}">NORMA DE VALIDEZ NACIONAL</td>
+                    <td th:text="${resolucion.validezDesde}">VALIDEZ DESDE</td>
+                    <td th:text="${resolucion.validezHasta}">VALIDEZ HASTA</td>
                     <td th:text="${resolucion.plazoDeValidezNacional}">PLAZO DE VALIDEZ NACIONAL</td>
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
                     </td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
+
+
                 </tr>
                 <tr th:if="${tipo == 'SOCIO HUMANISTICA'} " th:each="resolucion : ${resoluciones}">
                     <td>
@@ -218,8 +228,11 @@
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
                         <td th:text="${resolucion.cnofDondeSedictaLaOferta}">CNOF DONDE SE DICTA LA OFERTA</td>
                     <td th:text="${resolucion.otrasInstitucionesDondeSeDictaLaOferta}">OTRAS INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
+                    <td th:text="${resolucion.fechaDeAprobacionDeCapacitacionLaboral}">FECHA DE APROBACION DE CAPACITACION LABORAL</td>
+                    <td th:text="${resolucion.fechaDeVencimientoDeCapacitacionLaboral}">FECHA DE VENCIMIENTO DE CAPACITACIÓN LABORAL</td>
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
+
 
             </div>
 
@@ -235,7 +248,14 @@
 
 
             </tbody>
+
+
+
         </table>
+
+
+
+
         <style>
             :root {
                 --violeta: #b49fff;
@@ -250,12 +270,10 @@
                 --grisFuerte: #D0CECD;
                 --negro: black;
             }
-    
-    
+
     
             .table-container {
                 overflow-x: auto;
-                margin: 20px;
             }
     
             table {
@@ -287,7 +305,14 @@
                 font-size: 34px;
 
             }
-    
+
+
+
+            #contenedorNoUsuario{
+                display: flex;
+                flex-direction: column;
+            }
+
             @media screen and (max-width: 768px) {
     
                 th,
@@ -296,7 +321,14 @@
                 }
             }
         </style>
+
+
     </div>
+
+
+
+
+
     <div class="table-container" th:fragment="tablaUsuarios(${usuarios})" id="usuariosTabla">
         <table  id="tablaQueCargoContenido">
             <thead>
@@ -394,6 +426,7 @@
         </style>
     </div>
 
+    <script th:src="@{/js/panel-admin.js}"></script>
 
 
    
