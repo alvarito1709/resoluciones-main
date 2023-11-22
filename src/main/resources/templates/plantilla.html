@@ -58,10 +58,11 @@
         <!-- MENU DEL ADMINISTRADOR -->
         <nav class="mobile-nav">
             <ul>
-                <li id="cargaResolucion" onclick="abrirCargaResoParaCrear()"><a href="#">CARGAR RESOLUCION</a></li>
+                <li th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }"  id="cargaResolucion" onclick="abrirCargaResoParaCrear()"><a href="#">CARGAR RESOLUCION</a></li>
                 <!-- <li id="cargaMasica"><a href="#">CARGA MASIVA</a></li> -->
                 <li id="exportarResoluciones"><a href="#">EXPORTAR RESOLUCIONES</a></li>
-                <li><a th:href="@{/admin/usuarios}">ADMINISTRAR USUARIOS</a></li>
+                <li th:if="${usuario != null && usuario.permisos == 'ROLE_ADMIN' }"><a th:href="@{/admin/usuarios}" >ADMINISTRAR USUARIOS</a></li>
+           
                 <li th:unless="${pagPrin}"><a th:href="@{/admin}">ADMIN</a></li>
                 <li id="desloguearse"><a href="#">SALIR</a></li>
             </ul>

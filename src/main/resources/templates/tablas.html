@@ -15,9 +15,9 @@
         <table  id="tablaQueCargoContenido">
             <thead>
 
-            <div th:if="${usuario == null}">
+            <div th:if="${usuarioFinal == null}">
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}"  >
-                    <th>ACCIONES</th>
+                    <th th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">ACCIONES</th>
                     <th>ID</th>
                     <th>TIPO DE OFERTA</th>
                     <th>TIPO DE GESTIÓN</th>
@@ -101,7 +101,7 @@
                     <th>DESCARGABLES</th>
                 </tr>
             </div>
-                <tr th:if="${usuario == true}">
+                <tr th:if="${usuarioFinal == true}">
 
                 <th>TIPO DE OFERTA</th>
                 <th>TIPO DE GESTIÓN</th>
@@ -118,10 +118,10 @@
             </thead>
             <tbody>
 
-            <div id="contenedorNoUsuario" th:if="${usuario == null}">
+            <div id="contenedorNoUsuario" th:if="${usuarioFinal == null}">
                 <tr th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}" th:each="resolucion : ${resoluciones}">
 
-                    <td>
+                    <td th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
                         th:attr="onclick='abrirPopETP(\'' + ${resolucion.id} + '\')'"></span>
                         <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span></td>
@@ -236,7 +236,7 @@
 
             </div>
 
-            <tr th:if="${usuario == true}" th:each="resolucion : ${resoluciones}">
+            <tr th:if="${usuarioFinal == true}" th:each="resolucion : ${resoluciones}">
                 <td th:text="${resolucion.tipoDeOferta}">EDUCACION TECNICA PROFESIONAL</td>
                 <td th:text="${resolucion.tipoDeGestion}">GESTIÓN ESTATAL(SSAALV)</td>
                 <td th:text="${resolucion.tipoDeTitulos}">TECNICATURA SUPERIOR</td>

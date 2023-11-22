@@ -43,6 +43,7 @@ public class AdminController {
 
         if (usuario != null) {
             model.addAttribute("usuario", usuario);
+            System.out.println(usuario.getPermisos());
         }
         int menosUnMes = 0;
         int entreUnMesYSeisMeses = 0;
@@ -100,6 +101,7 @@ List<Resolucion> resoluciones=resolucionService.obtenerTodasResoluciones();
 
             //CREA UNA VARIABLE USUARIO CON LOS ARIBUTOS DE USUARIOSRESSION (tipo de acceso)
             model.addAttribute("usuario", usuario);
+            System.out.println(usuario.getPermisos());
         }
 model.addAttribute("tipo","");
         model.addAttribute("pagPrin", true);
