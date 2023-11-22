@@ -1,5 +1,5 @@
-// var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-var urlBase = "http://localhost:8080";
+var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+// var urlBase = "http://localhost:8080";
 function toggleMobileNav() {
     const mobileNav = document.querySelector(".mobile-nav");
     mobileNav.classList.toggle("active");
