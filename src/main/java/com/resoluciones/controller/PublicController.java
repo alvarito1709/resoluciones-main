@@ -91,7 +91,7 @@ public class PublicController {
 
         List<Resolucion> resoluciones = resolucionService.buscarPorDenominacion(denominacion);
         model.addAttribute("resoluciones", resoluciones);
-        model.addAttribute("usuario", vistaUsuario);
+        model.addAttribute("usuarioFinal", vistaUsuario);
         return new ModelAndView("tablas :: tablaPedidos");
     }
 
