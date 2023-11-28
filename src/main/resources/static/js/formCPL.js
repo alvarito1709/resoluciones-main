@@ -5,8 +5,8 @@ function enviarDatosPOSTCPL() {
   var id2 = document.getElementById("id2");
   var usuarioDeCreacion2 = document.getElementById("usuarioDeCreacion2");
   var tipoDeOferta2 = document.getElementById("tipoDeOfertaF2");
-  var resolucionAprobatoria2=document.getElementById("resolucionAprobatoria2")
-  var numeroAnexo2=document.getElementById("numeroDeAnexo2")
+  var resolucionAprobatoria2=document.getElementById("resolucionAprobatoria2");
+  var numeroAnexo2=document.getElementById("numeroDeAnexo2");
   var nominaDeFamiliasProfesionales2 = document.getElementById("nominaDeFamiliasProfesionales2");
   var denominacionDeLaTitulacionOCertificacion2 = document.getElementById("denominacionDeLaTitulacionOCertificacion2");
   // var resolucionAprobatoriaDeCapacitacionLaboral2 = document.getElementById("resolucionAprobatoriaDeCapacitacionLaboral2");

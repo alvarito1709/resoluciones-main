@@ -25,7 +25,7 @@
             <label class="botonFormularioResoCerrar" id="closePopup" >Cerrar</label> 
             <div class="containerFormResol">
 
-                <form th:action="@{/}"  th:if="${tipo == 'ARTISTICA ESPECIFICA'}" class="formResolucionEspe" id="formResolucionAR" th:object="${resolucion}">
+                <form th:action="@{/admin}"  th:if="${tipo == 'ARTISTICA ESPECIFICA'}" class="formResolucionEspe" id="formResolucionAR" th:object="${resolucion}">
 
                     <div class="form-group" hidden>
                         <label for="id1">ID</label>
@@ -61,12 +61,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="resolucionAprobatoria">RESOLUCIÓN APROBATORIA</label>
-                        <input type="text" id="resolucionAprobatoria" th:field="*{resolucionAprobatoria}">
+                        <label for="resolucionAprobatoria1">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria1" th:field="*{resolucionAprobatoria}">
                     </div>
                     <div class="form-group">
-                        <label for="numeroDeAnexo">NÚMERO DE ANEXO</label>
-                        <input type="text" id="numeroDeAnexo" th:field="*{numeroDeAnexo}">
+                        <label for="numeroDeAnexo1">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo1" th:field="*{numeroDeAnexo}">
                     </div>
                     <div class="form-group">
                         <label for="ambitoDeLaEducacion1">AMBITO DE LA EDUCACIÓN</label>
@@ -101,6 +101,12 @@
                             CERTIFICACIÓN</label>
                         <input type="text" id="denominacionDeLaTitulacionOCertificacion1" th:field="*{denominacionDeLaTitulacionOCertificacion}">
                     </div>
+
+                    <div class="form-group">
+                        <label for="nombreDeLaOfertaEducativa">NOMBRE DE LA OFERTA EDUCATIVA</label>
+                        <input type="text" id="nombreDeLaOfertaEducativa" th:field="*{nombreDeLaOfertaEducativa}">
+                    </div>
+
                     <div class="form-group">
                         <label for="marcoDeReferencia1">MARCO DE REFERENCIA</label>
                         <input type="text" id="marcoDeReferencia1"  th:field="*{marcoDeReferencia}">
@@ -134,10 +140,12 @@
                     <div class="form-group">
                         <label for="url1">URL DEL ARCHIVO</label>
                         <input type="text" id="url1"  th:field="*{url}">
-                    </div>                               
+                    </div>
+
+                    <button class="botonFormularioReso" id="enviarFormPostAR" onclick="enviarDatosPOSTAR()">CARGAR OFERTA</button>
 
                 </form>
-                <form th:action="@{/}"  th:if="${tipo == 'CAPACITACIÓN LABORAL'}" class="formResolucionEspe" id="formResolucionCPL" th:object="${resolucion}">
+                <form th:action="@{/admin}"  th:if="${tipo == 'CAPACITACIÓN LABORAL'}" class="formResolucionEspe" id="formResolucionCPL" th:object="${resolucion}">
                     <div class="form-group" hidden>
                         <label for="id2">ID</label>
                         <input type="text" id="id2" th:field="*{id}" >
@@ -151,12 +159,12 @@
                         <input type="text" id="tipoDeOfertaF2" th:field="*{tipoDeOferta}" >
                     </div>
                     <div class="form-group">
-                        <label for="resolucionAprobatoria">RESOLUCIÓN APROBATORIA</label>
-                        <input type="text" id="resolucionAprobatoria" th:field="*{resolucionAprobatoria}">
+                        <label for="resolucionAprobatoria2">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria2" th:field="*{resolucionAprobatoria}">
                     </div>
                     <div class="form-group">
-                        <label for="numeroDeAnexo">NÚMERO DE ANEXO</label>
-                        <input type="text" id="numeroDeAnexo" th:field="*{numeroDeAnexo}">
+                        <label for="numeroDeAnexo2">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo2" th:field="*{numeroDeAnexo}">
                     </div>
                   
                     <div class="form-group">
@@ -203,13 +211,19 @@
                         <input type="number" id="cargaHorariaHSReloj2"  th:field="*{cargaHorariaHSReloj}">
                     </div>
                     <div class="form-group">
-                        <label for="institucionesDondeSeDictaLaOferta2">CENOF DONDE SE DICTA LA CAPACITACION LABORAL</label>
+                        <label for="institucionesDondeSeDictaLaOferta2">INSTITUCIONES DONDE SE DICTA LA CAPACITACION LABORAL</label>
                         <input type="text" id="institucionesDondeSeDictaLaOferta2"  th:field="*{institucionesDondeSeDictaLaOferta}">
                     </div>
                     <div class="form-group">
-                        <label for="cnofDondeSeDictaLaOferta2">CNOF DONDE SE DICTA LA OFERTA</label>
-                        <input type="text" id="cnofDondeSeDictaLaOferta2"  th:field="*{cnofDondeSedictaLaOferta}">
+                        <label for="cenofDondeSeDictaLaOferta">CNOF DONDE SE DICTA LA OFERTA</label>
+                        <input type="text" id="cenofDondeSeDictaLaOferta"  th:field="*{cnofDondeSedictaLaOferta}">
                     </div>
+
+                    <div class="form-group">
+                        <label for="otrasInstitucionesDondeSeDictaLaOferta">OTRAS INSTUCIONES DONDE SE DICTA LA OFERTA</label>
+                        <input type="text" id="otrasInstitucionesDondeSeDictaLaOferta" th:field="*{otrasInstitucionesDondeSeDictaLaOferta}">
+                    </div>
+
                     <div class="form-group">
                         <label for="plazoDeVigencia2">PLAZO DE VIGENCIA</label>
                         <input type="date" id="plazoDeVigencia2" th:field="*{plazoDeVigencia}">
@@ -226,9 +240,11 @@
                         <label for="url2">URL DEL ARCHIVO</label>
                         <input type="text" id="url2" th:field="*{url}" >
                     </div>
+
+                    <button class="botonFormularioReso" id="enviarFormPostCPL" onclick="enviarDatosPOSTCPL()">CARGAR OFERTA</button>
                     
                 </form>
-                <form th:action="@{/}"  th:if="${tipo == 'SOCIO HUMANISTICA'}" action="#" class="formResolucionEspe" id="formResolucionSH" th:object="${resolucion}">
+                <form th:action="@{/admin}"  th:if="${tipo == 'SOCIO HUMANISTICA'}" action="#" class="formResolucionEspe" id="formResolucionSH" th:object="${resolucion}">
                     <div class="form-group" hidden>
                         <label for="id3">ID</label>
                         <input type="text" id="id3" th:field="*{id}">
@@ -259,12 +275,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="resolucionAprobatoria">RESOLUCIÓN APROBATORIA</label>
-                        <input type="text" id="resolucionAprobatoria" th:field="*{resolucionAprobatoria}">
+                        <label for="resolucionAprobatoria3">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria3" th:field="*{resolucionAprobatoria}">
                     </div>
                     <div class="form-group">
-                        <label for="numeroDeAnexo">NÚMERO DE ANEXO</label>
-                        <input type="text" id="numeroDeAnexo" th:field="*{numeroDeAnexo}">
+                        <label for="numeroDeAnexo3">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo3" th:field="*{numeroDeAnexo}">
                     </div>
                   
                     <div class="form-group">
@@ -334,11 +350,13 @@
                         <label for="url3">URL DEL ARCHIVO</label>
                         <input type="text" id="url3" th:field="*{url}">
                     </div>
+
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostSH" onclick="enviarDatosPOSTSH()">CARGAR OFERTA</button>
         
                 
                     
                 </form>
-                <form th:action="@{/}" th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}"  action="#" class="formResolucionEspe" id="formResolucionETP" th:object="${resolucion}">
+                <form th:action="@{/admin}" th:if="${tipo == 'EDUCACIÓN TECNICA PROFESIONAL'}"  action="#" class="formResolucionEspe" id="formResolucionETP" th:object="${resolucion}">
                     <div class="form-group" hidden>
                         <label for="id4">ID</label>
                         <input type="text" id="id4"th:field="*{id}">
@@ -372,12 +390,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="resolucionAprobatoria">RESOLUCIÓN APROBATORIA</label>
-                        <input type="text" id="resolucionAprobatoria" th:field="*{resolucionAprobatoria}">
+                        <label for="resolucionAprobatoria4">RESOLUCIÓN APROBATORIA</label>
+                        <input type="text" id="resolucionAprobatoria4" th:field="*{resolucionAprobatoria}">
                     </div>
                     <div class="form-group">
-                        <label for="numeroDeAnexo">NÚMERO DE ANEXO</label>
-                        <input type="text" id="numeroDeAnexo" th:field="*{numeroDeAnexo}">
+                        <label for="numeroDeAnexo4">NÚMERO DE ANEXO</label>
+                        <input type="text" id="numeroDeAnexo4" th:field="*{numeroDeAnexo}">
                     </div>
                     <div class="form-group">
                         <label for="ambitoDeLaETP4">AMBITO DE LA ETP</label>
@@ -447,7 +465,7 @@
                         <input type="number" id="cargaHorariaHSReloj4" th:field="*{cargaHorariaHSReloj}">
                     </div>
                     <div class="form-group">
-                        <label for="institucionesDondeSeDictaLaOferta3">INSTITUCIONES DONDE SE DICTA LA OFERTA</label>
+                        <label for="institucionesDondeSeDictaLaOferta4">INSTITUCIONES DONDE SE DICTA LA OFERTA</label>
                         <input type="text" id="institucionesDondeSeDictaLaOferta4" th:field="*{institucionesDondeSeDictaLaOferta}">
                     </div>
                     <div class="form-group">
@@ -462,9 +480,9 @@
                         <label for="url4">URL DEL ARCHIVO</label>
                         <input type="text" id="url4" th:field="*{url}">
                     </div>
-                   
-                  
-                    
+
+
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostETP"onclick="enviarDatosPOSTETP()">CARGAR OFERTA</button>
                     
                 </form>
 
@@ -525,6 +543,10 @@
     
     <script src="/static/js/indexPanel.js"></script>
     <script th:src="@{/js/indexPanel.js}"></script>
+    <script th:src="@{/js/formAR.js}"></script>
+    <script th:src="@{/js/formCPL.js}"></script>
+    <script th:src="@{/js/formSH.js}"></script>
+    <script th:src="@{/js/formETP.js}"></script>
   
 </body>
 

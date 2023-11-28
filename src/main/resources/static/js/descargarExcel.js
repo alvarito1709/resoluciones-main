@@ -1,5 +1,5 @@
 var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
- //var urlBase = "http://localhost:8080";
+//var urlBase = "http://localhost:8080";
 document.getElementById('exportarResoluciones').addEventListener('click', function () {
     let tipoDeOferta = document.getElementById("tipoOfertaOut").value
    
