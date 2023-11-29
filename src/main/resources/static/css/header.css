@@ -25,6 +25,7 @@
 .user-menu {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .user-avatar {
@@ -106,6 +107,22 @@
     align-items: center;
     gap: 5px;
 }
+
+#textoIngreso{
+    font-weight: 600;
+    font-size: small;
+}
+
+#loguearse{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#loguearse svg{
+    margin: auto;
+}
+
 .noVisible {
     display: none !important;
 }

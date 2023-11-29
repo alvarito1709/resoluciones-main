@@ -25,6 +25,7 @@
     <header class="main-header" th:fragment="header">
         <div class="logo">
             <!-- Aquí puedes poner tu logotipo o título -->
+            <span><img th:src="@{/img/logoAgencia.png}" alt="logo BA" id="logoAgencia"></span>
         </div>
         <div class="user-menu">
             <div class="userName" th:if="${usuario}">
@@ -36,22 +37,29 @@
 
 
                 </div>
-                <div th:unless="${usuario.imagen}">
+                <div th:unless="${usuario.imagen}" id="ingreso">
                     <!-- Icono de usuario de Iconify -->
                     <span class="user-avatar iconify" data-icon="carbon:user-avatar-filled"></span>
+
                 </div>
+
+
 
             </div>
             <div class="userName" th:unless="${usuario}">
                 <div id="loguearse"> <!-- Icono de usuario de Iconify -->
                     <span class="user-avatar iconify" data-icon="carbon:user-avatar-filled"></span>
+                    <span id="textoIngreso" >Ingreso</span>
                 </div>
+
 
             </div>
 
             <!-- DESPLIEGA EL MENU DE ADMINISTRADOR-->
             <div th:if="${usuario}" class="mobile-menu-icon iconify" data-icon="teenyicons:menu-outline"
                 onclick="toggleMobileNav()"></div>
+
+
         </div>
 
 
