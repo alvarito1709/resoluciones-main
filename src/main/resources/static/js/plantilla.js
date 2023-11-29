@@ -163,3 +163,11 @@ tipoOfertaOut.addEventListener("change",
 
         }
     })
+
+
+document.getElementById("titleNameSearch").addEventListener("keypress", function (event) {
+    if (event.keyCode === 13){
+        buscarPorDenominacion();
+    }
+
+})

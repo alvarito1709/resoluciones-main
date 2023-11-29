@@ -142,7 +142,7 @@
                         <input type="text" id="url1"  th:field="*{url}">
                     </div>
 
-                    <button class="botonFormularioReso" id="enviarFormPostAR" onclick="enviarDatosPOSTAR()">CARGAR OFERTA</button>
+                    <button class="botonFormularioReso" id="enviarFormPostAR" onclick="enviarDatosPOSTAR()" th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">CARGAR OFERTA</button>
 
                 </form>
                 <form th:action="@{/admin}"  th:if="${tipo == 'CAPACITACIÓN LABORAL'}" class="formResolucionEspe" id="formResolucionCPL" th:object="${resolucion}">
@@ -241,7 +241,7 @@
                         <input type="text" id="url2" th:field="*{url}" >
                     </div>
 
-                    <button class="botonFormularioReso" id="enviarFormPostCPL" onclick="enviarDatosPOSTCPL()">CARGAR OFERTA</button>
+                    <button class="botonFormularioReso" id="enviarFormPostCPL" onclick="enviarDatosPOSTCPL()" th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">CARGAR OFERTA</button>
                     
                 </form>
                 <form th:action="@{/admin}"  th:if="${tipo == 'SOCIO HUMANISTICA'}" action="#" class="formResolucionEspe" id="formResolucionSH" th:object="${resolucion}">
@@ -351,7 +351,7 @@
                         <input type="text" id="url3" th:field="*{url}">
                     </div>
 
-                    <button class="botonFormularioReso" type="submit" id="enviarFormPostSH" onclick="enviarDatosPOSTSH()">CARGAR OFERTA</button>
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostSH" onclick="enviarDatosPOSTSH()" th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">CARGAR OFERTA</button>
         
                 
                     
@@ -482,7 +482,7 @@
                     </div>
 
 
-                    <button class="botonFormularioReso" type="submit" id="enviarFormPostETP"onclick="enviarDatosPOSTETP()">CARGAR OFERTA</button>
+                    <button class="botonFormularioReso" type="submit" id="enviarFormPostETP" onclick="enviarDatosPOSTETP()" th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">CARGAR OFERTA</button>
                     
                 </form>
 
