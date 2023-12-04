@@ -40,7 +40,7 @@
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'SOCIO HUMANISTICA'}">
-                    <th>ACCIONES</th>
+                    <th th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">ACCIONES</th>
                     <th>ID</th>
                     <th>TIPO DE OFERTA</th>
                     <th>TIPO DE GESTIÓN</th>
@@ -61,7 +61,7 @@
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}">
-                    <th>ACCIONES</th>
+                    <th th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">ACCIONES</th>
                     <th>ID</th>
                     <th>TIPO DE OFERTA</th>
                     <th>TIPO DE GESTIÓN</th>
@@ -83,7 +83,7 @@
                     <th>DESCARGABLES</th>
                 </tr>
                 <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}">
-                    <th>ACCIONES</th>
+                    <th th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">ACCIONES</th>
                     <th>ID</th>
                     <th>TIPO DE OFERTA</th>
                     <th>DENOMINACIÓN DE LA CERTIFICACIÓN</th>
@@ -162,7 +162,7 @@
 
                 </tr>
                 <tr th:if="${tipo == 'SOCIO HUMANISTICA'} " th:each="resolucion : ${resoluciones}">
-                    <td>
+                    <td th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
                               th:attr="onclick='abrirPopSH(\'' + ${resolucion.id} + '\')'"></span>
                               <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span>
@@ -191,7 +191,7 @@
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
                 <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}" th:each="resolucion : ${resoluciones}">
-                    <td>
+                    <td th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
                               th:attr="onclick='abrirPopAR(\'' + ${resolucion.id} + '\')'"></span>
                               <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span>
@@ -221,7 +221,7 @@
                     <td th:text="${resolucion.url}">ARCHIVO</td>
                 </tr>
                 <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}" th:each="resolucion : ${resoluciones}">
-                    <td>
+                    <td th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">
                         <span class="iconify icon-edit" data-icon="material-symbols:edit"
                               th:attr="onclick='abrirPopCPL(\'' + ${resolucion.id} + '\')'"></span>
                               <span class="iconify icon-edit" data-icon="mdi:delete-off" th:attr="onclick='showConfirmationPopupDelete(\'' + ${resolucion.id} + '\')'"></span>
