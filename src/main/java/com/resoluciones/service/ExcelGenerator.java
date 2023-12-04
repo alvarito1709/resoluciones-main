@@ -50,79 +50,79 @@ public class ExcelGenerator {
             Resolucion resolucion = resoluciones.get(rowNum - 1);
 
             if (tipo.equalsIgnoreCase("CAPACITACIÓN LABORAL")) {
-                row.createCell(0).setCellValue(resolucion.getId());
-                row.createCell(1).setCellValue(resolucion.getTipoDeOferta());
-                row.createCell(2).setCellValue(resolucion.getNominaDeFamiliasProfesionales());
-                row.createCell(3).setCellValue(resolucion.getDenominacionDeLaTitulacionOCertificacion());
-                row.createCell(4).setCellValue(resolucion.getResolucionAprobatoria());
-                row.createCell(5).setCellValue(resolucion.getNumeroDeAnexo());
-                row.createCell(6).setCellValue(resolucion.getCargaHorariaHSReloj());
-                row.createCell(7).setCellValue(resolucion.getInstitucionesDondeSeDictaLaOferta());
-                row.createCell(8).setCellValue(resolucion.getPlazoDeVigencia().toString());
-                row.createCell(9).setCellValue(resolucion.getUrl());
+                setCellValueOrBlank(row.createCell(0), resolucion.getId());
+                setCellValueOrBlank(row.createCell(1), resolucion.getTipoDeOferta());
+                setCellValueOrBlank(row.createCell(2), resolucion.getNominaDeFamiliasProfesionales());
+                setCellValueOrBlank(row.createCell(3), resolucion.getDenominacionDeLaTitulacionOCertificacion());
+                setCellValueOrBlank(row.createCell(4), resolucion.getResolucionAprobatoria());
+                setCellValueOrBlank(row.createCell(5), resolucion.getNumeroDeAnexo());
+                setCellValueOrBlank(row.createCell(6), resolucion.getCargaHorariaHSReloj());
+                setCellValueOrBlank(row.createCell(7), resolucion.getInstitucionesDondeSeDictaLaOferta());
+                setCellValueOrBlank(row.createCell(8), resolucion.getPlazoDeVigencia() != null ? resolucion.getPlazoDeVigencia().toString() : null);
+                setCellValueOrBlank(row.createCell(9), resolucion.getUrl());
             }
 
             if (tipo.equalsIgnoreCase("EDUCACIÓN TECNICA PROFESIONAL")) {
-                row.createCell(0).setCellValue(resolucion.getId());
-                row.createCell(1).setCellValue(resolucion.getTipoDeOferta());
-                row.createCell(2).setCellValue(resolucion.getTipoDeGestion());
-                row.createCell(3).setCellValue(resolucion.getTipoDeTitulos());
-                row.createCell(4).setCellValue(resolucion.getResolucionAprobatoria());
-                row.createCell(5).setCellValue(resolucion.getNumeroDeAnexo());
-                row.createCell(6).setCellValue(resolucion.getAmbitoDeLaETP());
-                row.createCell(7).setCellValue(resolucion.getNominaDeFamiliasProfesionales());
-                row.createCell(8).setCellValue(resolucion.getTitulacionOTipoDeCertificacion());
-                row.createCell(9).setCellValue(resolucion.getDenominacionDeLaTitulacionOCertificacion());
-                row.createCell(10).setCellValue(resolucion.getMarcoDeReferencia());
-            //    row.createCell(11).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
-                row.createCell(12).setCellValue(resolucion.getNormaDeValidezNacional());
-                row.createCell(13).setCellValue(resolucion.getCargaHorariaHSReloj());
-                row.createCell(14).setCellValue(resolucion.getPlazoDeVigencia().toString());
-                row.createCell(15).setCellValue(resolucion.getPlazoDeValidezNacional().toString());
-                row.createCell(16).setCellValue(resolucion.getUrl());
+                setCellValueOrBlank(row.createCell(0), resolucion.getId());
+                setCellValueOrBlank(row.createCell(1), resolucion.getTipoDeOferta());
+                setCellValueOrBlank(row.createCell(2), resolucion.getTipoDeGestion());
+                setCellValueOrBlank(row.createCell(3), resolucion.getTipoDeTitulos());
+                setCellValueOrBlank(row.createCell(4), resolucion.getResolucionAprobatoria());
+                setCellValueOrBlank(row.createCell(5), resolucion.getNumeroDeAnexo());
+                setCellValueOrBlank(row.createCell(6), resolucion.getAmbitoDeLaETP());
+                setCellValueOrBlank(row.createCell(7), resolucion.getNominaDeFamiliasProfesionales());
+                setCellValueOrBlank(row.createCell(8), resolucion.getTitulacionOTipoDeCertificacion());
+                setCellValueOrBlank(row.createCell(9), resolucion.getDenominacionDeLaTitulacionOCertificacion());
+                setCellValueOrBlank(row.createCell(10), resolucion.getMarcoDeReferencia());
+// row.createCell(11).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
+                setCellValueOrBlank(row.createCell(12), resolucion.getNormaDeValidezNacional());
+                setCellValueOrBlank(row.createCell(13), resolucion.getCargaHorariaHSReloj());
+                setCellValueOrBlank(row.createCell(14), resolucion.getPlazoDeVigencia() != null ? resolucion.getPlazoDeVigencia().toString() : null);
+                setCellValueOrBlank(row.createCell(15), resolucion.getPlazoDeValidezNacional() != null ? resolucion.getPlazoDeValidezNacional().toString() : null);
+                setCellValueOrBlank(row.createCell(16), resolucion.getUrl());
 
             }
             if (tipo.equalsIgnoreCase("SOCIO HUMANISTICA")) {
-                row.createCell(0).setCellValue(resolucion.getId());
-                row.createCell(1).setCellValue(resolucion.getTipoDeOferta());
-                row.createCell(2).setCellValue(resolucion.getTipoDeGestion());
-                row.createCell(3).setCellValue(resolucion.getTipoDeTitulos());
-                row.createCell(4).setCellValue(resolucion.getResolucionAprobatoria());
-                row.createCell(5).setCellValue(resolucion.getNumeroDeAnexo());
-                row.createCell(6).setCellValue(resolucion.getAmbitoDeLaEducacion());
-                row.createCell(7).setCellValue(resolucion.getDisciplinaSociohumanistica());
-                row.createCell(8).setCellValue(resolucion.getArea());
-                row.createCell(9).setCellValue(resolucion.getMarcoDeReferencia());
-              //  row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
-                row.createCell(11).setCellValue(resolucion.getNormaDeValidezNacional());
-                row.createCell(12).setCellValue(resolucion.getCargaHorariaHSReloj());
-                row.createCell(13).setCellValue(resolucion.getInstitucionesDondeSeDictaLaOferta());
-                row.createCell(14).setCellValue(resolucion.getPlazoDeVigencia().toString());
-                row.createCell(15).setCellValue(resolucion.getPlazoDeValidezNacional().toString());
-                row.createCell(16).setCellValue(resolucion.getUrl());
+                setCellValueOrBlank(row.createCell(0), resolucion.getId());
+                setCellValueOrBlank(row.createCell(1), resolucion.getTipoDeOferta());
+                setCellValueOrBlank(row.createCell(2), resolucion.getTipoDeGestion());
+                setCellValueOrBlank(row.createCell(3), resolucion.getTipoDeTitulos());
+                setCellValueOrBlank(row.createCell(4), resolucion.getResolucionAprobatoria());
+                setCellValueOrBlank(row.createCell(5), resolucion.getNumeroDeAnexo());
+                setCellValueOrBlank(row.createCell(6), resolucion.getAmbitoDeLaEducacion());
+                setCellValueOrBlank(row.createCell(7), resolucion.getDisciplinaSociohumanistica());
+                setCellValueOrBlank(row.createCell(8), resolucion.getArea());
+                setCellValueOrBlank(row.createCell(9), resolucion.getMarcoDeReferencia());
+// row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
+                setCellValueOrBlank(row.createCell(11), resolucion.getNormaDeValidezNacional());
+                setCellValueOrBlank(row.createCell(12), resolucion.getCargaHorariaHSReloj());
+                setCellValueOrBlank(row.createCell(13), resolucion.getInstitucionesDondeSeDictaLaOferta());
+                setCellValueOrBlank(row.createCell(14), resolucion.getPlazoDeVigencia() != null ? resolucion.getPlazoDeVigencia().toString() : null);
+                setCellValueOrBlank(row.createCell(15), resolucion.getPlazoDeValidezNacional() != null ? resolucion.getPlazoDeValidezNacional().toString() : null);
+                setCellValueOrBlank(row.createCell(16), resolucion.getUrl());
 
 
             }
 //
 
             if (tipo.equalsIgnoreCase("ARTISTICA ESPECIFICA")) {
-                row.createCell(0).setCellValue(resolucion.getId());
-                row.createCell(1).setCellValue(resolucion.getTipoDeOferta());
-                row.createCell(2).setCellValue(resolucion.getTipoDeGestion());
-                row.createCell(3).setCellValue(resolucion.getTipoDeTitulos());
-                row.createCell(4).setCellValue(resolucion.getResolucionAprobatoria());
-                row.createCell(5).setCellValue(resolucion.getNumeroDeAnexo());
-                row.createCell(6).setCellValue(resolucion.getAmbitoDeLaEducacion());
-                row.createCell(7).setCellValue(resolucion.getLenguajeDisciplina());
-                row.createCell(8).setCellValue(resolucion.getArea());
-                row.createCell(9).setCellValue(resolucion.getMarcoDeReferencia());
-            //    row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
-                row.createCell(11).setCellValue(resolucion.getNormaDeValidezNacional());
-                row.createCell(12).setCellValue(resolucion.getCargaHorariaHSReloj());
-                row.createCell(13).setCellValue(resolucion.getInstitucionesDondeSeDictaLaOferta());
-                row.createCell(14).setCellValue(resolucion.getPlazoDeVigencia().toString());
-                row.createCell(15).setCellValue(resolucion.getPlazoDeValidezNacional().toString());
-                row.createCell(16).setCellValue(resolucion.getUrl());
+                setCellValueOrBlank(row.createCell(0), resolucion.getId());
+                setCellValueOrBlank(row.createCell(1), resolucion.getTipoDeOferta());
+                setCellValueOrBlank(row.createCell(2), resolucion.getTipoDeGestion());
+                setCellValueOrBlank(row.createCell(3), resolucion.getTipoDeTitulos());
+                setCellValueOrBlank(row.createCell(4), resolucion.getResolucionAprobatoria());
+                setCellValueOrBlank(row.createCell(5), resolucion.getNumeroDeAnexo());
+                setCellValueOrBlank(row.createCell(6), resolucion.getAmbitoDeLaEducacion());
+                setCellValueOrBlank(row.createCell(7), resolucion.getLenguajeDisciplina());
+                setCellValueOrBlank(row.createCell(8), resolucion.getArea());
+                setCellValueOrBlank(row.createCell(9), resolucion.getMarcoDeReferencia());
+// row.createCell(10).setCellValue(resolucion.getNormaAprobatoriaDelPlanDeEstudioDisenoCurricular());
+                setCellValueOrBlank(row.createCell(11), resolucion.getNormaDeValidezNacional());
+                setCellValueOrBlank(row.createCell(12), resolucion.getCargaHorariaHSReloj());
+                setCellValueOrBlank(row.createCell(13), resolucion.getInstitucionesDondeSeDictaLaOferta());
+                setCellValueOrBlank(row.createCell(14), resolucion.getPlazoDeVigencia() != null ? resolucion.getPlazoDeVigencia().toString() : null);
+                setCellValueOrBlank(row.createCell(15), resolucion.getPlazoDeValidezNacional() != null ? resolucion.getPlazoDeValidezNacional().toString() : null);
+                setCellValueOrBlank(row.createCell(16), resolucion.getUrl());
 
             }
 
@@ -135,5 +135,12 @@ public class ExcelGenerator {
         workbook.close();
 
         return outputStream.toByteArray();
+    }
+    private static void setCellValueOrBlank(Cell cell, Object value) {
+        if (value != null && !value.toString().isEmpty()) {
+            cell.setCellValue(value.toString());
+        } else {
+            cell.setCellValue(" ");
+        }
     }
 }

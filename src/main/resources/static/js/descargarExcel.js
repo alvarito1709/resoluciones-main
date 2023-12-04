@@ -1,10 +1,10 @@
 var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-//var urlBase = "http://localhost:8080";
+// var urlBase = "http://localhost:8080";
 document.getElementById('exportarResoluciones').addEventListener('click', function () {
     let tipoDeOferta = document.getElementById("tipoOfertaOut").value
    
     var url = urlBase+"/admin/downloadExcel?tipoDeOferta=" + tipoDeOferta;
-
+console.log(tipoDeOferta);
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'blob';

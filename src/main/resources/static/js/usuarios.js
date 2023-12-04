@@ -1,7 +1,6 @@
 var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
 // var urlBase = "http://localhost:8080";
 
-
 function modificarResolucionUsu(id) {
   fetch(urlBase + `/admin/usuarios/get?id=${id}`)
     .then(response => response.json())
