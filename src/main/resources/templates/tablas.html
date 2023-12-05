@@ -157,7 +157,7 @@
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
                     </td>
-                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                    <td><a th:href="'https://'+ ${resolucion.url}" target="_blank">ARCHIVO </a></td>
 
 
                 </tr>
@@ -188,7 +188,7 @@
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
                     </td>
-                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                    <td><a th:href="'https://'+ ${resolucion.url}" target="_blank">ARCHIVO </a></td>
                 </tr>
                 <tr th:if="${tipo == 'ARTISTICA ESPECIFICA'}" th:each="resolucion : ${resoluciones}">
                     <td th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">
@@ -218,7 +218,7 @@
                     <td th:text="${resolucion.cargaHorariaHSReloj}">CARGA HORARIA (HS RELOJ)</td>
                     <td th:text="${resolucion.institucionesDondeSeDictaLaOferta}">INSTITUCIONES DONDE SE DICTA LA OFERTA
                     </td>
-                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                    <td><a th:href="'https://'+ ${resolucion.url}" target="_blank">ARCHIVO </a></td>
                 </tr>
                 <tr th:if="${tipo == 'CAPACITACIÓN LABORAL'}" th:each="resolucion : ${resoluciones}">
                     <td th:if="${usuario != null && (usuario.permisos == 'ROLE_ADMIN' || usuario.permisos == 'ROLE_EDITOR') }">
@@ -240,7 +240,7 @@
                     <td th:text="${resolucion.otrasInstitucionesDondeSeDictaLaOferta}">OTRAS INSTITUCIONES DONDE SE DICTA LA OFERTA</td>
                     <td th:text="${resolucion.fechaDeAprobacionDeCapacitacionLaboral}">FECHA DE APROBACION DE CAPACITACION LABORAL</td>
                     <td th:text="${resolucion.fechaDeVencimientoDeCapacitacionLaboral}">FECHA DE VENCIMIENTO DE CAPACITACIÓN LABORAL</td>
-                    <td th:text="${resolucion.url}">ARCHIVO</td>
+                    <td><a th:href="'https://'+ ${resolucion.url}" target="_blank">ARCHIVO </a></td>
                 </tr>
 
 
