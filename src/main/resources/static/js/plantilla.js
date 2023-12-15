@@ -1,6 +1,8 @@
 var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
 // var urlBase = "http://localhost:8080";
 
+
+// Realiza la busqueda a través de filtros de los select
 function retrieveGuests() {
     var url = urlBase+'/filtro-resoluciones';
 
@@ -66,7 +68,7 @@ function retrieveGuests() {
     });
 }
 
-
+//Realiza la busqueda y actualiza la tabla según la denominacion de la resolucion
 function buscarPorDenominacion() {
     var url = urlBase+'/buscarResolucion/denominacion';
 
@@ -164,10 +166,38 @@ tipoOfertaOut.addEventListener("change",
         }
     })
 
-
+//Realiza la busqueda con tecla ENTER
 document.getElementById("titleNameSearch").addEventListener("keypress", function (event) {
     if (event.keyCode === 13){
         buscarPorDenominacion();
     }
 
 })
+
+//Oculta el boton de "BUSCAR" para que realize la funcion correspondiente y borra la selección de los filtros
+
+function ocultarFiltros(){
+
+        document.getElementById("filterButton").style.display ="none";
+        document.getElementById("searchButton").style.display = "block";
+        document.getElementById("tipoOfertaOut").value = "";
+        document.getElementById("tipoGetionOutETP").value = "";
+        document.getElementById("tipoGetionOutAR").value = "";
+        document.getElementById("tipoGetionOutSH").value = "";
+        document.getElementById("tipoGetionOutCP").value = "";
+        document.getElementById("tipoTituloOutETP").value = "";
+        document.getElementById("tipoTituloOutArSh").value = "";
+
+}
+
+
+//Oculta el boton de "BUSCAR" para que realize la funcion correspondiente y borra la selección de los filtros
+
+function borrarInputDeBusqueda(){
+
+
+    document.getElementById("filterButton").style.display ="block";
+    document.getElementById("searchButton").style.display = "none";
+    document.getElementById("titleNameSearch").value = "";
+
+}

@@ -105,7 +105,7 @@
         </span>
         <div class="resolution-filters">
 
-            <select name="tipoDeOferta" id="tipoOfertaOut">
+            <select name="tipoDeOferta" id="tipoOfertaOut" onclick="borrarInputDeBusqueda()">
 
                 <option value="" selected>Catálogo</option>
                 <option value="EDUCACIÓN TECNICA PROFESIONAL">Educación Técnica Profesional</option>
@@ -116,30 +116,30 @@
             </select>
 
             <!-- SELECCIONA EL TIPO DE GESTIÓN -->
-            <select name="tipoDeGestion" id="tipoGetionOutETP" style="display: none">
+            <select name="tipoDeGestion" id="tipoGetionOutETP" onclick="borrarInputDeBusqueda()" style="display: none">
                 <option value="" selected>Tipo de gestión</option>
                 <option value="GESTIÓN ESTATAL (SSAALV)">Estatal (SSAALV)</option>
                 <option value="GESTIÓN PRIVADA (DGEGP)">Privada (DGEGP)</option>
             </select>
 
-            <select name="tipoDeGestion" id="tipoGetionOutSH" style="display: none">
+            <select name="tipoDeGestion" id="tipoGetionOutSH" onclick="borrarInputDeBusqueda()" style="display: none">
                 <option value="" selected>Tipo de gestión</option>
                 <option value="GESTIÓN ESTATAL (SSAALV/SSCPEE)">Estatal (SSAALV/SSCPEE)</option>
                 <option value="GESTIÓN PRIVADA (DGEGP)">Privada (DGEGP)</option>
             </select>
 
-            <select name="tipoDeGestion" id="tipoGetionOutAR" style="display: none">
+            <select name="tipoDeGestion" id="tipoGetionOutAR" onclick="borrarInputDeBusqueda()" style="display: none">
                 <option value="" selected>Tipo de gestión</option>
                 <option value="GESTIÓN ESTATAL (DGEART/SSCPEE)">Estatal (DGEART/SSCPEE)</option>
                 <option value="GESTIÓN PRIVADA (DGEGP)">Privada (DGEGP)</option>
             </select>
 
-            <select name="tipoDeGestion" id="tipoGetionOutCP">
+            <select name="tipoDeGestion" id="tipoGetionOutCP" onclick="borrarInputDeBusqueda()">
                 <option value="" selected>-</option>
             </select>
 
             <!-- selecciona el tipo de titulo -->
-            <select name="tipoDeTitulo" id="tipoTituloOutETP" class="ETP" style="display: none">
+            <select name="tipoDeTitulo" id="tipoTituloOutETP" class="ETP" onclick="borrarInputDeBusqueda()" style="display: none">
 
                     <!-- tipo de titulos para EDUCACION TECNICA PROFESIONAL -->
                 <option value="" selected class="ETP">Tipo de título</option>
@@ -150,35 +150,29 @@
 
                 <!-- TIPO DE TITULOS PARA ARTISTICA Y SOCIO HUMANISTICA -->
 
-                <select class="ArSh" id="tipoTituloOutArSh" style="display: none">
+                <select class="ArSh" id="tipoTituloOutArSh" onclick="borrarInputDeBusqueda()" style="display: none">
                 <option value="" selected class="ArSh">Tipo de título</option>
                 <option value="TECNICATURA SUPERIOR" class="ArSh">Tecnicatura Superior</option>
                 <option value="FORMACION PROFESIONAL CONTINUA" class="ArSh">Formación Profesional Continua</option>
                 </select>
                 <!-- TIPO DE TITULOS PARA CAPACITACION LABORAL -->
 
-                <select class="CP" id="tipoTituloOutCp">
+                <select class="CP" onclick="borrarInputDeBusqueda()" id="tipoTituloOutCp">
                 <option value="" selected class="CP">-</option>
                 </select>
-            </select>
 
 
 
 
 
-            <input type="text" id="titleNameSearch" placeholder="Nombre de Oferta Educativa">
-                <span onclick="buscarPorDenominacion()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                           viewBox="0 0 24 24" ><path fill="#3280e4" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5q0-2.725 1.888-4.612T9.5 3q2.725 0 4.612 1.888T16
-                           9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3l-1.4 1.4ZM9.5 14q1.875 0 3.188-1.313T14 9.5q0-1.875-1.313-3.188T9.5 5Q7.625 5 6.312 6.313T5 9.5q0 1.875 1.313 3.188T9.5 14Z"/>
-                </svg></span>
-
-
+            <input type="text" id="titleNameSearch" onclick="ocultarFiltros()" placeholder="Nombre de Oferta Educativa">
 
         </div>
     </div>
 
     <div class="contenedorBuscar">
-        <button type="button" onclick="retrieveGuests()">Buscar</button>
+        <button type="button" onclick="retrieveGuests()" id="filterButton">Buscar</button>
+        <button type="button" onclick="buscarPorDenominacion()" id="searchButton" style="display: none">Buscar</button>
     </div>
 
 
