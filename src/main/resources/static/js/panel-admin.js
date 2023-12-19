@@ -1,5 +1,7 @@
-var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
-// var urlBase = "http://localhost:8080";
+//var urlBase = "https://inscripcionesagencia.bue.edu.ar/catalogodetitulaciones";
+ var urlBase = "http://localhost:8080";
+
+var tabla = document.getElementById("tablaResoluciones")
 function validarDatos() {
 
     let tipoDeOferta = document.getElementById("tipoOfertaOut").value
@@ -141,11 +143,16 @@ function crearBotonEnvio() {
 
     nuevoBoton.addEventListener("click", () => {
         retrieveGuests()
+        visualizarTabla()
     });
 
     contenedorBotones.appendChild(nuevoBoton);
 }
 crearBotonEnvio()
+
+function visualizarTabla(){
+    this.tabla.style.display = "block"
+}
 
 
 const TG1 = document.getElementById("TG1");
@@ -209,6 +216,7 @@ var tipoOferta = document.getElementById("tipoOferta")
 var tipoDeGestion = document.getElementById("tipoDeGestion")
 var tipoTitulo = document.getElementById("tipoTitulo")
 
+
 function toggleNoVisible(elementId) {
     const contenedorBotones = document.getElementById("contenedorBotones");
     var clase = "noVisible"
@@ -230,6 +238,7 @@ function removeElementById(elementId, padre, siguiente) {
             tipoOferta.classList.remove("noVisible")
             tipoDeGestion.classList.add("noVisible")
             tipoTitulo.classList.add("noVisible")
+            this.tabla.style.display = "none"
             for (let index = 0; index < 100; index++) {
                 var element = document.getElementById("tipoDeGestion" + index);
                 if (element) {
@@ -252,6 +261,7 @@ function removeElementById(elementId, padre, siguiente) {
             tipoOferta.classList.add("noVisible")
             tipoDeGestion.classList.remove("noVisible")
             tipoTitulo.classList.add("noVisible")
+            this.tabla.style.display = "none"
             for (let index = 0; index < 100; index++) {
                 var element = document.getElementById("tipoDeGestion" + index);
                 if (element) {
@@ -274,6 +284,7 @@ function removeElementById(elementId, padre, siguiente) {
             tipoOferta.classList.add("noVisible")
             tipoDeGestion.classList.add("noVisible")
             tipoTitulo.classList.remove("noVisible")
+            this.tabla.style.display = "none"
             for (let index = 0; index < 100; index++) {
                 var element = document.getElementById("tipoTitulo" + index);
                 if (element) {
@@ -290,7 +301,6 @@ function removeElementById(elementId, padre, siguiente) {
     if (element) {
         element.remove();
     }
-
 }
 function viewOrNotButtom(name, botones) {
     switch (name) {
