@@ -1,8 +1,8 @@
 *{
     box-sizing: border-box;
 }
-h3{ font-size: 1.1em; }
-p{font-size: 0.9em;}
+h3{ font-size: 1.6em; }
+p{font-size: 1em;}
 
 :root {
     --violeta: #b49fff;
@@ -36,6 +36,10 @@ header{
     overflow-x: auto;
 }
 
+-webkit-scrollbar:horizontal{
+    position: fixed;
+}
+
 #tablaResoluciones {
     border-collapse: collapse;
     background-color: white;
@@ -67,7 +71,7 @@ tr:nth-child(even) {
 .title-container{
     width: 100%;
     color: whitesmoke;
-    padding: 60px;
+    padding: 110px;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -75,7 +79,7 @@ tr:nth-child(even) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 -100px 30px rgba(89, 3, 90, 0.62);
+    box-shadow: inset 0 -200px 30px rgba(89, 3, 90, 0.62);
 
 }
 
@@ -143,6 +147,7 @@ tr:nth-child(even) {
     border: none;
     background-color: var(--azul);
     font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -151,7 +156,7 @@ tr:nth-child(even) {
 }
 
 #logoAgencia{
-    width: 180px;
+    width: 65%;
 
 }
 

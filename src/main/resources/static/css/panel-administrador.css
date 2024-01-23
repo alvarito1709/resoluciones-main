@@ -13,12 +13,17 @@
     --negro: black;
 }
 
+-webkit-scrollbar:horizontal{
+    position: fixed;
+}
+
 body{
     z-index: 0;
 }
 
-h3{ font-size: 0.8em; }
-p{font-size: 0.9em;}
+h3{ font-size: 1.2em; }
+p{font-size: 0.9em;
+margin-top: 25  px;}
 
 
 .panelSec {
@@ -39,28 +44,29 @@ p{font-size: 0.9em;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    height: 80%;
+    width: 90%;
     background-color: var(--gris);
     border-radius: 20px;
 }
 
 .botones-container span {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
+    margin-top: 25px;
     margin-bottom: 50px;
 }
 .chart-container {
     width: 20%;
 }
 .container-tituloSeccion{
-    background-color: var(--gris);
     display: flex;
     align-self: center;
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
+    margin-top: 15px;
     margin-left: 0;
     margin-right: 0;
     padding-top: 30px;
@@ -90,6 +96,7 @@ p{font-size: 0.9em;}
     flex-direction: column;
     width: 100%;
     margin-bottom: 50px;
+    min-height: 50vh;
 }
 .busquedaPorNroResolucion{
     width: 100%;
